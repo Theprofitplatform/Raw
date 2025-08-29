@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sydney SEO Services - Rank #1 on Google | The Profit Platform</title>
+    <meta name="description" content="Get your Sydney business to #1 on Google. Local SEO experts with proven results. 3x more customers in 90 days guaranteed. Free SEO audit available.">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ========================= 
+           CSS RESET & VARIABLES 
+           ========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pp-primary: #2c86f9;
+            --pp-primary-dark: #1e6ee8;
+            --pp-black: #0f172a;
+            --pp-white: #ffffff;
+            --pp-gray-50: #f8fafc;
+            --pp-gray-100: #f1f5f9;
+            --pp-gray-200: #e2e8f0;
+            --pp-gray-300: #cbd5e1;
+            --pp-gray-400: #94a3b8;
+            --pp-gray-500: #64748b;
+            --pp-gray-600: #475569;
+            --pp-gray-700: #334155;
+            --pp-gray-800: #1e293b;
+            --pp-gray-900: #0f172a;
+            --pp-success: #10b981;
+            --pp-warning: #f59e0b;
+            --pp-danger: #ef4444;
+            --pp-radius: 16px;
+            --pp-radius-sm: 8px;
+            --pp-radius-lg: 24px;
+            --pp-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --pp-shadow: 0 4px 20px rgba(15, 23, 42, .08);
+            --pp-shadow-lg: 0 20px 40px rgba(15, 23, 42, .12);
+            --pp-shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, .25);
+            --pp-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --pp-seo-primary: #10b981;
+            --pp-seo-dark: #059669;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--pp-gray-800);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: var(--pp-gray-50);
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        /* ========================= 
+           TYPOGRAPHY 
+           ========================= */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--pp-black);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+        }
+
+        p {
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            line-height: 1.7;
+            color: var(--pp-gray-600);
+        }
+
+        /* ========================= 
+           LAYOUT COMPONENTS 
+           ========================= */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+        }
+
+        /* ========================= 
+           BUTTONS 
+           ========================= */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: var(--pp-radius);
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--pp-transition);
+            cursor: pointer;
+            border: none;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--pp-seo-primary), var(--pp-seo-dark));
+            color: white;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--pp-seo-primary);
+            border: 2px solid var(--pp-seo-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--pp-seo-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ========================= 
+           HEADER 
+           ========================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: var(--pp-transition);
+            border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+            box-shadow: var(--pp-shadow);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            gap: 20px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .phone-number {
+            font-weight: 700;
+            color: var(--pp-seo-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* ========================= 
+           HERO SECTION 
+           ========================= */
+        .hero {
+            padding: 140px 0 100px;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #f0f9ff 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+            animation: heroFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes heroFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, -30px) rotate(180deg); }
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--pp-seo-primary);
+        }
+
+        .hero h1 {
+            margin-bottom: 25px;
+            color: var(--pp-black);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--pp-gray-600);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-benefits {
+            list-style: none;
+            margin: 40px 0;
+        }
+
+        .hero-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 15px 0;
+            font-weight: 500;
+            color: var(--pp-gray-700);
+        }
+
+        .hero-benefits li::before {
+            content: "✓";
+            color: var(--pp-seo-primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .hero-guarantee {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--pp-gray-500);
+            font-size: 0.9rem;
+            margin-top: 25px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--pp-radius-lg);
+            box-shadow: var(--pp-shadow-xl);
+        }
+
+        /* ========================= 
+           PROBLEM SECTION 
+           ========================= */
+        .problem {
+            background: white;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .problem-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .problem-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .problem-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: var(--pp-gray-50);
+            border-radius: var(--pp-radius);
+            border-left: 4px solid var(--pp-danger);
+        }
+
+        .problem-icon {
+            color: var(--pp-danger);
+            font-size: 1.2rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .problem-text {
+            flex: 1;
+        }
+
+        .problem-text strong {
+            color: var(--pp-black);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* ========================= 
+           SOLUTION SECTION 
+           ========================= */
+        .solution {
+            background: linear-gradient(135deg, var(--pp-gray-50) 0%, white 100%);
+            padding: 100px 0;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .solution-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--pp-radius-lg);
+            box-shadow: var(--pp-shadow);
+            transition: var(--pp-transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--pp-seo-primary), var(--pp-seo-dark));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--pp-shadow-xl);
+            border-color: var(--pp-seo-primary);
+        }
+
+        .solution-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .solution-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--pp-seo-primary), var(--pp-seo-dark));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover .solution-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .solution-card h3 {
+            color: var(--pp-black);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .solution-card p {
+            color: var(--pp-gray-600);
+            line-height: 1.6;
+        }
+
+        /* ========================= 
+           RESULTS SECTION 
+           ========================= */
+        .results {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, var(--pp-gray-50) 0%, white 100%);
+            padding: 40px 30px;
+            border-radius: var(--pp-radius-lg);
+            text-align: center;
+            box-shadow: var(--pp-shadow);
+            transition: var(--pp-transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--pp-shadow-xl);
+        }
+
+        .result-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--pp-seo-primary), var(--pp-seo-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .result-label {
+            font-size: 1.2rem;
+            color: var(--pp-black);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .result-description {
+            color: var(--pp-gray-600);
+            font-size: 0.95rem;
+        }
+
+        /* ========================= 
+           PROCESS SECTION 
+           ========================= */
+        .process {
+            background: linear-gradient(135deg, var(--pp-gray-50) 0%, white 50%, #f0fdf4 100%);
+            padding: 100px 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--pp-seo-primary), var(--pp-seo-dark));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 auto 25px;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover .step-number {
+            transform: scale(1.1);
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            color: var(--pp-black);
+            margin-bottom: 15px;
+        }
+
+        .step-description {
+            color: var(--pp-gray-600);
+            line-height: 1.6;
+        }
+
+        /* ========================= 
+           PRICING SECTION 
+           ========================= */
+        .pricing {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .pricing-card {
+            max-width: 500px;
+            margin: 60px auto 0;
+            background: linear-gradient(135deg, white 0%, var(--pp-gray-50) 100%);
+            padding: 50px 40px;
+            border-radius: var(--pp-radius-lg);
+            box-shadow: var(--pp-shadow-xl);
+            text-align: center;
+            border: 2px solid var(--pp-seo-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--pp-seo-primary), var(--pp-seo-dark));
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .pricing-title {
+            font-size: 2rem;
+            color: var(--pp-black);
+            margin-bottom: 15px;
+        }
+
+        .pricing-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 8px;
+            margin: 30px 0;
+        }
+
+        .price-currency {
+            font-size: 1.5rem;
+            color: var(--pp-gray-500);
+        }
+
+        .price-amount {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--pp-seo-primary);
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 1.2rem;
+            color: var(--pp-gray-500);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 15px 0;
+            color: var(--pp-gray-700);
+            font-size: 1.05rem;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--pp-seo-primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .pricing-cta {
+            margin: 40px 0 20px;
+        }
+
+        .pricing-guarantee {
+            color: var(--pp-gray-500);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* ========================= 
+           FAQ SECTION 
+           ========================= */
+        .faq {
+            background: var(--pp-gray-50);
+            padding: 100px 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--pp-radius);
+            overflow: hidden;
+            box-shadow: var(--pp-shadow);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 25px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--pp-black);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--pp-transition);
+        }
+
+        .faq-question:hover {
+            background: var(--pp-gray-50);
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            color: var(--pp-seo-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 0 25px 25px;
+        }
+
+        .faq-answer p {
+            color: var(--pp-gray-600);
+            line-height: 1.7;
+        }
+
+        /* ========================= 
+           CTA SECTION 
+           ========================= */
+        .cta {
+            background: linear-gradient(135deg, var(--pp-seo-primary) 0%, var(--pp-seo-dark) 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--pp-seo-primary);
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ========================= 
+           FOOTER 
+           ========================= */
+        footer {
+            background: var(--pp-black);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--pp-seo-primary);
+        }
+
+        /* ========================= 
+           MOBILE RESPONSIVE 
+           ========================= */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .problem-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .pricing-card {
+                margin: 40px 20px 0;
+                padding: 40px 30px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 120px 0 80px;
+            }
+        }
+
+        /* ========================= 
+           ANIMATIONS 
+           ========================= */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <!-- Structured Data for SEO Landing Page -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "SEO Services Sydney",
+        "description": "Professional SEO and Local Search services for Sydney businesses. Get to #1 on Google with proven strategies.",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "The Profit Platform",
+            "telephone": "0487286451",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Sydney",
+                "addressRegion": "NSW",
+                "addressCountry": "Australia"
+            }
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Sydney",
+            "@id": "https://en.wikipedia.org/wiki/Sydney"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "SEO Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Local SEO Sydney"
+                    },
+                    "price": "990",
+                    "priceCurrency": "AUD",
+                    "availability": "https://schema.org/InStock"
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png" alt="The Profit Platform Logo">
+            </div>
+            <div class="nav-cta">
+                <a href="tel:0487286451" class="phone-number">
+                    <i class="fas fa-phone"></i>
+                    0487 286 451
+                </a>
+                <a href="#contact" class="btn btn-primary">Free SEO Audit</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-search"></i>
+                        <span>#1 SEO Agency in Sydney</span>
+                    </div>
+                    
+                    <h1>Rank #1 on Google<br>Get 3x More Sydney Customers</h1>
+                    
+                    <p class="hero-subtitle">Stop losing customers to competitors. Our proven SEO strategies get Sydney businesses to the top of Google search results and maps in 90 days or less.</p>
+                    
+                    <ul class="hero-benefits">
+                        <li>Get found when customers search for your services</li>
+                        <li>Dominate Google Maps for local searches</li>
+                        <li>3x more website traffic and phone calls</li>
+                        <li>Beat your competition on search results</li>
+                        <li>No long-term contracts - cancel anytime</li>
+                    </ul>
+
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">Get Free SEO Audit ($500 Value)</a>
+                        <a href="tel:0487286451" class="btn btn-secondary">Call: 0487 286 451</a>
+                    </div>
+
+                    <div class="hero-guarantee">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>90-Day Results Guarantee • No Setup Fees • Cancel Anytime</span>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="SEO Results Dashboard">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem section">
+        <div class="container">
+            <div class="problem-content">
+                <div class="problem-text">
+                    <h2>Why Sydney Businesses Struggle Online</h2>
+                    <p>You're losing customers every day because they can't find you when searching for your services. Here's what's happening:</p>
+                    
+                    <ul class="problem-list">
+                        <li class="problem-item">
+                            <i class="fas fa-times-circle problem-icon"></i>
+                            <div class="problem-text">
+                                <strong>You're invisible on Google</strong>
+                                Your competitors appear first when customers search for your services
+                            </div>
+                        </li>
+                        <li class="problem-item">
+                            <i class="fas fa-times-circle problem-icon"></i>
+                            <div class="problem-text">
+                                <strong>Missing local customers</strong>
+                                You don't show up in "near me" searches and Google Maps results
+                            </div>
+                        </li>
+                        <li class="problem-item">
+                            <i class="fas fa-times-circle problem-icon"></i>
+                            <div class="problem-text">
+                                <strong>Outdated website hurts rankings</strong>
+                                Slow loading, poor mobile experience, and technical issues kill your SEO
+                            </div>
+                        </li>
+                        <li class="problem-item">
+                            <i class="fas fa-times-circle problem-icon"></i>
+                            <div class="problem-text">
+                                <strong>No consistent content strategy</strong>
+                                Google rewards fresh, relevant content - without it, you fall behind
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="problem-visual">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Business struggling with online visibility" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 0;">
+                <h2>Our Proven SEO System</h2>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 20px auto;">We use a comprehensive approach that gets results fast and keeps you ahead of the competition.</p>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Local SEO Domination</h3>
+                    <p>Optimize your Google My Business, local citations, and location-specific keywords to dominate local search results and Google Maps.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Keyword Research & Strategy</h3>
+                    <p>Target high-value keywords your customers actually search for. We find opportunities your competitors are missing.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Technical SEO Optimization</h3>
+                    <p>Fix website speed, mobile responsiveness, and technical issues that prevent Google from ranking your site higher.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Content Creation</h3>
+                    <p>Monthly blog posts, service pages, and location-specific content that Google loves and customers find valuable.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Authority Building</h3>
+                    <p>Strategic link building and online reputation management to establish your business as the trusted local expert.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Performance Tracking</h3>
+                    <p>Monthly reports showing your rankings, traffic growth, and leads generated from organic search.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 0;">
+                <h2>Real Results from Sydney Businesses</h2>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 20px auto;">See how our SEO strategies have transformed local businesses just like yours.</p>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">+274%</div>
+                    <div class="result-label">Website Traffic</div>
+                    <p class="result-description">Average increase in organic traffic for Sydney plumbing business</p>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-number">#1</div>
+                    <div class="result-label">Google Ranking</div>
+                    <p class="result-description">Electrician in Western Sydney now ranks #1 for primary keywords</p>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-number">+180%</div>
+                    <div class="result-label">Phone Calls</div>
+                    <p class="result-description">Dental practice in North Shore sees 180% more appointment bookings</p>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-number">90 Days</div>
+                    <div class="result-label">Time to Results</div>
+                    <p class="result-description">Average time to see significant ranking improvements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 0;">
+                <h2>Our 4-Step SEO Process</h2>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 20px auto;">From audit to #1 rankings, here's exactly how we transform your online visibility.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">SEO Audit & Strategy</h3>
+                    <p class="step-description">Complete analysis of your website, competitors, and opportunities. We create a custom roadmap for your success.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Technical Optimization</h3>
+                    <p class="step-description">Fix all technical issues, optimize site speed, mobile experience, and ensure Google can properly index your site.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Content & Local SEO</h3>
+                    <p class="step-description">Create optimized content, build local citations, and establish your authority in Sydney search results.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Monitor & Scale</h3>
+                    <p class="step-description">Track rankings, traffic, and leads. Continuously optimize to maintain and improve your search dominance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing section">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <h2>SEO Investment That Pays For Itself</h2>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 20px auto;">Most clients see 3-5x ROI within 6 months. Your investment in SEO pays for itself with increased customers.</p>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-badge">Most Popular</div>
+                <h3 class="pricing-title">SEO Growth Package</h3>
+                
+                <div class="pricing-price">
+                    <span class="price-currency">$</span>
+                    <span class="price-amount">990</span>
+                    <span class="price-period">/month</span>
+                </div>
+
+                <ul class="pricing-features">
+                    <li>Complete SEO audit and strategy</li>
+                    <li>Google My Business optimization</li>
+                    <li>Keyword research and targeting</li>
+                    <li>Technical SEO fixes</li>
+                    <li>Monthly content creation (4 posts)</li>
+                    <li>Local citation building</li>
+                    <li>Link building campaigns</li>
+                    <li>Monthly ranking and traffic reports</li>
+                    <li>Competitor monitoring</li>
+                    <li>Dedicated SEO specialist</li>
+                </ul>
+
+                <div class="pricing-cta">
+                    <a href="#contact" class="btn btn-primary">Start Ranking Higher Today</a>
+                </div>
+
+                <p class="pricing-guarantee">90-Day Results Guarantee • Cancel Anytime • No Setup Fees</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 0;">
+                <h2>SEO Questions Answered</h2>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 20px auto;">Everything Sydney business owners ask about SEO and ranking on Google.</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        How quickly will I see SEO results?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most Sydney businesses see initial improvements within 4-6 weeks, with significant ranking increases by month 3. Full SEO results typically develop over 6-12 months as Google recognizes your growing authority.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        What makes your SEO different from other agencies?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We focus exclusively on Sydney businesses and understand the local market. Our strategies are proven specifically for Australian search patterns, and we guarantee results or work for free until you see improvement.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        Do you work with my industry?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We work with all types of Sydney businesses including trades, healthcare, professional services, retail, and more. Each industry requires different SEO strategies, which we customize for maximum results.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        What's included in the free SEO audit?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your free audit includes: current ranking analysis, technical SEO issues, competitor comparison, keyword opportunities, local SEO assessment, and a custom strategy roadmap worth $500.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        Do you use white-hat SEO techniques?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. We only use white-hat, Google-approved SEO techniques that build long-term rankings. We never use tactics that could risk your website's search visibility.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Dominate Sydney Search Results?</h2>
+            <p>Get your free SEO audit and discover exactly how to outrank your competition</p>
+            <a href="#contact" class="btn">Get My Free $500 SEO Audit</a>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section" id="contact" style="background: white;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+                <h2>Get Your Free SEO Audit</h2>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 20px auto;">Discover exactly what's keeping you from ranking #1 on Google</p>
+            </div>
+
+            <div style="max-width: 600px; margin: 0 auto; background: var(--pp-gray-50); padding: 40px; border-radius: var(--pp-radius-lg); box-shadow: var(--pp-shadow);">
+                <form class="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <input type="text" placeholder="Full Name *" required style="padding: 15px; border: 2px solid var(--pp-gray-200); border-radius: var(--pp-radius-sm); font-size: 1rem;">
+                        <input type="tel" placeholder="Phone Number *" required style="padding: 15px; border: 2px solid var(--pp-gray-200); border-radius: var(--pp-radius-sm); font-size: 1rem;">
+                    </div>
+                    <input type="email" placeholder="Email Address *" required style="padding: 15px; border: 2px solid var(--pp-gray-200); border-radius: var(--pp-radius-sm); font-size: 1rem;">
+                    <input type="text" placeholder="Business Name" style="padding: 15px; border: 2px solid var(--pp-gray-200); border-radius: var(--pp-radius-sm); font-size: 1rem;">
+                    <input type="url" placeholder="Current Website (if any)" style="padding: 15px; border: 2px solid var(--pp-gray-200); border-radius: var(--pp-radius-sm); font-size: 1rem;">
+                    <textarea placeholder="What services do you offer? What areas of Sydney do you serve?" rows="4" style="padding: 15px; border: 2px solid var(--pp-gray-200); border-radius: var(--pp-radius-sm); font-size: 1rem; resize: vertical;"></textarea>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.2rem; padding: 18px;">Get My Free SEO Audit</button>
+                </form>
+                <p style="text-align: center; margin-top: 20px; color: var(--pp-gray-500); font-size: 0.9rem;">We'll analyze your website and send your custom SEO strategy within 24 hours</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 The Profit Platform. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/services">Services</a>
+                    <a href="/pricing">Pricing</a>
+                    <a href="#contact">Contact</a>
+                    <a href="tel:0487286451">Call: 0487 286 451</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const isOpen = button.classList.contains('active');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-question').forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.classList.remove('active');
+                        otherButton.nextElementSibling.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ
+                button.classList.toggle('active', !isOpen);
+                answer.classList.toggle('active', !isOpen);
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We\'ll send your free SEO audit within 24 hours.');
+        });
+    </script>
+</body>
+</html>

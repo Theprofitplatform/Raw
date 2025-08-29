@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Admin - Automated Posting System | The Profit Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --pp-primary: #2c86f9;
+            --pp-primary-dark: #1e6ee8;
+            --pp-black: #0f172a;
+            --pp-white: #ffffff;
+            --pp-gray-50: #f8fafc;
+            --pp-gray-100: #f1f5f9;
+            --pp-gray-200: #e2e8f0;
+            --pp-gray-300: #cbd5e1;
+            --pp-gray-400: #94a3b8;
+            --pp-gray-500: #64748b;
+            --pp-gray-600: #475569;
+            --pp-gray-700: #334155;
+            --pp-gray-800: #1e293b;
+            --pp-success: #10b981;
+            --pp-warning: #f59e0b;
+            --pp-danger: #ef4444;
+            --pp-radius: 12px;
+            --pp-shadow: 0 4px 20px rgba(15, 23, 42, .08);
+            --pp-shadow-lg: 0 20px 40px rgba(15, 23, 42, .12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--pp-gray-50);
+            color: var(--pp-gray-800);
+            line-height: 1.6;
+        }
+
+        .admin-header {
+            background: white;
+            border-bottom: 1px solid var(--pp-gray-200);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .admin-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .admin-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--pp-primary);
+        }
+
+        .admin-stats {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--pp-primary);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--pp-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .main-content {
+            padding: 2rem 0;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--pp-radius);
+            box-shadow: var(--pp-shadow);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--pp-gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--pp-black);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--pp-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--pp-primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-success {
+            background: var(--pp-success);
+            color: white;
+        }
+
+        .btn-warning {
+            background: var(--pp-warning);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--pp-primary);
+            border: 1px solid var(--pp-primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--pp-black);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--pp-gray-300);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--pp-primary);
+            box-shadow: 0 0 0 3px rgba(44, 134, 249, 0.1);
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--pp-gray-300);
+            border-radius: 8px;
+            background: white;
+            font-size: 1rem;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--pp-gray-300);
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .automation-panel {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--pp-radius);
+            margin-bottom: 2rem;
+        }
+
+        .automation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .automation-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .automation-subtitle {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .automation-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .automation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .automation-stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .automation-stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .automation-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .blog-queue {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .queue-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--pp-gray-200);
+            transition: background 0.2s;
+        }
+
+        .queue-item:hover {
+            background: var(--pp-gray-50);
+        }
+
+        .queue-item:last-child {
+            border-bottom: none;
+        }
+
+        .queue-content {
+            flex: 1;
+        }
+
+        .queue-title {
+            font-weight: 600;
+            color: var(--pp-black);
+            margin-bottom: 0.25rem;
+        }
+
+        .queue-meta {
+            font-size: 0.8rem;
+            color: var(--pp-gray-500);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .queue-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .template-card {
+            border: 1px solid var(--pp-gray-200);
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .template-card:hover {
+            border-color: var(--pp-primary);
+            box-shadow: var(--pp-shadow);
+        }
+
+        .template-card.selected {
+            border-color: var(--pp-primary);
+            background: rgba(44, 134, 249, 0.05);
+        }
+
+        .template-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-description {
+            font-size: 0.9rem;
+            color: var(--pp-gray-600);
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: var(--pp-gray-300);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .schedule-day {
+            background: white;
+            padding: 1rem;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .schedule-day-name {
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--pp-gray-600);
+            margin-bottom: 0.5rem;
+        }
+
+        .schedule-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .schedule-post {
+            background: var(--pp-primary);
+            color: white;
+            padding: 0.25rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .ai-assistant {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--pp-radius);
+            margin-top: 1rem;
+        }
+
+        .ai-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .ai-suggestions {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .ai-suggestion {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .ai-suggestion:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--pp-radius);
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--pp-gray-200);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--pp-gray-500);
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            z-index: 1100;
+            transform: translateX(400px);
+            transition: transform 0.3s;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background: var(--pp-success);
+        }
+
+        .notification.error {
+            background: var(--pp-danger);
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .automation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .schedule-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .admin-stats {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="admin-header">
+        <div class="admin-container">
+            <nav class="admin-nav">
+                <div class="admin-logo">
+                    <i class="fas fa-robot"></i>
+                    Blog Automation System
+                </div>
+                <div class="admin-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalPosts">847</div>
+                        <div class="stat-label">Total Posts</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="scheduledPosts">23</div>
+                        <div class="stat-label">Scheduled</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="avgViews">2.4K</div>
+                        <div class="stat-label">Avg Views</div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="admin-container">
+            <!-- Automation Status Panel -->
+            <div class="automation-panel">
+                <div class="automation-header">
+                    <div>
+                        <h1 class="automation-title">🤖 Automated Blog System</h1>
+                        <p class="automation-subtitle">AI-powered content creation and scheduling for The Profit Platform</p>
+                    </div>
+                    <div class="automation-status">
+                        <div class="status-dot"></div>
+                        <span>Active & Running</span>
+                    </div>
+                </div>
+                <div class="automation-grid">
+                    <div class="automation-stat">
+                        <div class="automation-stat-number">12</div>
+                        <div class="automation-stat-label">Posts This Week</div>
+                    </div>
+                    <div class="automation-stat">
+                        <div class="automation-stat-number">89%</div>
+                        <div class="automation-stat-label">Success Rate</div>
+                    </div>
+                    <div class="automation-stat">
+                        <div class="automation-stat-number">3.2x</div>
+                        <div class="automation-stat-label">Traffic Increase</div>
+                    </div>
+                    <div class="automation-stat">
+                        <div class="automation-stat-number">45min</div>
+                        <div class="automation-stat-label">Time Saved Daily</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Main Content Creator -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-magic"></i>
+                            Create New Post
+                        </h2>
+                        <button class="btn btn-primary" onclick="generateAIContent()">
+                            <i class="fas fa-robot"></i>
+                            AI Generate
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <form id="blogPostForm">
+                            <div class="form-group">
+                                <label class="form-label">Content Template</label>
+                                <div class="template-grid" id="templateGrid">
+                                    <div class="template-card selected" data-template="seo-guide">
+                                        <div class="template-title">📈 SEO Guide</div>
+                                        <div class="template-description">Step-by-step SEO tutorials for local businesses</div>
+                                    </div>
+                                    <div class="template-card" data-template="case-study">
+                                        <div class="template-title">💼 Case Study</div>
+                                        <div class="template-description">Client success stories and results</div>
+                                    </div>
+                                    <div class="template-card" data-template="industry-news">
+                                        <div class="template-title">📰 Industry News</div>
+                                        <div class="template-description">Latest digital marketing trends</div>
+                                    </div>
+                                    <div class="template-card" data-template="how-to">
+                                        <div class="template-title">🛠️ How-To Guide</div>
+                                        <div class="template-description">Practical marketing tips and tutorials</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="postTitle">Post Title</label>
+                                <input type="text" id="postTitle" class="form-input" placeholder="Enter your blog post title...">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="postKeywords">Target Keywords (comma-separated)</label>
+                                <input type="text" id="postKeywords" class="form-input" placeholder="SEO Sydney, local SEO, Google ranking...">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="postContent">Content</label>
+                                <textarea id="postContent" class="form-textarea" placeholder="Write your content or use AI to generate..."></textarea>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label class="form-label" for="publishDate">Publish Date</label>
+                                    <input type="datetime-local" id="publishDate" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="postStatus">Status</label>
+                                    <select id="postStatus" class="form-select">
+                                        <option value="scheduled">Schedule for Later</option>
+                                        <option value="draft">Save as Draft</option>
+                                        <option value="publish">Publish Now</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i>
+                                    Save Post
+                                </button>
+                                <button type="button" class="btn btn-outline" onclick="previewPost()">
+                                    <i class="fas fa-eye"></i>
+                                    Preview
+                                </button>
+                                <button type="button" class="btn btn-success" onclick="schedulePost()">
+                                    <i class="fas fa-clock"></i>
+                                    Schedule
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div>
+                    <!-- Publishing Queue -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-clock"></i>
+                                Publishing Queue
+                            </h3>
+                            <span class="badge" style="background: var(--pp-primary); color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem;">
+                                5 Pending
+                            </span>
+                        </div>
+                        <div class="card-body" style="padding: 0;">
+                            <div class="blog-queue">
+                                <div class="queue-item">
+                                    <div class="queue-content">
+                                        <div class="queue-title">Top 10 Local SEO Tips for Sydney Businesses</div>
+                                        <div class="queue-meta">
+                                            <span><i class="fas fa-calendar"></i> Tomorrow 9:00 AM</span>
+                                            <span><i class="fas fa-tag"></i> SEO Guide</span>
+                                        </div>
+                                    </div>
+                                    <div class="queue-actions">
+                                        <button class="btn btn-outline btn-small">Edit</button>
+                                    </div>
+                                </div>
+                                <div class="queue-item">
+                                    <div class="queue-content">
+                                        <div class="queue-title">How We Helped a Plumber Get 74% More Calls</div>
+                                        <div class="queue-meta">
+                                            <span><i class="fas fa-calendar"></i> Dec 20, 10:00 AM</span>
+                                            <span><i class="fas fa-tag"></i> Case Study</span>
+                                        </div>
+                                    </div>
+                                    <div class="queue-actions">
+                                        <button class="btn btn-outline btn-small">Edit</button>
+                                    </div>
+                                </div>
+                                <div class="queue-item">
+                                    <div class="queue-content">
+                                        <div class="queue-title">Google Algorithm Update: What It Means for Local Business</div>
+                                        <div class="queue-meta">
+                                            <span><i class="fas fa-calendar"></i> Dec 22, 2:00 PM</span>
+                                            <span><i class="fas fa-tag"></i> Industry News</span>
+                                        </div>
+                                    </div>
+                                    <div class="queue-actions">
+                                        <button class="btn btn-outline btn-small">Edit</button>
+                                    </div>
+                                </div>
+                                <div class="queue-item">
+                                    <div class="queue-content">
+                                        <div class="queue-title">DIY Website Audit: 15-Point Checklist</div>
+                                        <div class="queue-meta">
+                                            <span><i class="fas fa-calendar"></i> Dec 24, 11:00 AM</span>
+                                            <span><i class="fas fa-tag"></i> How-To Guide</span>
+                                        </div>
+                                    </div>
+                                    <div class="queue-actions">
+                                        <button class="btn btn-outline btn-small">Edit</button>
+                                    </div>
+                                </div>
+                                <div class="queue-item">
+                                    <div class="queue-content">
+                                        <div class="queue-title">2024 Digital Marketing Trends for Small Business</div>
+                                        <div class="queue-meta">
+                                            <span><i class="fas fa-calendar"></i> Dec 26, 9:30 AM</span>
+                                            <span><i class="fas fa-tag"></i> Industry News</span>
+                                        </div>
+                                    </div>
+                                    <div class="queue-actions">
+                                        <button class="btn btn-outline btn-small">Edit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Content Assistant -->
+                    <div class="ai-assistant">
+                        <div class="ai-title">
+                            <i class="fas fa-brain"></i>
+                            AI Content Suggestions
+                        </div>
+                        <div class="ai-suggestions">
+                            <div class="ai-suggestion" onclick="useAISuggestion(this)">
+                                "How to Rank #1 on Google Maps in Sydney" - High search volume
+                            </div>
+                            <div class="ai-suggestion" onclick="useAISuggestion(this)">
+                                "Why Your Website Isn't Getting Leads" - Trending topic
+                            </div>
+                            <div class="ai-suggestion" onclick="useAISuggestion(this)">
+                                "Google Ads vs Facebook Ads: Which is Better?" - Comparison guide
+                            </div>
+                            <div class="ai-suggestion" onclick="useAISuggestion(this)">
+                                "Local SEO Checklist for 2024" - Evergreen content
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publishing Schedule -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-calendar-alt"></i>
+                        Publishing Schedule - Next 7 Days
+                    </h3>
+                    <button class="btn btn-outline" onclick="editSchedule()">
+                        <i class="fas fa-edit"></i>
+                        Edit Schedule
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="schedule-grid">
+                        <div class="schedule-day">
+                            <div class="schedule-day-name">MON</div>
+                            <div class="schedule-posts">
+                                <div class="schedule-post">SEO Tips</div>
+                            </div>
+                        </div>
+                        <div class="schedule-day">
+                            <div class="schedule-day-name">TUE</div>
+                            <div class="schedule-posts">
+                                <div class="schedule-post">Case Study</div>
+                            </div>
+                        </div>
+                        <div class="schedule-day">
+                            <div class="schedule-day-name">WED</div>
+                            <div class="schedule-posts">
+                                <!-- Empty day -->
+                            </div>
+                        </div>
+                        <div class="schedule-day">
+                            <div class="schedule-day-name">THU</div>
+                            <div class="schedule-posts">
+                                <div class="schedule-post">Industry News</div>
+                            </div>
+                        </div>
+                        <div class="schedule-day">
+                            <div class="schedule-day-name">FRI</div>
+                            <div class="schedule-posts">
+                                <div class="schedule-post">How-To Guide</div>
+                            </div>
+                        </div>
+                        <div class="schedule-day">
+                            <div class="schedule-day-name">SAT</div>
+                            <div class="schedule-posts">
+                                <div class="schedule-post">Weekend Read</div>
+                            </div>
+                        </div>
+                        <div class="schedule-day">
+                            <div class="schedule-day-name">SUN</div>
+                            <div class="schedule-posts">
+                                <!-- Empty day -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for AI Content Generation -->
+    <div id="aiModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>AI Content Generator</h3>
+                <button class="modal-close" onclick="closeModal('aiModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Content Type</label>
+                    <select class="form-select" id="aiContentType">
+                        <option value="blog-post">Full Blog Post</option>
+                        <option value="outline">Content Outline</option>
+                        <option value="title-ideas">Title Ideas</option>
+                        <option value="meta-description">Meta Description</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Topic/Keywords</label>
+                    <input type="text" class="form-input" id="aiTopic" placeholder="e.g., Local SEO for restaurants">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Target Audience</label>
+                    <select class="form-select" id="aiAudience">
+                        <option value="small-business">Small Business Owners</option>
+                        <option value="startups">Startups</option>
+                        <option value="ecommerce">E-commerce</option>
+                        <option value="professionals">Professional Services</option>
+                        <option value="local-business">Local Businesses</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Tone</label>
+                    <select class="form-select" id="aiTone">
+                        <option value="professional">Professional</option>
+                        <option value="friendly">Friendly</option>
+                        <option value="authoritative">Authoritative</option>
+                        <option value="conversational">Conversational</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="generateContent()">
+                    <i class="fas fa-magic"></i>
+                    Generate Content
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script>
+        // Blog Automation System JavaScript
+        class BlogAutomation {
+            constructor() {
+                this.templates = {
+                    'seo-guide': {
+                        title: 'SEO Guide Template',
+                        structure: `# [TITLE]
+
+## Introduction
+Quick overview of the SEO topic and why it matters for Sydney businesses.
+
+## What You'll Learn
+- Key benefit 1
+- Key benefit 2  
+- Key benefit 3
+
+## Step-by-Step Guide
+
+### Step 1: [Action Item]
+Detailed explanation with actionable advice.
+
+### Step 2: [Action Item]
+More detailed steps with examples.
+
+### Step 3: [Action Item]
+Continue with practical steps.
+
+## Real Results
+"Quote from a client who saw success with this strategy."
+
+## Next Steps
+- Action item 1
+- Action item 2
+- Call to action
+
+## Need Help?
+Contact The Profit Platform for expert SEO services in Sydney.`
+                    },
+                    'case-study': {
+                        title: 'Case Study Template',
+                        structure: `# How We Helped [CLIENT TYPE] Achieve [RESULT]
+
+## The Challenge
+[CLIENT NAME] was struggling with:
+- Problem 1
+- Problem 2
+- Problem 3
+
+## Our Solution
+We implemented:
+- Strategy 1
+- Strategy 2
+- Strategy 3
+
+## The Results
+After [TIMEFRAME]:
+- ✅ [SPECIFIC RESULT 1]
+- ✅ [SPECIFIC RESULT 2]
+- ✅ [SPECIFIC RESULT 3]
+
+## Client Testimonial
+"[POSITIVE QUOTE FROM CLIENT]" - [CLIENT NAME], [BUSINESS TYPE]
+
+## Want Similar Results?
+Contact us for a free consultation.`
+                    },
+                    'how-to': {
+                        title: 'How-To Guide Template',
+                        structure: `# How to [ACHIEVE GOAL]: Complete Guide for [TARGET AUDIENCE]
+
+## Why This Matters
+Brief explanation of the importance and benefits.
+
+## What You'll Need
+- Requirement 1
+- Requirement 2
+- Requirement 3
+
+## Step-by-Step Instructions
+
+### Step 1: [Action]
+Detailed instructions with screenshots if needed.
+
+### Step 2: [Action]
+Continue with clear, actionable steps.
+
+### Step 3: [Action]
+More detailed instructions.
+
+## Pro Tips
+- Expert tip 1
+- Expert tip 2
+- Expert tip 3
+
+## Common Mistakes to Avoid
+- Mistake 1 and how to fix it
+- Mistake 2 and how to fix it
+
+## Conclusion
+Summary and next steps.
+
+## Need Expert Help?
+The Profit Platform can handle this for you. Get a free consultation.`
+                    },
+                    'industry-news': {
+                        title: 'Industry News Template',  
+                        structure: `# [NEWS HEADLINE]: What It Means for Your Business
+
+## What Happened
+Summary of the news/update/change.
+
+## Why It Matters
+Impact on businesses and marketing strategies.
+
+## What You Should Do
+### Immediate Actions
+- Action item 1
+- Action item 2
+
+### Long-term Strategy
+- Strategic consideration 1
+- Strategic consideration 2
+
+## Our Recommendation
+Expert advice from The Profit Platform team.
+
+## Stay Updated
+Follow us for the latest digital marketing news and updates.`
+                    }
+                };
+                
+                this.aiSuggestions = [
+                    "How to Rank #1 on Google Maps in Sydney",
+                    "Why Your Website Isn't Getting Leads (And How to Fix It)",
+                    "Google Ads vs Facebook Ads: Which is Better for Local Business?",
+                    "Local SEO Checklist for 2024: 50 Point Audit",
+                    "How to Double Your Website Traffic in 90 Days",
+                    "The Complete Guide to Google My Business Optimization",
+                    "Why Your Competitors are Beating You Online",
+                    "How to Write Website Copy That Actually Converts",
+                    "The Truth About SEO: What Really Works in 2024",
+                    "How to Get More 5-Star Google Reviews"
+                ];
+                
+                this.scheduledPosts = [];
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.loadScheduledPosts();
+                this.updateStats();
+                this.rotateAISuggestions();
+            }
+
+            setupEventListeners() {
+                // Template selection
+                document.querySelectorAll('.template-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        document.querySelectorAll('.template-card').forEach(c => c.classList.remove('selected'));
+                        card.classList.add('selected');
+                        this.loadTemplate(card.dataset.template);
+                    });
+                });
+
+                // Form submission
+                document.getElementById('blogPostForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.savePost();
+                });
+
+                // Set default publish date to tomorrow 9 AM
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                tomorrow.setHours(9, 0, 0, 0);
+                document.getElementById('publishDate').value = tomorrow.toISOString().slice(0, 16);
+            }
+
+            loadTemplate(templateKey) {
+                const template = this.templates[templateKey];
+                if (template) {
+                    document.getElementById('postContent').value = template.structure;
+                    this.showNotification('Template loaded successfully!', 'success');
+                }
+            }
+
+            generateAIContent() {
+                document.getElementById('aiModal').classList.add('active');
+            }
+
+            generateContent() {
+                const type = document.getElementById('aiContentType').value;
+                const topic = document.getElementById('aiTopic').value;
+                const audience = document.getElementById('aiAudience').value;
+                const tone = document.getElementById('aiTone').value;
+
+                if (!topic.trim()) {
+                    this.showNotification('Please enter a topic or keywords', 'error');
+                    return;
+                }
+
+                // Simulate AI content generation
+                this.showNotification('Generating AI content...', 'success');
+                
+                setTimeout(() => {
+                    let generatedContent = '';
+                    
+                    switch(type) {
+                        case 'blog-post':
+                            generatedContent = this.generateBlogPost(topic, audience, tone);
+                            break;
+                        case 'outline':
+                            generatedContent = this.generateOutline(topic);
+                            break;
+                        case 'title-ideas':
+                            generatedContent = this.generateTitleIdeas(topic);
+                            break;
+                        case 'meta-description':
+                            generatedContent = this.generateMetaDescription(topic);
+                            break;
+                    }
+
+                    document.getElementById('postContent').value = generatedContent;
+                    if (type === 'title-ideas') {
+                        document.getElementById('postTitle').value = generatedContent.split('\n')[0].replace('1. ', '');
+                    }
+                    
+                    this.closeModal('aiModal');
+                    this.showNotification('AI content generated successfully!', 'success');
+                }, 2000);
+            }
+
+            generateBlogPost(topic, audience, tone) {
+                return `# The Complete Guide to ${topic}
+
+## Introduction
+Are you struggling with ${topic.toLowerCase()}? You're not alone. Many ${audience.replace('-', ' ')} face this challenge every day. In this comprehensive guide, we'll show you exactly how to master ${topic.toLowerCase()} and get real results for your business.
+
+## Why ${topic} Matters for Your Business
+${topic} isn't just a buzzword - it's a critical factor in your business success. Here's why:
+
+- **Increased Visibility**: Proper ${topic.toLowerCase()} helps you get found by potential customers
+- **Better ROI**: Strategic implementation leads to measurable business growth  
+- **Competitive Advantage**: Stay ahead of competitors who aren't optimizing properly
+
+## Step-by-Step Implementation Guide
+
+### Step 1: Assessment and Planning
+Before jumping in, you need to understand your current situation:
+- Audit your existing setup
+- Identify key opportunities
+- Set measurable goals
+
+### Step 2: Implementation
+Now it's time to put your plan into action:
+- Follow best practices
+- Use the right tools
+- Monitor progress regularly
+
+### Step 3: Optimization and Scaling
+Once you have the basics working:
+- Test and refine your approach
+- Scale what's working
+- Eliminate what's not
+
+## Real Results from Our Clients
+"After implementing these ${topic.toLowerCase()} strategies, we saw a 147% increase in qualified leads within 60 days. The ROI has been incredible." - Sarah M., Local Business Owner
+
+## Common Mistakes to Avoid
+- Mistake #1: Trying to do everything at once
+- Mistake #2: Not tracking the right metrics
+- Mistake #3: Giving up too soon
+
+## Your Next Steps
+Ready to implement ${topic.toLowerCase()} for your business? Here's what to do:
+
+1. **Start with the basics** - Don't overcomplicate things initially
+2. **Track your progress** - Measure what matters
+3. **Get expert help** - Consider working with professionals
+
+## Need Professional Help?
+${topic} can be complex and time-consuming. At The Profit Platform, we've helped hundreds of Sydney businesses achieve remarkable results with proven ${topic.toLowerCase()} strategies.
+
+**Get a free consultation** and discover how we can help your business grow.
+
+[Contact us today for your free strategy session!]`;
+            }
+
+            generateOutline(topic) {
+                return `# ${topic} - Content Outline
+
+## I. Introduction (200-300 words)
+   A. Hook - Relevant statistic or pain point
+   B. Problem identification
+   C. Promise/solution preview
+   D. What reader will learn
+
+## II. Background/Context (300-400 words)
+   A. Why ${topic} matters now
+   B. Current landscape/trends
+   C. Common challenges businesses face
+
+## III. Main Content Sections
+
+### A. Section 1: Fundamentals (400-500 words)
+   - Key concept 1
+   - Key concept 2  
+   - Key concept 3
+   - Practical examples
+
+### B. Section 2: Implementation (500-600 words)
+   - Step-by-step process
+   - Tools and resources needed
+   - Timeline expectations
+   - Success metrics
+
+### C. Section 3: Advanced Strategies (400-500 words)
+   - Pro tips and techniques
+   - Common pitfalls to avoid
+   - Optimization strategies
+
+## IV. Case Study/Results (200-300 words)
+   A. Client example
+   B. Specific metrics and outcomes
+   C. Testimonial quote
+
+## V. Conclusion and Next Steps (200-250 words)
+   A. Key takeaways summary
+   B. Action items for readers
+   C. Call-to-action
+
+## VI. Additional Resources
+   - Helpful tools
+   - Further reading
+   - Contact information
+
+**Target Word Count: 2,000-2,500 words**
+**Target Keywords: [${topic}, related keywords]**
+**Call-to-Action: Free consultation/audit**`;
+            }
+
+            generateTitleIdeas(topic) {
+                const titles = [
+                    `The Complete Guide to ${topic}: Everything You Need to Know`,
+                    `How to Master ${topic} in 30 Days (Step-by-Step Guide)`,
+                    `${topic} Secrets: What Top Businesses Don't Want You to Know`,
+                    `Why Your ${topic} Strategy Isn't Working (And How to Fix It)`,
+                    `The Ultimate ${topic} Checklist for 2024`,
+                    `${topic} vs. [Alternative]: Which is Better for Your Business?`,
+                    `How We Helped 100+ Businesses Succeed with ${topic}`,
+                    `The Truth About ${topic}: Myths vs. Reality`,
+                    `${topic} Made Simple: A Beginner's Guide`,
+                    `How to Get Results with ${topic} (Even on a Tight Budget)`
+                ];
+                
+                return titles.map((title, index) => `${index + 1}. ${title}`).join('\n');
+            }
+
+            generateMetaDescription(topic) {
+                return `Learn how to master ${topic} with our comprehensive guide. Get proven strategies, expert tips, and real results. Free consultation available for Sydney businesses.`;
+            }
+
+            savePost() {
+                const title = document.getElementById('postTitle').value;
+                const content = document.getElementById('postContent').value;
+                const publishDate = document.getElementById('publishDate').value;
+                const status = document.getElementById('postStatus').value;
+
+                if (!title.trim() || !content.trim()) {
+                    this.showNotification('Please fill in all required fields', 'error');
+                    return;
+                }
+
+                // Simulate saving
+                this.showNotification('Saving post...', 'success');
+                
+                setTimeout(() => {
+                    if (status === 'scheduled') {
+                        this.scheduledPosts.push({
+                            title: title,
+                            content: content,
+                            publishDate: publishDate,
+                            template: document.querySelector('.template-card.selected').dataset.template
+                        });
+                        this.updateSchedule();
+                        this.showNotification('Post scheduled successfully!', 'success');
+                    } else if (status === 'publish') {
+                        this.showNotification('Post published successfully!', 'success');
+                    } else {
+                        this.showNotification('Post saved as draft!', 'success');
+                    }
+                    
+                    this.updateStats();
+                    this.clearForm();
+                }, 1500);
+            }
+
+            schedulePost() {
+                document.getElementById('postStatus').value = 'scheduled';
+                this.savePost();
+            }
+
+            previewPost() {
+                const title = document.getElementById('postTitle').value;
+                const content = document.getElementById('postContent').value;
+                
+                if (!title.trim() || !content.trim()) {
+                    this.showNotification('Please add title and content to preview', 'error');
+                    return;
+                }
+
+                // Open preview in new window
+                const previewWindow = window.open('', '_blank', 'width=800,height=600');
+                previewWindow.document.write(`
+                    <html>
+                        <head>
+                            <title>Preview: ${title}</title>
+                            <style>
+                                body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+                                h1 { color: #2c86f9; }
+                                h2 { color: #334155; margin-top: 30px; }
+                                p { line-height: 1.6; }
+                                pre { white-space: pre-wrap; }
+                            </style>
+                        </head>
+                        <body>
+                            <h1>${title}</h1>
+                            <pre>${content}</pre>
+                        </body>
+                    </html>
+                `);
+                previewWindow.document.close();
+            }
+
+            clearForm() {
+                document.getElementById('postTitle').value = '';
+                document.getElementById('postContent').value = '';
+                document.getElementById('postKeywords').value = '';
+                
+                // Reset publish date to tomorrow 9 AM
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                tomorrow.setHours(9, 0, 0, 0);
+                document.getElementById('publishDate').value = tomorrow.toISOString().slice(0, 16);
+            }
+
+            updateStats() {
+                // Simulate updating stats
+                document.getElementById('totalPosts').textContent = Math.floor(Math.random() * 100) + 800;
+                document.getElementById('scheduledPosts').textContent = this.scheduledPosts.length + Math.floor(Math.random() * 10);
+                document.getElementById('avgViews').textContent = (Math.random() * 5 + 1).toFixed(1) + 'K';
+            }
+
+            loadScheduledPosts() {
+                // Posts are already shown in the HTML, this would normally load from a database
+            }
+
+            updateSchedule() {
+                // This would update the visual schedule calendar
+                this.showNotification('Schedule updated!', 'success');
+            }
+
+            rotateAISuggestions() {
+                setInterval(() => {
+                    const suggestions = document.querySelectorAll('.ai-suggestion');
+                    const randomIndex = Math.floor(Math.random() * this.aiSuggestions.length);
+                    const randomSuggestion = suggestions[Math.floor(Math.random() * suggestions.length)];
+                    
+                    if (randomSuggestion) {
+                        randomSuggestion.textContent = this.aiSuggestions[randomIndex];
+                    }
+                }, 10000); // Rotate every 10 seconds
+            }
+
+            showNotification(message, type = 'success') {
+                const notification = document.getElementById('notification');
+                notification.textContent = message;
+                notification.className = `notification ${type}`;
+                notification.classList.add('show');
+
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+
+            closeModal(modalId) {
+                document.getElementById(modalId).classList.remove('active');
+            }
+        }
+
+        // Global functions for button clicks
+        function generateAIContent() {
+            blogSystem.generateAIContent();
+        }
+
+        function generateContent() {
+            blogSystem.generateContent();
+        }
+
+        function closeModal(modalId) {
+            blogSystem.closeModal(modalId);
+        }
+
+        function previewPost() {
+            blogSystem.previewPost();
+        }
+
+        function schedulePost() {
+            blogSystem.schedulePost();
+        }
+
+        function editSchedule() {
+            blogSystem.showNotification('Schedule editor coming soon!', 'success');
+        }
+
+        function useAISuggestion(element) {
+            const suggestionText = element.textContent.split(' - ')[0].replace(/"/g, '');
+            document.getElementById('postTitle').value = suggestionText;
+            blogSystem.showNotification('Suggestion applied to title!', 'success');
+        }
+
+        // Initialize the system when page loads
+        let blogSystem;
+        document.addEventListener('DOMContentLoaded', function() {
+            blogSystem = new BlogAutomation();
+        });
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
