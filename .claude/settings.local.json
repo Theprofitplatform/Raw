@@ -11,7 +11,11 @@
       "WebFetch(domain:www.google.com)",
       "WebSearch",
       "Bash(curl:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(npx playwright:*)",
+      "Bash(node:*)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []
