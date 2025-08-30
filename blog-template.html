@@ -1567,48 +1567,81 @@
 
     <!-- Header -->
     <header id="header">
-        <div class="container">
-            <nav>
-                <a href="/" class="logo">
-                    <img src="https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png" alt="The Profit Platform Logo" class="logo-img">
-                </a>
+        <nav class="container">
+            <a href="/" class="logo">
+                <img src="https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png" alt="The Profit Platform Logo" class="logo-img">
+            </a>
 
-                <ul class="nav-links">
-                    <li><a href="/" class="nav-item">
-                        <i class="fas fa-home nav-icon"></i>
-                        <span>Home</span>
-                    </a></li>
-                    <li><a href="/services" class="nav-item">
-                        <i class="fas fa-cogs nav-icon"></i>
-                        <span>Services</span>
-                    </a></li>
-                    <li><a href="/pricing" class="nav-item">
-                        <i class="fas fa-dollar-sign nav-icon"></i>
-                        <span>Pricing</span>
-                    </a></li>
-                    
-                    <li><a href="/blog" class="nav-item active">
-                        <i class="fas fa-blog nav-icon"></i>
-                        <span>Blog</span>
-                    </a></li>
-                    <li><a href="/contact" class="nav-item">
-                        <i class="fas fa-envelope nav-icon"></i>
-                        <span>Contact</span>
-                    </a></li>
-                </ul>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-item">
+                    <i class="fas fa-home nav-icon"></i>
+                    <span>Home</span>
+                </a></li>
+               <li class="nav-dropdown">
+    <a href="/services" class="nav-item">
+        <i class="fas fa-cogs nav-icon"></i>
+        <span>Services</span>
+        <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </a>
+    <div class="dropdown-menu">
+        <a href="/seo" class="dropdown-item">
+            <i class="fas fa-search"></i>
+            <div>
+                <strong>SEO & Local Search</strong>
+                <span>Rank #1 on Google</span>
+            </div>
+        </a>
+        <a href="/web-design" class="dropdown-item">
+            <i class="fas fa-laptop-code"></i>
+            <div>
+                <strong>Web Design</strong>
+                <span>Convert visitors to customers</span>
+            </div>
+        </a>
+        <a href="/google-ads" class="dropdown-item">
+            <i class="fas fa-bullhorn"></i>
+            <div>
+                <strong>Google & Meta Ads</strong>
+                <span>Instant customers</span>
+            </div>
+        </a>
+        <a href="/services" class="dropdown-item view-all">
+            <i class="fas fa-th-large"></i>
+            <div>
+                <strong>View All Services</strong>
+                <span>Complete solutions</span>
+            </div>
+        </a>
+    </div>
+</li>
+
+
+                <li><a href="/pricing" class="nav-item">
+                    <i class="fas fa-dollar-sign nav-icon"></i>
+                    <span>Pricing</span>
+                </a></li>
                 
-                <div class="nav-cta">
-                  
-                    <a href="/contact" class="btn btn-primary">Get Free Audit</a>
-                </div>
+                <li><a href="/blog" class="nav-item active">
+                    <i class="fas fa-blog nav-icon"></i>
+                    <span>Blog</span>
+                </a></li>
+                <li><a href="/contact" class="nav-item">
+                    <i class="fas fa-envelope nav-icon"></i>
+                    <span>Contact</span>
+                </a></li>
+            </ul>
+            
+            <div class="nav-cta">
+              
+                <a href="#contact" class="btn btn-primary">Get Free Audit</a>
+            </div>
 
-                <div class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
     </header>
 
     <!-- Mobile Navigation Overlay -->
@@ -1624,13 +1657,15 @@
         </div>
         <div class="mobile-nav-links">
             <a href="/">🏠 Home</a>
-            <a href="services">🎯 Services</a>
-            <a href="/#results">📈 Results</a>
-            <a href="/#process">⚙️ How It Works</a>
-            <a href="/#testimonials">⭐ Testimonials</a>
-            <a href="pricing">💰 Pricing</a>
-            <a href="/#faq">❓ FAQ</a>
-            <a href="contact">📞 Contact</a>
+            <a href="/services">🎯 Services</a>
+            <a href="/seo" style="margin-left: 20px; font-size: 1rem; color: var(--pp-gray-600);">📍 SEO & Local Search</a>
+            <a href="/web-design" style="margin-left: 20px; font-size: 1rem; color: var(--pp-gray-600);">🎨 Web Design</a>
+            <a href="/google-ads" style="margin-left: 20px; font-size: 1rem; color: var(--pp-gray-600);">📢 Google & Meta Ads</a>
+            <a href="/pricing">💰 Pricing</a>
+            <a href="#results">📈 Results</a>
+            <a href="#testimonials">⭐ Reviews</a>
+            <a href="/blog">📝 Blog</a>
+            <a href="/contact">📞 Contact</a>
         </div>
         <div class="mobile-nav-cta">
             <a href="tel:0487286451" class="phone-number">0487 286 451</a>
@@ -2075,113 +2110,170 @@
 
     <!-- Enhanced Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column footer-about">
-                    <h4>The Profit Platform</h4>
-                    <p>Australia's fastest-growing digital marketing agency. We've helped 247+ Sydney businesses triple their leads and dominate their competition with proven marketing strategies.</p>
-                    <div class="footer-social">
-                        <a href="https://facebook.com/theprofitplatform" class="social-icon" aria-label="Facebook" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://linkedin.com/company/theprofitplatform" class="social-icon" aria-label="LinkedIn" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://instagram.com/theprofitplatform" class="social-icon" aria-label="Instagram" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://youtube.com/theprofitplatform" class="social-icon" aria-label="YouTube" target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+        <!-- Newsletter Signup Banner -->
+        
+
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column footer-about">
+                        <div class="footer-logo">
+                            <img src="https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png" alt="The Profit Platform Logo" class="footer-logo-img">
+                        </div>
+                        <p>Australia's fastest-growing digital marketing agency. We've helped 247+ Sydney businesses triple their leads and dominate their competition with proven marketing strategies.</p>
+                        
+                        <div class="footer-stats">
+                            <div class="footer-stat">
+                                <div class="stat-number">247+</div>
+                                <div class="stat-label">Happy Clients</div>
+                            </div>
+                            <div class="footer-stat">
+                                <div class="stat-number">3.2x</div>
+                                <div class="stat-label">Avg ROI</div>
+                            </div>
+                            <div class="footer-stat">
+                                <div class="stat-number">4.9</div>
+                                <div class="stat-label">Star Rating</div>
+                            </div>
+                        </div>
+
+                        <div class="footer-social">
+                            <a href="https://facebook.com/theprofitplatform" class="social-icon facebook" aria-label="Facebook" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://linkedin.com/company/theprofitplatform" class="social-icon linkedin" aria-label="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://instagram.com/theprofitplatform" class="social-icon instagram" aria-label="Instagram" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com/theprofitplatform" class="social-icon youtube" aria-label="YouTube" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://google.com/business/theprofitplatform" class="social-icon google" aria-label="Google Reviews" target="_blank">
+                                <i class="fab fa-google"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="footer-column">
-                    <h4>🎯 Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="services">Website Design & Development</a></li>
-                        <li><a href="services">Local SEO & Google Ranking</a></li>
-                        <li><a href="services">Google & Meta Ads</a></li>
-                        <li><a href="services">Conversion Optimization</a></li>
-                        <li><a href="services">Marketing Automation</a></li>
-                    </ul>
-                </div>
+                    <div class="footer-column">
+                        <h4>🎯 Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="services.html#web-design">Website Design & Development</a></li>
+                            <li><a href="services.html#seo">Local SEO & Google Ranking</a></li>
+                            <li><a href="services.html#ads">Google & Meta Ads Management</a></li>
+                            <li><a href="services.html#conversion">Conversion Optimization</a></li>
+                            <li><a href="services.html#automation">Marketing Automation</a></li>
+                            <li><a href="services.html#branding">Brand Strategy & Design</a></li>
+                        </ul>
+                        <div class="service-badge">
+                            <i class="fas fa-award"></i>
+                            <span>Google Partner Certified</span>
+                        </div>
+                    </div>
 
-                <div class="footer-column">
-                    <h4>🏢 Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="/#results">Success Stories</a></li>
-                        <li><a href="/#testimonials">Client Reviews</a></li>
-                        <li><a href="pricing">Transparent Pricing</a></li>
-                        <li><a href="/#faq">Frequently Asked Questions</a></li>
-                        <li><a href="/#process">How We Work</a></li>
-                    </ul>
-                </div>
+                    <div class="footer-column">
+                        <h4>🏢 Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="#results">Success Stories</a></li>
+                            <li><a href="#testimonials">Client Reviews</a></li>
+                            <li><a href="pricing">Transparent Pricing</a></li>
+                            <li><a href="#faq">Frequently Asked Questions</a></li>
+                            <li><a href="#process">How We Work</a></li>
+                            <li><a href="blog">Marketing Blog</a></li>
+                        </ul>
+                        <div class="service-areas">
+                            <h5>🗺️ Service Areas</h5>
+                            <p>CBD, North Shore, Eastern Suburbs, Inner West, Western Sydney, Southern Sydney</p>
+                        </div>
+                    </div>
 
-                <div class="footer-column">
-                    <h4>📞 Contact Us</h4>
-                    <div class="footer-contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Sydney, NSW Australia</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:0487286451">0487 286 451</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:avi@theprofitplatform.com.au">avi@theprofitplatform.com.au</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Mon-Fri: 9am-8pm AEST</span>
+                    <div class="footer-column">
+                        <h4>📞 Get Started Today</h4>
+                        <div class="footer-contact-cta">
+                            <div class="contact-highlight">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <strong>Call for Free Consultation</strong>
+                                    <a href="tel:0487286451" class="footer-phone">0487 286 451</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-highlight">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email Us Anytime</strong>
+                                    <a href="mailto:avi@theprofitplatform.com.au">avi@theprofitplatform.com.au</a>
+                                </div>
+                            </div>
+
+                            <div class="footer-hours">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Business Hours</strong>
+                                    <span>Mon-Fri: 9am-8pm AEST</span>
+                                    <small>Weekend support available</small>
+                                </div>
+                            </div>
+
+                            <div class="footer-cta-buttons">
+                                <a href="#contact" class="footer-btn primary">
+                                    <i class="fas fa-rocket"></i>
+                                    Free Audit
+                                </a>
+                                <a href="tel:0487286451" class="footer-btn secondary">
+                                    <i class="fas fa-phone"></i>
+                                    Call Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Trust Badges Section -->
-            <div class="trust-badges">
-                <div class="trust-badge">
-                    <i class="fas fa-shield-check"></i>
-                    <div class="badge-content">
-                        <span class="badge-title">Certified Google Partner</span>
-                        <span class="badge-subtitle">Official Google Ads & Analytics Partner</span>
+        <!-- Trust Badges Section -->
+        <div class="footer-trust">
+            <div class="container">
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-check"></i>
+                        <span>SSL Secured</span>
                     </div>
-                </div>
-                <div class="trust-badge">
-                    <i class="fas fa-award"></i>
-                    <div class="badge-content">
-                        <span class="badge-title">247+ Happy Clients</span>
-                        <span class="badge-subtitle">4.9/5 Average Rating</span>
+                    <div class="trust-badge">
+                        <i class="fab fa-google"></i>
+                        <span>Google Partner</span>
                     </div>
-                </div>
-                <div class="trust-badge">
-                    <i class="fas fa-handshake"></i>
-                    <div class="badge-content">
-                        <span class="badge-title">No Lock-In Contracts</span>
-                        <span class="badge-subtitle">Cancel Anytime Policy</span>
+                    <div class="trust-badge">
+                        <i class="fab fa-facebook"></i>
+                        <span>Meta Business Partner</span>
                     </div>
-                </div>
-                <div class="trust-badge">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div class="badge-content">
-                        <span class="badge-title">Sydney Based Team</span>
-                        <span class="badge-subtitle">Local Support & Expertise</span>
+                    <div class="trust-badge">
+                        <i class="fas fa-handshake"></i>
+                        <span>No Lock-in Contracts</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-medal"></i>
+                        <span>4.9 Star Reviews</span>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="footer-bottom-content">
-                        <p>&copy; 2024 The Profit Platform. All rights reserved.</p>
-                        <div class="footer-legal-links">
-                            <a href="#privacy">Privacy Policy</a>
-                            <a href="#terms">Terms of Service</a>
-                            <a href="#cookies">Cookie Policy</a>
-                        </div>
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 The Profit Platform Pty Ltd. All rights reserved. ABN: 123 456 789</p>
+                        <p class="location">🇦🇺 Proudly Australian owned & operated in Sydney</p>
+                    </div>
+                    <div class="footer-legal-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#cookies">Cookie Policy</a>
+                        <a href="#accessibility">Accessibility</a>
                     </div>
                 </div>
             </div>
