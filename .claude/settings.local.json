@@ -6,7 +6,10 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(ssh:*)"
+      "Bash(ssh:*)",
+      "WebFetch(domain:theprofitplatform.com.au)",
+      "WebFetch(domain:www.google.com)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []

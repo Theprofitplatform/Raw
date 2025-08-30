@@ -1,0 +1,47 @@
+User-agent: *
+Allow: /
+
+# Allow important search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot  
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block AI training bots while allowing search indexing
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Block spam and unwanted bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Allow sitemap access
+Sitemap: https://theprofitplatform.com.au/sitemap.xml
+
+# Crawl delay for all bots (be respectful)
+Crawl-delay: 1
