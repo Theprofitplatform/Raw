@@ -5494,6 +5494,148 @@
     }
 }
 
+/* ========================= 
+   MOBILE OPTIMIZATION ENHANCEMENTS 
+   ========================= */
+
+/* Enhanced Touch Targets */
+.btn, button, a.btn {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile Menu Button Enhancement */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        padding: 12px;
+        min-width: 48px;
+        min-height: 48px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-btn:hover {
+        background: rgba(44, 134, 249, 0.1);
+    }
+
+    /* Enhanced Mobile Navigation Links */
+    .mobile-nav-links a {
+        padding: 16px 24px;
+        margin: 4px 0;
+        min-height: 48px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    /* Better mobile typography */
+    body {
+        line-height: 1.6;
+    }
+
+    /* Improved hero section spacing */
+    .hero-section {
+        padding: 60px 20px 40px;
+    }
+
+    /* Performance optimization - disable heavy animations */
+    .hero-section::before,
+    .animated-background {
+        animation: none;
+    }
+
+    .btn::after {
+        display: none;
+    }
+
+    /* Form optimization for mobile */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 16px 12px;
+        font-size: 16px; /* Prevent iOS zoom */
+        border-radius: 8px;
+        min-height: 44px;
+        transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: var(--pp-primary);
+        box-shadow: 0 0 0 3px rgba(44, 134, 249, 0.1);
+        outline: none;
+    }
+
+    .contact-form {
+        padding: 20px 16px;
+    }
+
+    /* Enhanced button touch targets */
+    .btn {
+        padding: 16px 24px;
+        font-size: 16px;
+        min-height: 48px;
+        border-radius: 8px;
+    }
+
+    /* Improved spacing for mobile */
+    .hero-content {
+        padding: 0 16px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 6vw, 3.5rem);
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 3vw, 1.25rem);
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    /* Better mobile card spacing */
+    .service-card,
+    .pricing-card,
+    .testimonial-card {
+        margin-bottom: 24px;
+        padding: 24px 20px;
+    }
+
+    /* Improve mobile footer */
+    .footer {
+        padding: 40px 20px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    /* Better mobile newsletter form */
+    .newsletter-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .newsletter-form input {
+        font-size: 16px;
+        padding: 16px;
+        min-height: 48px;
+    }
+
+    .newsletter-form button {
+        font-size: 16px;
+        padding: 16px 24px;
+        min-height: 48px;
+    }
+}
+
 
         /* ========================= 
            UTILITY CLASSES 
