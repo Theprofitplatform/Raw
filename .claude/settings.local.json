@@ -9,7 +9,9 @@
       "Bash(ssh:*)",
       "WebFetch(domain:theprofitplatform.com.au)",
       "WebFetch(domain:www.google.com)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(curl:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

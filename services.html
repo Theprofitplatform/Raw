@@ -1579,43 +1579,109 @@
 
     <!-- Header -->
     <header id="header">
-        <div class="container">
-            <nav>
-                <a href="/" class="logo">
-                    <img src="https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png" alt="The Profit Platform Logo" class="logo-img">
-                </a>
+        <nav class="container">
+            <a href="/" class="logo">
+                <img src="https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png" alt="The Profit Platform Logo" class="logo-img">
+            </a>
 
-                <ul class="nav-links">
-                    <li><a href="/" class="nav-item">
-                        <i class="fas fa-home nav-icon"></i>
-                        <span>Home</span>
-                    </a></li>
-                    <li><a href="/services" class="nav-item active">
-                        <i class="fas fa-cogs nav-icon"></i>
-                        <span>Services</span>
-                    </a></li>
-                    <li><a href="/pricing" class="nav-item">
-                        <i class="fas fa-dollar-sign nav-icon"></i>
-                        <span>Pricing</span>
-                    </a></li>
-                    
-                    <li><a href="/blog" class="nav-item">
-                        <i class="fas fa-blog nav-icon"></i>
-                        <span>Blog</span>
-                    </a></li>
-                    <li><a href="/contact" class="nav-item">
-                        <i class="fas fa-envelope nav-icon"></i>
-                        <span>Contact</span>
-                    </a></li>
-                </ul>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-item">
+                    <i class="fas fa-home nav-icon"></i>
+                    <span>Home</span>
+                </a></li>
+               <li class="nav-dropdown">
+    <a href="/services" class="nav-item active">
+        <i class="fas fa-cogs nav-icon"></i>
+        <span>Services</span>
+        <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </a>
+    <div class="dropdown-menu">
+        <a href="/seo" class="dropdown-item">
+            <i class="fas fa-search"></i>
+            <div>
+                <strong>SEO & Local Search</strong>
+                <span>Rank #1 on Google</span>
+            </div>
+        </a>
+        <a href="/web-design" class="dropdown-item">
+            <i class="fas fa-laptop-code"></i>
+            <div>
+                <strong>Web Design</strong>
+                <span>Convert visitors to customers</span>
+            </div>
+        </a>
+        <a href="/google-ads" class="dropdown-item">
+            <i class="fas fa-bullhorn"></i>
+            <div>
+                <strong>Google & Meta Ads</strong>
+                <span>Instant customers</span>
+            </div>
+        </a>
+        <a href="/services" class="dropdown-item view-all">
+            <i class="fas fa-th-large"></i>
+            <div>
+                <strong>View All Services</strong>
+                <span>Complete solutions</span>
+            </div>
+        </a>
+    </div>
+</li>
+
+                <li><a href="/pricing" class="nav-item">
+                    <i class="fas fa-dollar-sign nav-icon"></i>
+                    <span>Pricing</span>
+                </a></li>
                 
-                <div class="nav-cta">
-                  
-                    <a href="/contact" class="btn btn-primary">Get Free Audit</a>
-                </div>
-            </nav>
-        </div>
+                <li><a href="/blog" class="nav-item">
+                    <i class="fas fa-blog nav-icon"></i>
+                    <span>Blog</span>
+                </a></li>
+                <li><a href="/contact" class="nav-item">
+                    <i class="fas fa-envelope nav-icon"></i>
+                    <span>Contact</span>
+                </a></li>
+            </ul>
+            
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-primary">Get Free Audit</a>
+            </div>
+
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
     </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <div class="logo">
+                <img src="https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png" alt="The Profit Platform Logo" class="logo-img" style="height: 40px;">
+            </div>
+            <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="/">🏠 Home</a>
+            <a href="/services">🎯 Services</a>
+            <a href="/seo" style="margin-left: 20px; font-size: 1rem; color: var(--pp-gray-600);">📍 SEO & Local Search</a>
+            <a href="/web-design" style="margin-left: 20px; font-size: 1rem; color: var(--pp-gray-600);">🎨 Web Design</a>
+            <a href="/google-ads" style="margin-left: 20px; font-size: 1rem; color: var(--pp-gray-600);">📢 Google & Meta Ads</a>
+            <a href="/pricing">💰 Pricing</a>
+            <a href="/#results">📈 Results</a>
+            <a href="/#testimonials">⭐ Reviews</a>
+            <a href="/blog">📝 Blog</a>
+            <a href="/contact">📞 Contact</a>
+        </div>
+        <div class="mobile-nav-cta">
+            <a href="tel:0487286451" class="phone-number">0487 286 451</a>
+            <a href="#contact" class="btn btn-primary">Get Free Audit</a>
+        </div>
+    </div>
 
     <!-- Services Hero Section -->
     <section class="services-hero">
