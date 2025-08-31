@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - The Profit Platform</title>
+    <meta name="description" content="Oops! The page you're looking for doesn't exist. Let us help you find what you need.">
+    
+    <!-- PWA Meta Tags for Better Mobile Experience -->
+    <meta name="theme-color" content="#2C86F9">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="The Profit Platform">
+    <link rel="apple-touch-icon" sizes="192x192" href="https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png" alt="The Profit Platform Logo" class="logo-img" loading="eager" decoding="sync">
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="nav-menu">
+                    <a href="/">🏠 Home</a>
+                    <a href="/services">🎯 Services</a>
+                    <a href="/#results">📈 Results</a>
+                    <a href="/pricing">💰 Pricing</a>
+                    <a href="/contact">📞 Contact</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <img src="https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png" alt="The Profit Platform Logo" class="logo-img" style="height: 40px;">
+            <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="/">🏠 Home</a>
+            <a href="/services">🎯 Services</a>
+            <a href="/#results">📈 Results</a>
+            <a href="/#process">⚙️ How It Works</a>
+            <a href="/#testimonials">⭐ Testimonials</a>
+            <a href="/pricing">💰 Pricing</a>
+            <a href="/#faq">❓ FAQ</a>
+            <a href="/contact">📞 Contact</a>
+        </div>
+        <div class="mobile-nav-cta">
+            <a href="tel:0487286451" class="phone-number">0487 286 451</a>
+            <a href="/contact" class="btn btn-primary">Get Free Audit</a>
+        </div>
+    </div>
+
+    <!-- 404 Content -->
+    <main class="error-404">
+        <div class="container">
+            <div class="error-content">
+                <div class="error-animation">
+                    <div class="error-number">404</div>
+                    <div class="error-icon">🤔</div>
+                </div>
+                
+                <div class="error-text">
+                    <h1>Oops! Page Not Found</h1>
+                    <p>The page you're looking for seems to have gone on a marketing adventure without us. Don't worry, we'll help you get back on track!</p>
+                </div>
+
+                <div class="error-suggestions">
+                    <h2>What you can do:</h2>
+                    <div class="suggestions-grid">
+                        <div class="suggestion-card">
+                            <div class="suggestion-icon">🏠</div>
+                            <h3>Go Home</h3>
+                            <p>Start fresh from our homepage</p>
+                            <a href="/" class="btn btn-primary">Take Me Home</a>
+                        </div>
+                        
+                        <div class="suggestion-card">
+                            <div class="suggestion-icon">🎯</div>
+                            <h3>Our Services</h3>
+                            <p>Discover how we can help your business</p>
+                            <a href="/services" class="btn btn-outline">View Services</a>
+                        </div>
+                        
+                        <div class="suggestion-card">
+                            <div class="suggestion-icon">📞</div>
+                            <h3>Get Help</h3>
+                            <p>Contact us directly for assistance</p>
+                            <a href="/contact" class="btn btn-outline">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popular-pages">
+                    <h2>Popular Pages:</h2>
+                    <div class="popular-links">
+                        <a href="/">🏠 Home</a>
+                        <a href="/services">🎯 Services</a>
+                        <a href="/pricing">💰 Pricing</a>
+                        <a href="/#results">📈 Results</a>
+                        <a href="/#faq">❓ FAQ</a>
+                        <a href="/contact">📞 Contact</a>
+                    </div>
+                </div>
+
+                <div class="error-cta">
+                    <div class="cta-card">
+                        <h3>🚀 While you're here...</h3>
+                        <p>Get a <strong>FREE digital marketing audit</strong> and discover how to get 3x more customers for your Sydney business.</p>
+                        <a href="/contact" class="btn btn-primary">Get My Free Audit</a>
+                        <p class="cta-note">No obligations • 4-hour response time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column footer-about">
+                        <div class="footer-logo">
+                            <img src="https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png" alt="The Profit Platform">
+                        </div>
+                        <p>Sydney's results-driven digital marketing agency. Get 3x more customers with proven SEO, Google Ads & web design strategies.</p>
+                        <p class="footer-tagline">🇦🇺 Proudly Australian owned and operated</p>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>📞 Contact</h4>
+                        <ul class="footer-links">
+                            <li><a href="tel:0487286451">📱 0487 286 451</a></li>
+                            <li><a href="mailto:avi@theprofitplatform.com.au">✉️ avi@theprofitplatform.com.au</a></li>
+                            <li><span>📍 Sydney, NSW</span></li>
+                            <li><span>⏰ Mon-Fri: 9am-6pm AEST</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>🏢 Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="/#results">Success Stories</a></li>
+                            <li><a href="/services">Our Services</a></li>
+                            <li><a href="/pricing">Transparent Pricing</a></li>
+                            <li><a href="/#faq">Frequently Asked Questions</a></li>
+                            <li><a href="/#process">How We Work</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>⚖️ Legal</h4>
+                        <ul class="footer-links">
+                            <li><a href="/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="/terms-of-service">Terms of Service</a></li>
+                            <li><span>ABN: 123 456 789</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 The Profit Platform. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .error-404 {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--pp-gray-50) 0%, var(--pp-gray-100) 100%);
+            min-height: 100vh;
+        }
+
+        .error-content {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .error-animation {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .error-number {
+            font-size: clamp(8rem, 15vw, 12rem);
+            font-weight: 900;
+            color: var(--pp-primary);
+            line-height: 1;
+            text-shadow: 0 4px 20px rgba(44, 134, 249, 0.3);
+        }
+
+        .error-icon {
+            font-size: 4rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            40% { transform: translate(-50%, -50%) translateY(-20px); }
+            60% { transform: translate(-50%, -50%) translateY(-10px); }
+        }
+
+        .error-text {
+            margin-bottom: 60px;
+        }
+
+        .error-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--pp-black);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .error-text p {
+            font-size: 1.3rem;
+            color: var(--pp-gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .error-suggestions {
+            margin-bottom: 60px;
+        }
+
+        .error-suggestions h2 {
+            font-size: 2rem;
+            color: var(--pp-black);
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .suggestions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .suggestion-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .suggestion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+        }
+
+        .suggestion-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .suggestion-card h3 {
+            font-size: 1.5rem;
+            color: var(--pp-black);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .suggestion-card p {
+            color: var(--pp-gray-600);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .popular-pages {
+            margin-bottom: 60px;
+        }
+
+        .popular-pages h2 {
+            font-size: 1.8rem;
+            color: var(--pp-black);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .popular-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .popular-links a {
+            background: var(--pp-primary);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .popular-links a:hover {
+            background: var(--pp-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .error-cta {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, var(--pp-primary), var(--pp-primary-dark));
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 12px 40px rgba(44, 134, 249, 0.3);
+        }
+
+        .cta-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-card p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .cta-card .btn {
+            background: white;
+            color: var(--pp-primary);
+            font-weight: 700;
+        }
+
+        .cta-card .btn:hover {
+            background: var(--pp-gray-100);
+            transform: translateY(-2px);
+        }
+
+        .cta-note {
+            font-size: 0.9rem;
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .error-404 {
+                padding: 100px 0 60px;
+            }
+
+            .suggestions-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 20px;
+            }
+
+            .suggestion-card {
+                padding: 30px 20px;
+            }
+
+            .popular-links {
+                padding: 0 20px;
+            }
+
+            .cta-card {
+                margin: 0 20px;
+                padding: 30px 25px;
+            }
+
+            .error-text {
+                padding: 0 20px;
+            }
+        }
+    </style>
+
+    <script>
+        // Mobile Navigation Functionality
+        function initializeMobileNav() {
+            const menuToggle = document.getElementById('mobileMenuBtn');
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+            const mobileNavClose = document.getElementById('mobileNavClose');
+
+            function openMobileNav() {
+                document.body.style.overflow = 'hidden';
+                if (mobileNav) mobileNav.classList.add('active');
+                if (mobileNavOverlay) mobileNavOverlay.classList.add('active');
+            }
+
+            function closeMobileNav() {
+                document.body.style.overflow = '';
+                if (mobileNav) mobileNav.classList.remove('active');
+                if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
+            }
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', openMobileNav);
+            }
+
+            if (mobileNavClose) {
+                mobileNavClose.addEventListener('click', closeMobileNav);
+            }
+
+            if (mobileNavOverlay) {
+                mobileNavOverlay.addEventListener('click', closeMobileNav);
+            }
+
+            // Close mobile nav when clicking on links
+            document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+                link.addEventListener('click', closeMobileNav);
+            });
+
+            // Close mobile nav on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('active')) {
+                    closeMobileNav();
+                }
+            });
+
+            // Close mobile nav on window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && mobileNav && mobileNav.classList.contains('active')) {
+                    closeMobileNav();
+                }
+            });
+        }
+
+        // Initialize mobile nav on DOM load
+        document.addEventListener('DOMContentLoaded', initializeMobileNav);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(ssh:*)",
+      "WebFetch(domain:theprofitplatform.com.au)",
+      "WebFetch(domain:www.google.com)",
+      "WebSearch",
+      "Bash(curl:*)",
+      "Bash(grep:*)",
+      "Bash(npx playwright:*)",
+      "Bash(node:*)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
