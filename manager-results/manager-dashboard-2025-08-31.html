@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Agent Dashboard - 2025-08-31</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8fafc; }
+        .header { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 2rem; text-align: center; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+        .dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .metric { text-align: center; margin-bottom: 1rem; }
+        .metric-value { font-size: 2.5rem; font-weight: bold; color: #6366f1; }
+        .metric-label { color: #64748b; font-size: 0.9rem; }
+        .agent-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+        .agent-card { border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; }
+        .status-success { border-left: 4px solid #10b981; background: #f0f9ff; }
+        .status-failed { border-left: 4px solid #ef4444; background: #fef2f2; }
+        .status-running { border-left: 4px solid #f59e0b; background: #fef3cd; }
+        .workflow-timeline { display: flex; align-items: center; margin: 1rem 0; }
+        .timeline-step { flex: 1; text-align: center; position: relative; }
+        .timeline-step::after { content: ''; position: absolute; top: 50%; right: -50%; width: 100%; height: 2px; background: #e2e8f0; z-index: -1; }
+        .timeline-step:last-child::after { display: none; }
+        .timeline-step.completed { color: #10b981; }
+        .timeline-step.failed { color: #ef4444; }
+        .recommendations { background: #f0f9ff; border: 1px solid #e0f2fe; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+        .chart { height: 300px; background: #f8fafc; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #64748b; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>👑 Manager Agent Dashboard</h1>
+        <p>Workflow: Quick Health Check</p>
+        <p>Generated: 31/08/2025, 8:06:36 pm</p>
+    </div>
+    
+    <div class="container">
+        <div class="dashboard">
+            <!-- Summary Metrics -->
+            <div class="card">
+                <h3>📊 Summary Metrics</h3>
+                <div class="metric">
+                    <div class="metric-value">75%</div>
+                    <div class="metric-label">Overall Health Score</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">2/2</div>
+                    <div class="metric-label">Agents Successful</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">89s</div>
+                    <div class="metric-label">Execution Duration</div>
+                </div>
+            </div>
+            
+            <!-- Workflow Progress -->
+            <div class="card">
+                <h3>🎭 Workflow Progress</h3>
+                <div class="workflow-timeline">
+                    
+                        <div class="timeline-step completed">
+                            <div>developer</div>
+                            <div>✅</div>
+                        </div>
+                    
+                        <div class="timeline-step completed">
+                            <div>ui</div>
+                            <div>✅</div>
+                        </div>
+                    
+                </div>
+                <div class="metric">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Success Rate</div>
+                </div>
+            </div>
+            
+            <!-- Agent Status -->
+            <div class="card">
+                <h3>🤖 Agent Status</h3>
+                <div class="agent-grid">
+                    
+                        <div class="agent-card status-success">
+                            <h4>Developer</h4>
+                            <p>Status: completed</p>
+                            <p>Success Rate: 100%</p>
+                            <p>Runs: 1</p>
+                        </div>
+                    
+                        <div class="agent-card status-running">
+                            <h4>Tester</h4>
+                            <p>Status: idle</p>
+                            <p>Success Rate: 100%</p>
+                            <p>Runs: 0</p>
+                        </div>
+                    
+                        <div class="agent-card status-success">
+                            <h4>Ui</h4>
+                            <p>Status: completed</p>
+                            <p>Success Rate: 100%</p>
+                            <p>Runs: 1</p>
+                        </div>
+                    
+                        <div class="agent-card status-running">
+                            <h4>Orchestrator</h4>
+                            <p>Status: idle</p>
+                            <p>Success Rate: 100%</p>
+                            <p>Runs: 0</p>
+                        </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Performance Metrics -->
+            <div class="card">
+                <h3>⚡ Performance</h3>
+                <div class="metric">
+                    <div class="metric-value">101%</div>
+                    <div class="metric-label">Resource Efficiency</div>
+                </div>
+                <div class="chart">
+                    Performance Chart
+                    (Would contain actual performance visualization)
+                </div>
+            </div>
+            
+            <!-- Critical Issues -->
+            <div class="card">
+                <h3>🚨 Critical Issues</h3>
+                <div class="metric">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Critical Issues Found</div>
+                </div>
+                
+            </div>
+            
+            <!-- System Health -->
+            <div class="card">
+                <h3>💗 System Health</h3>
+                <div class="metric">
+                    <div class="metric-value">Healthy</div>
+                    <div class="metric-label">System Status</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Total Workflow Runs</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">Infinitys</div>
+                    <div class="metric-label">Average Duration</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

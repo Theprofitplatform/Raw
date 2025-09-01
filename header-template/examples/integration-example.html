@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Template Integration Example - The Profit Platform</title>
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Header Template Styles -->
+    <link rel="stylesheet" href="../styles/header.css">
+    
+    <style>
+        /* Example page styles */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+        }
+        
+        main {
+            margin-top: 80px; /* Account for fixed header */
+            padding: 2rem;
+            min-height: 200vh; /* Make page scrollable for testing */
+        }
+        
+        .example-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .demo-content {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .scroll-test {
+            height: 100vh;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Header Template -->
+    <div id="header-container">
+        <!-- Header will be loaded here -->
+    </div>
+
+    <main>
+        <div class="example-section">
+            <h1>Header Template Integration Example</h1>
+            <p>This example demonstrates how to integrate the header template into your pages.</p>
+            
+            <div class="demo-content">
+                <h2>Features Demonstrated:</h2>
+                <ul>
+                    <li>✅ Responsive navigation</li>
+                    <li>✅ Mobile menu functionality</li>
+                    <li>✅ Scroll progress indicator</li>
+                    <li>✅ Header state changes on scroll</li>
+                    <li>✅ Accessibility features (ARIA labels, keyboard navigation)</li>
+                    <li>✅ Smooth scrolling to sections</li>
+                </ul>
+            </div>
+
+            <div class="demo-content">
+                <h2>Integration Methods:</h2>
+                <h3>Method 1: Server-Side Include</h3>
+                <pre><code>&lt;!-- PHP --&gt;
+&lt;?php include 'header-template/components/header.html'; ?&gt;
+
+&lt;!-- Apache SSI --&gt;
+&lt;!--#include file="header-template/components/header.html" --&gt;</code></pre>
+
+                <h3>Method 2: JavaScript Dynamic Loading</h3>
+                <pre><code>// Load header dynamically
+fetch('header-template/components/header.html')
+    .then(response =&gt; response.text())
+    .then(html =&gt; {
+        document.getElementById('header-container').innerHTML = html;
+    });</code></pre>
+
+                <h3>Method 3: Build Process Integration</h3>
+                <pre><code>// Webpack HTML loader or similar
+import headerTemplate from './header-template/components/header.html';</code></pre>
+            </div>
+        </div>
+
+        <div class="scroll-test" id="scroll-section">
+            <div>
+                <h2>Scroll Test Section</h2>
+                <p>Scroll to see header changes and progress bar</p>
+            </div>
+        </div>
+
+        <div class="example-section">
+            <div class="demo-content">
+                <h2>Testing Checklist:</h2>
+                <ul>
+                    <li>□ Mobile menu opens/closes correctly</li>
+                    <li>□ Navigation links work properly</li>
+                    <li>□ Scroll progress bar updates</li>
+                    <li>□ Header styling changes on scroll</li>
+                    <li>□ Keyboard navigation works (Tab, Enter, Escape)</li>
+                    <li>□ Responsive design works on different screen sizes</li>
+                    <li>□ Phone number link is clickable</li>
+                    <li>□ Logo link works</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Load Header Template and Initialize -->
+    <script>
+        // Load header template
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-container').innerHTML = html;
+                
+                // Load and initialize header JavaScript
+                const script = document.createElement('script');
+                script.src = '../js/header.js';
+                document.head.appendChild(script);
+            })
+            .catch(error => {
+                console.error('Error loading header template:', error);
+                // Fallback: show error message
+                document.getElementById('header-container').innerHTML = 
+                    '<div style="background: #f8d7da; color: #721c24; padding: 1rem; text-align: center;">Error loading header template</div>';
+            });
+    </script>
+</body>
+</html>

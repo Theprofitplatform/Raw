@@ -1,0 +1,852 @@
+{
+  "timestamp": "2025-08-31T09:59:06.383Z",
+  "duration": 0,
+  "summary": {
+    "agentsRun": 1,
+    "agentsSuccessful": 1,
+    "totalInsights": 0,
+    "totalRecommendations": 1,
+    "criticalIssues": 0,
+    "overallHealthScore": 99
+  },
+  "agents": {
+    "developer": {
+      "summary": {},
+      "files": {
+        "404.html": {
+          "file": "404.html",
+          "type": "html",
+          "size": 16589,
+          "lines": 464,
+          "issues": [
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (18) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 5365,
+            "inlineStyles": 1,
+            "embeddedJSSize": 2185,
+            "titleLength": 36,
+            "metaDescriptionLength": 18,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "agent-orchestrator.js": {
+          "file": "agent-orchestrator.js",
+          "type": "js",
+          "size": 34825,
+          "lines": 844,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "19 console.log statements found. Remove for production."
+            },
+            {
+              "type": "maintainability",
+              "severity": "medium",
+              "message": "1 functions with high complexity. Consider refactoring."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 2,
+            "complexityScore": 100
+          }
+        },
+        "blog-admin.html": {
+          "file": "blog-admin.html",
+          "type": "html",
+          "size": 55313,
+          "lines": 1472,
+          "issues": [
+            {
+              "type": "maintainability",
+              "severity": "low",
+              "message": "21 inline styles found. Consider using CSS classes."
+            },
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded JavaScript detected. Consider external JS files."
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 13438,
+            "inlineStyles": 21,
+            "embeddedJSSize": 19547,
+            "titleLength": 59,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "blog-template.html": {
+          "file": "blog-template.html",
+          "type": "html",
+          "size": 114262,
+          "lines": 3158,
+          "issues": [
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded styles detected. Consider external CSS files for better caching.",
+              "line": 1
+            },
+            {
+              "type": "maintainability",
+              "severity": "low",
+              "message": "17 inline styles found. Consider using CSS classes."
+            },
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded JavaScript detected. Consider external JS files."
+            }
+          ],
+          "suggestions": [
+            "Extract large CSS blocks to external files for better performance and maintainability",
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 56974,
+            "inlineStyles": 17,
+            "embeddedJSSize": 12836,
+            "titleLength": 37,
+            "metaDescriptionLength": 120,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "contact.html": {
+          "file": "contact.html",
+          "type": "html",
+          "size": 100861,
+          "lines": 2994,
+          "issues": [
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded styles detected. Consider external CSS files for better caching.",
+              "line": 1
+            },
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded JavaScript detected. Consider external JS files."
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (70) should be 30-60 characters"
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (24) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Extract large CSS blocks to external files for better performance and maintainability",
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 56142,
+            "inlineStyles": 1,
+            "embeddedJSSize": 13188,
+            "titleLength": 70,
+            "metaDescriptionLength": 24,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "developer-agent.js": {
+          "file": "developer-agent.js",
+          "type": "js",
+          "size": 26727,
+          "lines": 715,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "14 console.log statements found. Remove for production."
+            },
+            {
+              "type": "best-practice",
+              "severity": "low",
+              "message": "1 'var' declarations found. Consider using 'let' or 'const'."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 1,
+            "complexityScore": 108
+          }
+        },
+        "enhanced-ui-testing-agent.js": {
+          "file": "enhanced-ui-testing-agent.js",
+          "type": "js",
+          "size": 21384,
+          "lines": 518,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "13 console.log statements found. Remove for production."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 0,
+            "complexityScore": 42
+          }
+        },
+        "google-ads-landing.html": {
+          "file": "google-ads-landing.html",
+          "type": "html",
+          "size": 73539,
+          "lines": 1964,
+          "issues": [
+            {
+              "type": "maintainability",
+              "severity": "low",
+              "message": "32 inline styles found. Consider using CSS classes."
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (74) should be 30-60 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 26592,
+            "inlineStyles": 32,
+            "embeddedJSSize": 6967,
+            "titleLength": 74,
+            "metaDescriptionLength": 145,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "homepage-backup.html": {
+          "file": "homepage-backup.html",
+          "type": "html",
+          "size": 281630,
+          "lines": 7983,
+          "issues": [
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded styles detected. Consider external CSS files for better caching.",
+              "line": 1
+            },
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded JavaScript detected. Consider external JS files."
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (73) should be 30-60 characters"
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (6) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Extract large CSS blocks to external files for better performance and maintainability",
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 156242,
+            "inlineStyles": 4,
+            "embeddedJSSize": 26047,
+            "titleLength": 73,
+            "metaDescriptionLength": 6,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "homepage-optimized.html": {
+          "file": "homepage-optimized.html",
+          "type": "html",
+          "size": 124413,
+          "lines": 2498,
+          "issues": [
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded JavaScript detected. Consider external JS files."
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (73) should be 30-60 characters"
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (6) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "inlineStyles": 4,
+            "embeddedJSSize": 25402,
+            "titleLength": 73,
+            "metaDescriptionLength": 6,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "homepage.html": {
+          "file": "homepage.html",
+          "type": "html",
+          "size": 281341,
+          "lines": 7978,
+          "issues": [
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded styles detected. Consider external CSS files for better caching.",
+              "line": 1
+            },
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded JavaScript detected. Consider external JS files."
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (73) should be 30-60 characters"
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (6) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Extract large CSS blocks to external files for better performance and maintainability",
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 156242,
+            "inlineStyles": 4,
+            "embeddedJSSize": 26047,
+            "titleLength": 73,
+            "metaDescriptionLength": 6,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "manifest.json": {
+          "file": "manifest.json",
+          "type": "json",
+          "size": 957,
+          "lines": 28,
+          "issues": [],
+          "suggestions": [],
+          "metrics": {}
+        },
+        "orchestrator-config.json": {
+          "file": "orchestrator-config.json",
+          "type": "json",
+          "size": 1220,
+          "lines": 53,
+          "issues": [],
+          "suggestions": [],
+          "metrics": {}
+        },
+        "package-lock.json": {
+          "file": "package-lock.json",
+          "type": "json",
+          "size": 1708,
+          "lines": 61,
+          "issues": [],
+          "suggestions": [],
+          "metrics": {}
+        },
+        "package.json": {
+          "file": "package.json",
+          "type": "json",
+          "size": 544,
+          "lines": 24,
+          "issues": [
+            {
+              "type": "metadata",
+              "severity": "low",
+              "message": "Missing package description"
+            }
+          ],
+          "suggestions": [],
+          "metrics": {
+            "dependencyCount": 1
+          }
+        },
+        "pricing.html": {
+          "file": "pricing.html",
+          "type": "html",
+          "size": 100977,
+          "lines": 2856,
+          "issues": [
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (77) should be 30-60 characters"
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (166) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 48914,
+            "inlineStyles": 4,
+            "embeddedJSSize": 9016,
+            "titleLength": 77,
+            "metaDescriptionLength": 166,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "privacy-policy.html": {
+          "file": "privacy-policy.html",
+          "type": "html",
+          "size": 15800,
+          "lines": 379,
+          "issues": [
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (112) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 2231,
+            "inlineStyles": 1,
+            "embeddedJSSize": 2185,
+            "titleLength": 36,
+            "metaDescriptionLength": 112,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "profit-platform-styles.css": {
+          "file": "profit-platform-styles.css",
+          "type": "css",
+          "size": 153687,
+          "lines": 5645,
+          "issues": [
+            {
+              "type": "maintainability",
+              "severity": "low",
+              "message": "859 overly specific selectors found"
+            },
+            {
+              "type": "maintainability",
+              "severity": "medium",
+              "message": "272 !important declarations found. Consider refactoring CSS specificity."
+            }
+          ],
+          "suggestions": [
+            "Use CSS custom properties (variables) for consistent theming",
+            "Consider using CSS Grid and Flexbox for modern layouts",
+            "Minimize use of complex selectors for better performance"
+          ],
+          "metrics": {
+            "totalSelectors": 880,
+            "importantDeclarations": 272,
+            "vendorPrefixes": 17
+          }
+        },
+        "run-enhanced-tests.js": {
+          "file": "run-enhanced-tests.js",
+          "type": "js",
+          "size": 5071,
+          "lines": 151,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "17 console.log statements found. Remove for production."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 2,
+            "complexityScore": 24
+          }
+        },
+        "seo-landing.html": {
+          "file": "seo-landing.html",
+          "type": "html",
+          "size": 60653,
+          "lines": 1640,
+          "issues": [
+            {
+              "type": "maintainability",
+              "severity": "low",
+              "message": "29 inline styles found. Consider using CSS classes."
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (61) should be 30-60 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 22114,
+            "inlineStyles": 29,
+            "embeddedJSSize": 5410,
+            "titleLength": 61,
+            "metaDescriptionLength": 147,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "services.html": {
+          "file": "services.html",
+          "type": "html",
+          "size": 87970,
+          "lines": 2487,
+          "issues": [
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (85) should be 30-60 characters"
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (163) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 40450,
+            "inlineStyles": 4,
+            "embeddedJSSize": 8601,
+            "titleLength": 85,
+            "metaDescriptionLength": 163,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "styles.css": {
+          "file": "styles.css",
+          "type": "css",
+          "size": 153687,
+          "lines": 5645,
+          "issues": [
+            {
+              "type": "maintainability",
+              "severity": "low",
+              "message": "859 overly specific selectors found"
+            },
+            {
+              "type": "maintainability",
+              "severity": "medium",
+              "message": "272 !important declarations found. Consider refactoring CSS specificity."
+            }
+          ],
+          "suggestions": [
+            "Use CSS custom properties (variables) for consistent theming",
+            "Consider using CSS Grid and Flexbox for modern layouts",
+            "Minimize use of complex selectors for better performance"
+          ],
+          "metrics": {
+            "totalSelectors": 880,
+            "importantDeclarations": 272,
+            "vendorPrefixes": 17
+          }
+        },
+        "terms-of-service.html": {
+          "file": "terms-of-service.html",
+          "type": "html",
+          "size": 18106,
+          "lines": 415,
+          "issues": [
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (103) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 2231,
+            "inlineStyles": 1,
+            "embeddedJSSize": 2185,
+            "titleLength": 38,
+            "metaDescriptionLength": 103,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "test-config.json": {
+          "file": "test-config.json",
+          "type": "json",
+          "size": 1355,
+          "lines": 54,
+          "issues": [],
+          "suggestions": [],
+          "metrics": {}
+        },
+        "test-header-footer-simple.js": {
+          "file": "test-header-footer-simple.js",
+          "type": "js",
+          "size": 8328,
+          "lines": 173,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "28 console.log statements found. Remove for production."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 1,
+            "complexityScore": 22
+          }
+        },
+        "test-header-footer.js": {
+          "file": "test-header-footer.js",
+          "type": "js",
+          "size": 7597,
+          "lines": 158,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "27 console.log statements found. Remove for production."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 1,
+            "complexityScore": 18
+          }
+        },
+        "tester-agent.js": {
+          "file": "tester-agent.js",
+          "type": "js",
+          "size": 39815,
+          "lines": 1037,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "22 console.log statements found. Remove for production."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 0,
+            "complexityScore": 84
+          }
+        }
+      },
+      "optimizations": [
+        {
+          "priority": "high",
+          "type": "performance",
+          "title": "Extract Embedded CSS",
+          "description": "587KB of embedded CSS found across HTML files",
+          "impact": "Improves caching, reduces HTML file sizes, enables parallel loading",
+          "implementation": [
+            "Create shared CSS file (e.g., styles.css)",
+            "Extract common styles and variables",
+            "Link CSS file in HTML head sections",
+            "Remove duplicate style blocks"
+          ]
+        },
+        {
+          "priority": "medium",
+          "type": "performance",
+          "title": "Implement Asset Optimization",
+          "description": "Optimize images, fonts, and other assets",
+          "impact": "Faster page load times, better Core Web Vitals",
+          "implementation": [
+            "Convert images to WebP format",
+            "Implement responsive images with srcset",
+            "Add font-display: swap for web fonts",
+            "Enable gzip/brotli compression"
+          ]
+        }
+      ],
+      "issues": [],
+      "metrics": {
+        "totalFiles": 27,
+        "totalLines": 51394,
+        "totalSize": 1788359,
+        "byFileType": {
+          "html": {
+            "count": 13,
+            "lines": 36288,
+            "size": 1331454
+          },
+          "js": {
+            "count": 7,
+            "lines": 3596,
+            "size": 143747
+          },
+          "json": {
+            "count": 5,
+            "lines": 220,
+            "size": 5784
+          },
+          "css": {
+            "count": 2,
+            "lines": 11290,
+            "size": 307374
+          }
+        },
+        "issuesSeverityCount": {
+          "high": 0,
+          "medium": 30,
+          "low": 15
+        },
+        "totalIssues": 45,
+        "codeQualityScore": 99
+      },
+      "bestPractices": {
+        "hasReadme": false,
+        "hasGitignore": false,
+        "hasLicense": false,
+        "hasPackageJson": true,
+        "hasSecurityPolicy": false,
+        "usesSemver": true,
+        "hasContributingGuide": false,
+        "hasCodeOfConduct": false
+      }
+    }
+  },
+  "insights": [],
+  "recommendations": [
+    {
+      "category": "performance",
+      "priority": "high",
+      "title": "High Priority Code Optimizations Available",
+      "actions": [
+        "Extract Embedded CSS"
+      ],
+      "impact": "Significant improvement in site performance and maintainability"
+    }
+  ],
+  "actionPlan": {
+    "immediate": [
+      {
+        "title": "High Priority Code Optimizations Available",
+        "category": "performance",
+        "actions": [
+          "Extract Embedded CSS"
+        ],
+        "timeline": "1-3 days"
+      }
+    ],
+    "shortTerm": [],
+    "longTerm": [],
+    "ongoing": [
+      {
+        "title": "Regular Code Quality Monitoring",
+        "actions": [
+          "Run developer agent monthly",
+          "Review code quality metrics",
+          "Address technical debt"
+        ],
+        "timeline": "Monthly"
+      },
+      {
+        "title": "Continuous Testing",
+        "actions": [
+          "Run comprehensive tests after major changes",
+          "Monitor performance metrics",
+          "Update test coverage"
+        ],
+        "timeline": "Per deployment"
+      }
+    ]
+  }
+}

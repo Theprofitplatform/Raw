@@ -1,0 +1,1609 @@
+{
+  "manager": {
+    "version": "1.0.0",
+    "timestamp": "2025-08-31T10:06:36.973Z",
+    "workflow": "Quick Health Check",
+    "duration": 89,
+    "state": {
+      "currentWorkflow": "quick-check",
+      "runningAgents": {},
+      "completedAgents": {},
+      "failedAgents": {},
+      "startTime": "2025-08-31T10:05:07.683Z",
+      "totalEstimatedDuration": 90,
+      "actualDuration": 0,
+      "resourceUsage": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "lastHealthCheck": {
+        "timestamp": "2025-08-31T10:06:07.704Z",
+        "systemStatus": "healthy",
+        "agents": {
+          "developer": {
+            "status": "completed",
+            "successRate": 100,
+            "lastRun": "2025-08-31T10:05:07.967Z",
+            "runCount": 1
+          },
+          "tester": {
+            "status": "idle",
+            "successRate": 100,
+            "lastRun": null,
+            "runCount": 0
+          },
+          "ui": {
+            "status": "running",
+            "successRate": 100,
+            "lastRun": null,
+            "runCount": 0
+          },
+          "orchestrator": {
+            "status": "idle",
+            "successRate": 100,
+            "lastRun": null,
+            "runCount": 0
+          }
+        },
+        "resources": {
+          "sufficient": true,
+          "resources": {
+            "cpu": 22.31081382855964,
+            "memory": 45.57380281933374,
+            "disk": 54.37166423208129
+          },
+          "recommendation": null
+        },
+        "alerts": []
+      },
+      "notifications": [],
+      "metrics": {
+        "totalRuns": 0,
+        "successfulRuns": 0,
+        "averageDuration": null,
+        "resourceEfficiency": 101
+      }
+    },
+    "metrics": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "averageDuration": null,
+      "resourceEfficiency": 101
+    }
+  },
+  "agents": {
+    "developer": {
+      "instance": null,
+      "status": "completed",
+      "priority": 1,
+      "dependencies": [],
+      "capabilities": [
+        "code-analysis",
+        "optimization",
+        "best-practices"
+      ],
+      "resourceUsage": "low",
+      "estimatedDuration": 30,
+      "lastRun": "2025-08-31T10:05:07.967Z",
+      "runCount": 1,
+      "successRate": 100,
+      "config": {}
+    },
+    "tester": {
+      "instance": null,
+      "status": "idle",
+      "priority": 2,
+      "dependencies": [],
+      "capabilities": [
+        "ui-testing",
+        "performance",
+        "accessibility",
+        "security",
+        "functional",
+        "mobile",
+        "cross-browser"
+      ],
+      "resourceUsage": "high",
+      "estimatedDuration": 120,
+      "lastRun": null,
+      "runCount": 0,
+      "successRate": 100,
+      "config": {}
+    },
+    "ui": {
+      "instance": null,
+      "status": "completed",
+      "priority": 2,
+      "dependencies": [],
+      "capabilities": [
+        "ui-consistency",
+        "responsive-design",
+        "seo-validation"
+      ],
+      "resourceUsage": "medium",
+      "estimatedDuration": 60,
+      "lastRun": "2025-08-31T10:06:36.971Z",
+      "runCount": 1,
+      "successRate": 100,
+      "config": {}
+    },
+    "orchestrator": {
+      "instance": null,
+      "status": "idle",
+      "priority": 3,
+      "dependencies": [
+        "developer",
+        "tester",
+        "ui"
+      ],
+      "capabilities": [
+        "coordination",
+        "cross-analysis",
+        "reporting"
+      ],
+      "resourceUsage": "low",
+      "estimatedDuration": 10,
+      "lastRun": null,
+      "runCount": 0,
+      "successRate": 100,
+      "config": {}
+    }
+  },
+  "results": {
+    "developer": {
+      "summary": {},
+      "files": {
+        "404.html": {
+          "file": "404.html",
+          "type": "html",
+          "size": 16589,
+          "lines": 464,
+          "issues": [
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (18) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 5365,
+            "inlineStyles": 1,
+            "embeddedJSSize": 2185,
+            "titleLength": 36,
+            "metaDescriptionLength": 18,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "agent-orchestrator.js": {
+          "file": "agent-orchestrator.js",
+          "type": "js",
+          "size": 34825,
+          "lines": 844,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "19 console.log statements found. Remove for production."
+            },
+            {
+              "type": "maintainability",
+              "severity": "medium",
+              "message": "1 functions with high complexity. Consider refactoring."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 2,
+            "complexityScore": 100
+          }
+        },
+        "blog-admin.html": {
+          "file": "blog-admin.html",
+          "type": "html",
+          "size": 55313,
+          "lines": 1472,
+          "issues": [
+            {
+              "type": "maintainability",
+              "severity": "low",
+              "message": "21 inline styles found. Consider using CSS classes."
+            },
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded JavaScript detected. Consider external JS files."
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 13438,
+            "inlineStyles": 21,
+            "embeddedJSSize": 19547,
+            "titleLength": 59,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "blog-template.html": {
+          "file": "blog-template.html",
+          "type": "html",
+          "size": 114262,
+          "lines": 3158,
+          "issues": [
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded styles detected. Consider external CSS files for better caching.",
+              "line": 1
+            },
+            {
+              "type": "maintainability",
+              "severity": "low",
+              "message": "17 inline styles found. Consider using CSS classes."
+            },
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded JavaScript detected. Consider external JS files."
+            }
+          ],
+          "suggestions": [
+            "Extract large CSS blocks to external files for better performance and maintainability",
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 56974,
+            "inlineStyles": 17,
+            "embeddedJSSize": 12836,
+            "titleLength": 37,
+            "metaDescriptionLength": 120,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "contact.html": {
+          "file": "contact.html",
+          "type": "html",
+          "size": 100861,
+          "lines": 2994,
+          "issues": [
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded styles detected. Consider external CSS files for better caching.",
+              "line": 1
+            },
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded JavaScript detected. Consider external JS files."
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (70) should be 30-60 characters"
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (24) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Extract large CSS blocks to external files for better performance and maintainability",
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 56142,
+            "inlineStyles": 1,
+            "embeddedJSSize": 13188,
+            "titleLength": 70,
+            "metaDescriptionLength": 24,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "developer-agent.js": {
+          "file": "developer-agent.js",
+          "type": "js",
+          "size": 26727,
+          "lines": 715,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "14 console.log statements found. Remove for production."
+            },
+            {
+              "type": "best-practice",
+              "severity": "low",
+              "message": "1 'var' declarations found. Consider using 'let' or 'const'."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 1,
+            "complexityScore": 108
+          }
+        },
+        "enhanced-ui-testing-agent.js": {
+          "file": "enhanced-ui-testing-agent.js",
+          "type": "js",
+          "size": 21384,
+          "lines": 518,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "13 console.log statements found. Remove for production."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 0,
+            "complexityScore": 42
+          }
+        },
+        "google-ads-landing.html": {
+          "file": "google-ads-landing.html",
+          "type": "html",
+          "size": 73539,
+          "lines": 1964,
+          "issues": [
+            {
+              "type": "maintainability",
+              "severity": "low",
+              "message": "32 inline styles found. Consider using CSS classes."
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (74) should be 30-60 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 26592,
+            "inlineStyles": 32,
+            "embeddedJSSize": 6967,
+            "titleLength": 74,
+            "metaDescriptionLength": 145,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "homepage-backup.html": {
+          "file": "homepage-backup.html",
+          "type": "html",
+          "size": 281630,
+          "lines": 7983,
+          "issues": [
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded styles detected. Consider external CSS files for better caching.",
+              "line": 1
+            },
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded JavaScript detected. Consider external JS files."
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (73) should be 30-60 characters"
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (6) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Extract large CSS blocks to external files for better performance and maintainability",
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 156242,
+            "inlineStyles": 4,
+            "embeddedJSSize": 26047,
+            "titleLength": 73,
+            "metaDescriptionLength": 6,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "homepage-optimized.html": {
+          "file": "homepage-optimized.html",
+          "type": "html",
+          "size": 124413,
+          "lines": 2498,
+          "issues": [
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded JavaScript detected. Consider external JS files."
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (73) should be 30-60 characters"
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (6) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "inlineStyles": 4,
+            "embeddedJSSize": 25402,
+            "titleLength": 73,
+            "metaDescriptionLength": 6,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "homepage.html": {
+          "file": "homepage.html",
+          "type": "html",
+          "size": 281341,
+          "lines": 7978,
+          "issues": [
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded styles detected. Consider external CSS files for better caching.",
+              "line": 1
+            },
+            {
+              "type": "performance",
+              "severity": "medium",
+              "message": "Large embedded JavaScript detected. Consider external JS files."
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (73) should be 30-60 characters"
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (6) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Extract large CSS blocks to external files for better performance and maintainability",
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 156242,
+            "inlineStyles": 4,
+            "embeddedJSSize": 26047,
+            "titleLength": 73,
+            "metaDescriptionLength": 6,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "manager-agent.js": {
+          "file": "manager-agent.js",
+          "type": "js",
+          "size": 53182,
+          "lines": 1358,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "58 console.log statements found. Remove for production."
+            },
+            {
+              "type": "maintainability",
+              "severity": "medium",
+              "message": "1 functions with high complexity. Consider refactoring."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 2,
+            "complexityScore": 112
+          }
+        },
+        "manager-config.json": {
+          "file": "manager-config.json",
+          "type": "json",
+          "size": 3688,
+          "lines": 143,
+          "issues": [],
+          "suggestions": [],
+          "metrics": {}
+        },
+        "manifest.json": {
+          "file": "manifest.json",
+          "type": "json",
+          "size": 957,
+          "lines": 28,
+          "issues": [],
+          "suggestions": [],
+          "metrics": {}
+        },
+        "orchestrator-config.json": {
+          "file": "orchestrator-config.json",
+          "type": "json",
+          "size": 1220,
+          "lines": 53,
+          "issues": [],
+          "suggestions": [],
+          "metrics": {}
+        },
+        "package-lock.json": {
+          "file": "package-lock.json",
+          "type": "json",
+          "size": 1708,
+          "lines": 61,
+          "issues": [],
+          "suggestions": [],
+          "metrics": {}
+        },
+        "package.json": {
+          "file": "package.json",
+          "type": "json",
+          "size": 544,
+          "lines": 24,
+          "issues": [
+            {
+              "type": "metadata",
+              "severity": "low",
+              "message": "Missing package description"
+            }
+          ],
+          "suggestions": [],
+          "metrics": {
+            "dependencyCount": 1
+          }
+        },
+        "pricing.html": {
+          "file": "pricing.html",
+          "type": "html",
+          "size": 100977,
+          "lines": 2856,
+          "issues": [
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (77) should be 30-60 characters"
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (166) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 48914,
+            "inlineStyles": 4,
+            "embeddedJSSize": 9016,
+            "titleLength": 77,
+            "metaDescriptionLength": 166,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "privacy-policy.html": {
+          "file": "privacy-policy.html",
+          "type": "html",
+          "size": 15800,
+          "lines": 379,
+          "issues": [
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (112) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 2231,
+            "inlineStyles": 1,
+            "embeddedJSSize": 2185,
+            "titleLength": 36,
+            "metaDescriptionLength": 112,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "profit-platform-styles.css": {
+          "file": "profit-platform-styles.css",
+          "type": "css",
+          "size": 153687,
+          "lines": 5645,
+          "issues": [
+            {
+              "type": "maintainability",
+              "severity": "low",
+              "message": "859 overly specific selectors found"
+            },
+            {
+              "type": "maintainability",
+              "severity": "medium",
+              "message": "272 !important declarations found. Consider refactoring CSS specificity."
+            }
+          ],
+          "suggestions": [
+            "Use CSS custom properties (variables) for consistent theming",
+            "Consider using CSS Grid and Flexbox for modern layouts",
+            "Minimize use of complex selectors for better performance"
+          ],
+          "metrics": {
+            "totalSelectors": 880,
+            "importantDeclarations": 272,
+            "vendorPrefixes": 17
+          }
+        },
+        "run-enhanced-tests.js": {
+          "file": "run-enhanced-tests.js",
+          "type": "js",
+          "size": 5071,
+          "lines": 151,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "17 console.log statements found. Remove for production."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 2,
+            "complexityScore": 24
+          }
+        },
+        "seo-landing.html": {
+          "file": "seo-landing.html",
+          "type": "html",
+          "size": 60653,
+          "lines": 1640,
+          "issues": [
+            {
+              "type": "maintainability",
+              "severity": "low",
+              "message": "29 inline styles found. Consider using CSS classes."
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (61) should be 30-60 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 22114,
+            "inlineStyles": 29,
+            "embeddedJSSize": 5410,
+            "titleLength": 61,
+            "metaDescriptionLength": 147,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "services.html": {
+          "file": "services.html",
+          "type": "html",
+          "size": 87970,
+          "lines": 2487,
+          "issues": [
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Title length (85) should be 30-60 characters"
+            },
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (163) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 40450,
+            "inlineStyles": 4,
+            "embeddedJSSize": 8601,
+            "titleLength": 85,
+            "metaDescriptionLength": 163,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "styles.css": {
+          "file": "styles.css",
+          "type": "css",
+          "size": 153687,
+          "lines": 5645,
+          "issues": [
+            {
+              "type": "maintainability",
+              "severity": "low",
+              "message": "859 overly specific selectors found"
+            },
+            {
+              "type": "maintainability",
+              "severity": "medium",
+              "message": "272 !important declarations found. Consider refactoring CSS specificity."
+            }
+          ],
+          "suggestions": [
+            "Use CSS custom properties (variables) for consistent theming",
+            "Consider using CSS Grid and Flexbox for modern layouts",
+            "Minimize use of complex selectors for better performance"
+          ],
+          "metrics": {
+            "totalSelectors": 880,
+            "importantDeclarations": 272,
+            "vendorPrefixes": 17
+          }
+        },
+        "terms-of-service.html": {
+          "file": "terms-of-service.html",
+          "type": "html",
+          "size": 18106,
+          "lines": 415,
+          "issues": [
+            {
+              "type": "seo",
+              "severity": "medium",
+              "message": "Meta description length (103) should be 120-160 characters"
+            }
+          ],
+          "suggestions": [
+            "Consider using WebP format for images to reduce file sizes",
+            "Add preconnect links for external domains to improve loading speed",
+            "Implement lazy loading for images below the fold"
+          ],
+          "metrics": {
+            "embeddedStylesSize": 2231,
+            "inlineStyles": 1,
+            "embeddedJSSize": 2185,
+            "titleLength": 38,
+            "metaDescriptionLength": 103,
+            "imagesWithoutAlt": 0
+          }
+        },
+        "test-config.json": {
+          "file": "test-config.json",
+          "type": "json",
+          "size": 1355,
+          "lines": 54,
+          "issues": [],
+          "suggestions": [],
+          "metrics": {}
+        },
+        "test-header-footer-simple.js": {
+          "file": "test-header-footer-simple.js",
+          "type": "js",
+          "size": 8328,
+          "lines": 173,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "28 console.log statements found. Remove for production."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 1,
+            "complexityScore": 22
+          }
+        },
+        "test-header-footer.js": {
+          "file": "test-header-footer.js",
+          "type": "js",
+          "size": 7597,
+          "lines": 158,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "27 console.log statements found. Remove for production."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 1,
+            "complexityScore": 18
+          }
+        },
+        "tester-agent.js": {
+          "file": "tester-agent.js",
+          "type": "js",
+          "size": 39815,
+          "lines": 1037,
+          "issues": [
+            {
+              "type": "production",
+              "severity": "low",
+              "message": "22 console.log statements found. Remove for production."
+            }
+          ],
+          "suggestions": [
+            "Use event delegation for better performance with many elements",
+            "Consider using requestAnimationFrame for smooth animations",
+            "Minimize DOM manipulation by batching updates"
+          ],
+          "metrics": {
+            "usesModernJS": true,
+            "functionCount": 0,
+            "complexityScore": 84
+          }
+        }
+      },
+      "optimizations": [
+        {
+          "priority": "high",
+          "type": "performance",
+          "title": "Extract Embedded CSS",
+          "description": "587KB of embedded CSS found across HTML files",
+          "impact": "Improves caching, reduces HTML file sizes, enables parallel loading",
+          "implementation": [
+            "Create shared CSS file (e.g., styles.css)",
+            "Extract common styles and variables",
+            "Link CSS file in HTML head sections",
+            "Remove duplicate style blocks"
+          ]
+        },
+        {
+          "priority": "medium",
+          "type": "performance",
+          "title": "Implement Asset Optimization",
+          "description": "Optimize images, fonts, and other assets",
+          "impact": "Faster page load times, better Core Web Vitals",
+          "implementation": [
+            "Convert images to WebP format",
+            "Implement responsive images with srcset",
+            "Add font-display: swap for web fonts",
+            "Enable gzip/brotli compression"
+          ]
+        }
+      ],
+      "issues": [],
+      "metrics": {
+        "totalFiles": 29,
+        "totalLines": 52895,
+        "totalSize": 1845229,
+        "byFileType": {
+          "html": {
+            "count": 13,
+            "lines": 36288,
+            "size": 1331454
+          },
+          "js": {
+            "count": 8,
+            "lines": 4954,
+            "size": 196929
+          },
+          "json": {
+            "count": 6,
+            "lines": 363,
+            "size": 9472
+          },
+          "css": {
+            "count": 2,
+            "lines": 11290,
+            "size": 307374
+          }
+        },
+        "issuesSeverityCount": {
+          "high": 0,
+          "medium": 31,
+          "low": 16
+        },
+        "totalIssues": 47,
+        "codeQualityScore": 99
+      },
+      "bestPractices": {
+        "hasReadme": false,
+        "hasGitignore": false,
+        "hasLicense": false,
+        "hasPackageJson": true,
+        "hasSecurityPolicy": false,
+        "usesSemver": true,
+        "hasContributingGuide": false,
+        "hasCodeOfConduct": false
+      }
+    },
+    "ui": [
+      {
+        "page": "Homepage",
+        "url": "https://theprofitplatform.com.au/",
+        "timestamp": "2025-08-31T10:05:08.549Z",
+        "tests": {
+          "scrollProgress": true,
+          "enhancedHeader": true,
+          "servicesDropdown": true,
+          "activeNav": true,
+          "hasTitle": true,
+          "hasMetaDescription": true,
+          "hasH1": true,
+          "uniqueH1": true,
+          "hasCanonical": false,
+          "hasLang": true,
+          "imagesHaveAlt": true,
+          "linksHaveText": false,
+          "headingHierarchy": false,
+          "colorContrast": false,
+          "focusable": true,
+          "skipLinks": false,
+          "fastLoad": true,
+          "fastDOMLoad": true,
+          "reasonableResourceCount": true,
+          "titleLength": false,
+          "descriptionLength": true,
+          "h1HasKeywords": false,
+          "hasStructuredData": true,
+          "hasOpenGraph": false,
+          "hasTwitterCard": false,
+          "responsive": {
+            "mobile": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            },
+            "tablet": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            },
+            "desktop": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            }
+          }
+        },
+        "scores": {
+          "performance": {
+            "loadTime": 0,
+            "domContentLoaded": 5,
+            "firstPaint": 3956,
+            "resourceCount": 8
+          },
+          "coreWebVitals": {
+            "fid": 0,
+            "lcp": 4208,
+            "cls": 0.019
+          },
+          "seo": {
+            "title": "Digital Marketing Agency Sydney | Get 3x More Leads - The Profit Platform",
+            "titleLength": 73,
+            "description": "Sydney's results-driven digital marketing agency. Get more customers with proven SEO, Google Ads & web design. No lock-ins. Free strategy call.",
+            "descriptionLength": 143,
+            "h1": "\n                        Get 3x More Local Customers in \n                        Sydney\n                        \n                    "
+          }
+        },
+        "issues": [],
+        "overallScore": 52
+      },
+      {
+        "page": "Services",
+        "url": "https://theprofitplatform.com.au/services",
+        "timestamp": "2025-08-31T10:05:21.496Z",
+        "tests": {
+          "scrollProgress": true,
+          "enhancedHeader": true,
+          "servicesDropdown": true,
+          "activeNav": true,
+          "hasTitle": true,
+          "hasMetaDescription": true,
+          "hasH1": true,
+          "uniqueH1": true,
+          "hasCanonical": false,
+          "hasLang": true,
+          "imagesHaveAlt": true,
+          "linksHaveText": false,
+          "headingHierarchy": false,
+          "colorContrast": false,
+          "focusable": true,
+          "skipLinks": false,
+          "fastLoad": true,
+          "fastDOMLoad": true,
+          "reasonableResourceCount": true,
+          "titleLength": false,
+          "descriptionLength": false,
+          "h1HasKeywords": true,
+          "hasStructuredData": true,
+          "hasOpenGraph": true,
+          "hasTwitterCard": false,
+          "responsive": {
+            "mobile": {
+              "correctNavigation": false,
+              "noHorizontalScroll": true
+            },
+            "tablet": {
+              "correctNavigation": false,
+              "noHorizontalScroll": true
+            },
+            "desktop": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            }
+          }
+        },
+        "scores": {
+          "performance": {
+            "loadTime": 0,
+            "domContentLoaded": 0,
+            "firstPaint": 1408,
+            "resourceCount": 9
+          },
+          "coreWebVitals": {
+            "fid": 0,
+            "lcp": 1408,
+            "cls": 0.023
+          },
+          "seo": {
+            "title": "Digital Marketing Services Sydney - SEO, Google Ads, Web Design | The Profit Platform",
+            "titleLength": 85,
+            "description": "Comprehensive digital marketing services for Sydney businesses. Expert SEO, Google Ads management, web design & more. Get 3x more customers with proven strategies.",
+            "descriptionLength": 163,
+            "h1": "\n                    Digital Marketing\n                    Services That Actually Work\n                "
+          }
+        },
+        "issues": [],
+        "overallScore": 55
+      },
+      {
+        "page": "Pricing",
+        "url": "https://theprofitplatform.com.au/pricing",
+        "timestamp": "2025-08-31T10:05:31.640Z",
+        "tests": {
+          "scrollProgress": true,
+          "enhancedHeader": true,
+          "servicesDropdown": true,
+          "activeNav": true,
+          "hasTitle": true,
+          "hasMetaDescription": true,
+          "hasH1": true,
+          "uniqueH1": true,
+          "hasCanonical": false,
+          "hasLang": true,
+          "imagesHaveAlt": true,
+          "linksHaveText": false,
+          "headingHierarchy": false,
+          "colorContrast": false,
+          "focusable": true,
+          "skipLinks": false,
+          "fastLoad": true,
+          "fastDOMLoad": true,
+          "reasonableResourceCount": true,
+          "titleLength": false,
+          "descriptionLength": false,
+          "h1HasKeywords": false,
+          "hasStructuredData": false,
+          "hasOpenGraph": true,
+          "hasTwitterCard": true,
+          "responsive": {
+            "mobile": {
+              "correctNavigation": false,
+              "noHorizontalScroll": true
+            },
+            "tablet": {
+              "correctNavigation": false,
+              "noHorizontalScroll": true
+            },
+            "desktop": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            }
+          }
+        },
+        "scores": {
+          "performance": {
+            "loadTime": 0,
+            "domContentLoaded": 1,
+            "firstPaint": 720,
+            "resourceCount": 5
+          },
+          "coreWebVitals": {
+            "fid": 0,
+            "lcp": 720,
+            "cls": 0.023
+          },
+          "seo": {
+            "title": "Transparent Pricing - Digital Marketing Services | The Profit Platform Sydney",
+            "titleLength": 77,
+            "description": "Transparent pricing for digital marketing services in Sydney. No lock-in contracts. Choose from Website Design, SEO, Google Ads packages. Free consultation available.",
+            "descriptionLength": 166,
+            "h1": "\n                    Transparent Pricing,\n                    Maximum Results\n                "
+          }
+        },
+        "issues": [],
+        "overallScore": 52
+      },
+      {
+        "page": "Contact",
+        "url": "https://theprofitplatform.com.au/contact",
+        "timestamp": "2025-08-31T10:05:41.082Z",
+        "tests": {
+          "scrollProgress": true,
+          "enhancedHeader": true,
+          "servicesDropdown": true,
+          "activeNav": true,
+          "hasTitle": true,
+          "hasMetaDescription": true,
+          "hasH1": true,
+          "uniqueH1": true,
+          "hasCanonical": false,
+          "hasLang": true,
+          "imagesHaveAlt": true,
+          "linksHaveText": false,
+          "headingHierarchy": false,
+          "colorContrast": false,
+          "focusable": true,
+          "skipLinks": false,
+          "formLabels": false,
+          "fastLoad": true,
+          "fastDOMLoad": true,
+          "reasonableResourceCount": true,
+          "titleLength": false,
+          "descriptionLength": true,
+          "h1HasKeywords": false,
+          "hasStructuredData": true,
+          "hasOpenGraph": true,
+          "hasTwitterCard": false,
+          "responsive": {
+            "mobile": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            },
+            "tablet": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            },
+            "desktop": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            }
+          }
+        },
+        "scores": {
+          "performance": {
+            "loadTime": 0,
+            "domContentLoaded": 1,
+            "firstPaint": 724,
+            "resourceCount": 5
+          },
+          "coreWebVitals": {
+            "fid": 0,
+            "lcp": 724,
+            "cls": 0.003
+          },
+          "seo": {
+            "title": "Contact Us - Free Digital Marketing Consultation | The Profit Platform",
+            "titleLength": 70,
+            "description": "Get in touch with Sydney's leading digital marketing agency. Free consultation, no obligations. Call 0487 286 451 or book online today.",
+            "descriptionLength": 135,
+            "h1": "\n                    Let's Grow Your\n                    Business Together\n                "
+          }
+        },
+        "issues": [],
+        "overallScore": 53
+      },
+      {
+        "page": "Blog Template",
+        "url": "https://theprofitplatform.com.au/blog-template",
+        "timestamp": "2025-08-31T10:05:50.562Z",
+        "tests": {
+          "scrollProgress": true,
+          "enhancedHeader": true,
+          "servicesDropdown": true,
+          "activeNav": true,
+          "hasTitle": true,
+          "hasMetaDescription": true,
+          "hasH1": true,
+          "uniqueH1": true,
+          "hasCanonical": false,
+          "hasLang": true,
+          "imagesHaveAlt": true,
+          "linksHaveText": false,
+          "headingHierarchy": false,
+          "colorContrast": false,
+          "focusable": true,
+          "skipLinks": false,
+          "fastLoad": true,
+          "fastDOMLoad": true,
+          "reasonableResourceCount": true,
+          "titleLength": true,
+          "descriptionLength": true,
+          "h1HasKeywords": false,
+          "hasStructuredData": true,
+          "hasOpenGraph": true,
+          "hasTwitterCard": true,
+          "responsive": {
+            "mobile": {
+              "correctNavigation": true,
+              "noHorizontalScroll": false
+            },
+            "tablet": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            },
+            "desktop": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            }
+          }
+        },
+        "scores": {
+          "performance": {
+            "loadTime": 0,
+            "domContentLoaded": 1,
+            "firstPaint": 744,
+            "resourceCount": 17
+          },
+          "coreWebVitals": {
+            "fid": 0,
+            "lcp": 744,
+            "cls": 0.003
+          },
+          "seo": {
+            "title": "Blog Post Title - The Profit Platform",
+            "titleLength": 37,
+            "description": "Read the latest insights and strategies from The Profit Platform. Expert digital marketing advice for Sydney businesses.",
+            "descriptionLength": 120,
+            "h1": "\n                    The Ultimate Guide to\n                    Local SEO in Sydney\n                "
+          }
+        },
+        "issues": [],
+        "overallScore": 61
+      },
+      {
+        "page": "Privacy Policy",
+        "url": "https://theprofitplatform.com.au/privacy-policy",
+        "timestamp": "2025-08-31T10:06:00.449Z",
+        "tests": {
+          "scrollProgress": false,
+          "enhancedHeader": false,
+          "servicesDropdown": false,
+          "activeNav": true,
+          "hasTitle": true,
+          "hasMetaDescription": true,
+          "hasH1": true,
+          "uniqueH1": true,
+          "hasCanonical": false,
+          "hasLang": true,
+          "imagesHaveAlt": true,
+          "linksHaveText": true,
+          "headingHierarchy": false,
+          "colorContrast": false,
+          "focusable": true,
+          "skipLinks": false,
+          "fastLoad": true,
+          "fastDOMLoad": true,
+          "reasonableResourceCount": true,
+          "titleLength": true,
+          "descriptionLength": false,
+          "h1HasKeywords": false,
+          "hasStructuredData": false,
+          "hasOpenGraph": false,
+          "hasTwitterCard": false,
+          "responsive": {
+            "mobile": {
+              "correctNavigation": false,
+              "noHorizontalScroll": true
+            },
+            "tablet": {
+              "correctNavigation": false,
+              "noHorizontalScroll": true
+            },
+            "desktop": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            }
+          }
+        },
+        "scores": {
+          "performance": {
+            "loadTime": 0,
+            "domContentLoaded": 1,
+            "firstPaint": 404,
+            "resourceCount": 5
+          },
+          "coreWebVitals": {
+            "fid": 0,
+            "lcp": 404,
+            "cls": 0.036
+          },
+          "seo": {
+            "title": "Privacy Policy - The Profit Platform",
+            "titleLength": 36,
+            "description": "Privacy Policy for The Profit Platform. Learn how we protect your personal information and respect your privacy.",
+            "descriptionLength": 112,
+            "h1": "Privacy Policy"
+          }
+        },
+        "issues": [],
+        "overallScore": 42
+      },
+      {
+        "page": "Terms of Service",
+        "url": "https://theprofitplatform.com.au/terms-of-service",
+        "timestamp": "2025-08-31T10:06:09.549Z",
+        "tests": {
+          "scrollProgress": false,
+          "enhancedHeader": false,
+          "servicesDropdown": false,
+          "activeNav": true,
+          "hasTitle": true,
+          "hasMetaDescription": true,
+          "hasH1": true,
+          "uniqueH1": true,
+          "hasCanonical": false,
+          "hasLang": true,
+          "imagesHaveAlt": true,
+          "linksHaveText": true,
+          "headingHierarchy": false,
+          "colorContrast": false,
+          "focusable": true,
+          "skipLinks": false,
+          "fastLoad": true,
+          "fastDOMLoad": true,
+          "reasonableResourceCount": true,
+          "titleLength": true,
+          "descriptionLength": false,
+          "h1HasKeywords": false,
+          "hasStructuredData": false,
+          "hasOpenGraph": false,
+          "hasTwitterCard": false,
+          "responsive": {
+            "mobile": {
+              "correctNavigation": false,
+              "noHorizontalScroll": true
+            },
+            "tablet": {
+              "correctNavigation": false,
+              "noHorizontalScroll": true
+            },
+            "desktop": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            }
+          }
+        },
+        "scores": {
+          "performance": {
+            "loadTime": 0,
+            "domContentLoaded": 0,
+            "firstPaint": 392,
+            "resourceCount": 5
+          },
+          "coreWebVitals": {
+            "fid": 0,
+            "lcp": 392,
+            "cls": 0.006
+          },
+          "seo": {
+            "title": "Terms of Service - The Profit Platform",
+            "titleLength": 38,
+            "description": "Terms of Service for The Profit Platform. Read our terms and conditions for digital marketing services.",
+            "descriptionLength": 103,
+            "h1": "Terms of Service"
+          }
+        },
+        "issues": [],
+        "overallScore": 42
+      },
+      {
+        "page": "SEO Landing",
+        "url": "https://theprofitplatform.com.au/seo-landing",
+        "timestamp": "2025-08-31T10:06:18.613Z",
+        "tests": {
+          "scrollProgress": false,
+          "enhancedHeader": true,
+          "servicesDropdown": true,
+          "activeNav": true,
+          "hasTitle": true,
+          "hasMetaDescription": true,
+          "hasH1": true,
+          "uniqueH1": true,
+          "hasCanonical": false,
+          "hasLang": true,
+          "imagesHaveAlt": true,
+          "linksHaveText": false,
+          "headingHierarchy": false,
+          "colorContrast": false,
+          "focusable": true,
+          "skipLinks": false,
+          "fastLoad": true,
+          "fastDOMLoad": true,
+          "reasonableResourceCount": true,
+          "titleLength": false,
+          "descriptionLength": true,
+          "h1HasKeywords": false,
+          "hasStructuredData": true,
+          "hasOpenGraph": false,
+          "hasTwitterCard": false,
+          "responsive": {
+            "mobile": {
+              "correctNavigation": false,
+              "noHorizontalScroll": false
+            },
+            "tablet": {
+              "correctNavigation": false,
+              "noHorizontalScroll": true
+            },
+            "desktop": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            }
+          }
+        },
+        "scores": {
+          "performance": {
+            "loadTime": 0,
+            "domContentLoaded": 0,
+            "firstPaint": 456,
+            "resourceCount": 6
+          },
+          "coreWebVitals": {
+            "fid": 0,
+            "lcp": 456,
+            "cls": 0.025
+          },
+          "seo": {
+            "title": "Sydney SEO Services - Rank #1 on Google | The Profit Platform",
+            "titleLength": 61,
+            "description": "Get your Sydney business to #1 on Google. Local SEO experts with proven results. 3x more customers in 90 days guaranteed. Free SEO audit available.",
+            "descriptionLength": 147,
+            "h1": "Rank #1 on GoogleGet 3x More Sydney Customers"
+          }
+        },
+        "issues": [],
+        "overallScore": 48
+      },
+      {
+        "page": "Google Ads Landing",
+        "url": "https://theprofitplatform.com.au/google-ads-landing",
+        "timestamp": "2025-08-31T10:06:27.774Z",
+        "tests": {
+          "scrollProgress": false,
+          "enhancedHeader": true,
+          "servicesDropdown": true,
+          "activeNav": true,
+          "hasTitle": true,
+          "hasMetaDescription": true,
+          "hasH1": true,
+          "uniqueH1": true,
+          "hasCanonical": false,
+          "hasLang": true,
+          "imagesHaveAlt": true,
+          "linksHaveText": false,
+          "headingHierarchy": false,
+          "colorContrast": false,
+          "focusable": true,
+          "skipLinks": false,
+          "fastLoad": true,
+          "fastDOMLoad": true,
+          "reasonableResourceCount": true,
+          "titleLength": false,
+          "descriptionLength": true,
+          "h1HasKeywords": false,
+          "hasStructuredData": true,
+          "hasOpenGraph": false,
+          "hasTwitterCard": false,
+          "responsive": {
+            "mobile": {
+              "correctNavigation": false,
+              "noHorizontalScroll": false
+            },
+            "tablet": {
+              "correctNavigation": false,
+              "noHorizontalScroll": true
+            },
+            "desktop": {
+              "correctNavigation": true,
+              "noHorizontalScroll": true
+            }
+          }
+        },
+        "scores": {
+          "performance": {
+            "loadTime": 0,
+            "domContentLoaded": 0,
+            "firstPaint": 468,
+            "resourceCount": 6
+          },
+          "coreWebVitals": {
+            "fid": 0,
+            "lcp": 468,
+            "cls": 0.028
+          },
+          "seo": {
+            "title": "Google Ads Management Sydney - Get Instant Customers | The Profit Platform",
+            "titleLength": 74,
+            "description": "Professional Google Ads and Facebook Ads management in Sydney. Get instant customers with proven ad campaigns. Stop wasting money on ads that don't work.",
+            "descriptionLength": 153,
+            "h1": "Get Instant CustomersStop Wasting Money on Ads"
+          }
+        },
+        "issues": [],
+        "overallScore": 48
+      }
+    ]
+  },
+  "summary": {
+    "workflow": "Quick Health Check",
+    "successRate": 100,
+    "agentsExecuted": 2,
+    "agentsSuccessful": 2,
+    "overallHealth": 75,
+    "criticalIssues": 0,
+    "duration": 89,
+    "efficiency": 101
+  },
+  "recommendations": []
+}
