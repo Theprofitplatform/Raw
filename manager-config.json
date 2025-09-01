@@ -1,0 +1,143 @@
+{
+  "outputDir": "./manager-results",
+  "workflowMode": "adaptive",
+  "enableScheduling": true,
+  "enableMonitoring": true,
+  "enableNotifications": true,
+  "resourceOptimization": true,
+  "maxConcurrentAgents": 2,
+  "retryFailedAgents": 3,
+  "healthCheckInterval": 30000,
+  "autoRemediation": true,
+  "generateDashboard": true,
+  "webhookUrl": null,
+  "emailNotifications": null,
+  
+  "customAgentConfigs": {
+    "developer": {
+      "analyzeCSS": true,
+      "analyzeHTML": true,
+      "analyzeJS": true,
+      "generateOptimizations": true,
+      "checkBestPractices": true,
+      "validateCode": true
+    },
+    "tester": {
+      "headless": true,
+      "runUITests": true,
+      "runPerformanceTests": true,
+      "runAccessibilityTests": true,
+      "runSecurityTests": true,
+      "runFunctionalTests": true,
+      "runRegressionTests": false,
+      "generateVisualDiffs": false,
+      "crossBrowserTesting": false,
+      "mobileDeviceTesting": true,
+      "retryFailedTests": 2,
+      "timeout": 60000
+    },
+    "ui": {
+      "headless": true,
+      "generateScreenshots": false,
+      "checkAccessibility": true,
+      "checkPerformance": true,
+      "checkSEO": true,
+      "checkResponsive": true,
+      "timeout": 30000
+    }
+  },
+  
+  "workflows": {
+    "development": {
+      "name": "Development Workflow",
+      "description": "Optimized for development cycle with faster feedback",
+      "agents": ["developer", "ui"],
+      "mode": "parallel",
+      "triggers": ["on-commit", "pre-push"],
+      "estimatedDuration": 90,
+      "agentConfigs": {
+        "ui": {
+          "generateScreenshots": false,
+          "checkPerformance": false
+        }
+      }
+    },
+    "production-deploy": {
+      "name": "Production Deployment",
+      "description": "Comprehensive checks before production deployment",
+      "agents": ["developer", "tester", "ui"],
+      "mode": "sequential",
+      "triggers": ["pre-deploy", "release"],
+      "estimatedDuration": 240,
+      "agentConfigs": {
+        "tester": {
+          "runSecurityTests": true,
+          "runPerformanceTests": true,
+          "crossBrowserTesting": true
+        }
+      }
+    },
+    "maintenance": {
+      "name": "Regular Maintenance",
+      "description": "Scheduled maintenance and health checks",
+      "agents": ["developer", "tester"],
+      "mode": "adaptive",
+      "triggers": ["scheduled", "weekly"],
+      "estimatedDuration": 180,
+      "agentConfigs": {
+        "developer": {
+          "checkBestPractices": true,
+          "generateOptimizations": true
+        }
+      }
+    }
+  },
+  
+  "scheduling": {
+    "enableCronJobs": false,
+    "schedules": [
+      {
+        "workflow": "comprehensive",
+        "cron": "0 2 * * 1",
+        "description": "Weekly comprehensive analysis every Monday at 2 AM"
+      },
+      {
+        "workflow": "performance-focused",
+        "cron": "0 6 * * *",
+        "description": "Daily performance check at 6 AM"
+      }
+    ]
+  },
+  
+  "monitoring": {
+    "enableRealTimeMonitoring": true,
+    "healthCheckEndpoints": [],
+    "alertThresholds": {
+      "agentFailureRate": 20,
+      "workflowDurationIncrease": 50,
+      "systemResourceUsage": 85
+    },
+    "retentionDays": 30
+  },
+  
+  "notifications": {
+    "enableSlack": false,
+    "enableDiscord": false,
+    "enableEmail": false,
+    "enableWebhooks": false,
+    "channels": {
+      "critical": ["email", "webhook"],
+      "warning": ["webhook"],
+      "info": []
+    }
+  },
+  
+  "reporting": {
+    "generateTrends": true,
+    "generateMetrics": true,
+    "reportFormats": ["json", "html", "markdown"],
+    "includeScreenshots": false,
+    "includePerformanceCharts": true,
+    "archiveReports": true
+  }
+}

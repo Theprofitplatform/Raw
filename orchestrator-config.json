@@ -1,0 +1,53 @@
+{
+  "outputDir": "./orchestrator-results",
+  "runDeveloperAgent": true,
+  "runTesterAgent": true,
+  "runUITestingAgent": true,
+  "runInParallel": false,
+  "generateCombinedReport": true,
+  
+  "developerAgent": {
+    "analyzeCSS": true,
+    "analyzeHTML": true,
+    "analyzeJS": true,
+    "generateOptimizations": true,
+    "checkBestPractices": true,
+    "validateCode": true
+  },
+  
+  "testerAgent": {
+    "headless": true,
+    "runUITests": true,
+    "runPerformanceTests": true,
+    "runAccessibilityTests": true,
+    "runSecurityTests": true,
+    "runFunctionalTests": true,
+    "runRegressionTests": false,
+    "generateVisualDiffs": false,
+    "crossBrowserTesting": false,
+    "mobileDeviceTesting": true,
+    "retryFailedTests": 2
+  },
+  
+  "uiTestingAgent": {
+    "headless": true,
+    "generateScreenshots": false,
+    "checkAccessibility": true,
+    "checkPerformance": true,
+    "checkSEO": true,
+    "checkResponsive": true
+  },
+  
+  "reporting": {
+    "generateExecutiveSummary": true,
+    "generateActionPlan": true,
+    "correlateFindings": true,
+    "prioritizeRecommendations": true
+  },
+  
+  "thresholds": {
+    "criticalHealthScore": 60,
+    "warningHealthScore": 80,
+    "maxCriticalIssues": 5
+  }
+}

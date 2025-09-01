@@ -1,0 +1,64 @@
+{
+  "name": "The Profit Platform - Digital Marketing Agency Sydney",
+  "short_name": "TPP",
+  "description": "Sydney's results-driven digital marketing agency. Get 3x more leads with proven SEO, Google Ads & web design.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-AU",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "marketing"],
+  "icons": [
+    {
+      "src": "https://theprofitplatform.com.au/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "https://theprofitplatform.com.au/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "https://theprofitplatform.com.au/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get in touch for your free marketing audit",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "https://theprofitplatform.com.au/apple-touch-icon.png",
+          "sizes": "180x180"
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "short_name": "Services",
+      "description": "View our digital marketing services",
+      "url": "/#services",
+      "icons": [
+        {
+          "src": "https://theprofitplatform.com.au/apple-touch-icon.png",
+          "sizes": "180x180"
+        }
+      ]
+    }
+  ]
+}
