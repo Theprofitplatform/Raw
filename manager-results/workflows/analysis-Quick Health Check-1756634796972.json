@@ -1,0 +1,25 @@
+{
+  "workflow": "Quick Health Check",
+  "timestamp": "2025-08-31T10:06:36.972Z",
+  "duration": 89,
+  "estimatedDuration": 90,
+  "efficiency": 101,
+  "agentPerformance": {
+    "developer": {
+      "status": "success",
+      "successRate": 100,
+      "runCount": 1,
+      "estimatedDuration": 30,
+      "resourceUsage": "low"
+    },
+    "ui": {
+      "status": "success",
+      "successRate": 100,
+      "runCount": 1,
+      "estimatedDuration": 60,
+      "resourceUsage": "medium"
+    }
+  },
+  "insights": [],
+  "recommendations": []
+}

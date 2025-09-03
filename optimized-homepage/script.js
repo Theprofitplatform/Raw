@@ -380,4 +380,3 @@ function preloadCriticalResources() {
 
 // Initialize preloading
 preloadCriticalResources();
-

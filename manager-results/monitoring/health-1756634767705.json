@@ -1,0 +1,40 @@
+{
+  "timestamp": "2025-08-31T10:06:07.704Z",
+  "systemStatus": "healthy",
+  "agents": {
+    "developer": {
+      "status": "completed",
+      "successRate": 100,
+      "lastRun": "2025-08-31T10:05:07.967Z",
+      "runCount": 1
+    },
+    "tester": {
+      "status": "idle",
+      "successRate": 100,
+      "lastRun": null,
+      "runCount": 0
+    },
+    "ui": {
+      "status": "running",
+      "successRate": 100,
+      "lastRun": null,
+      "runCount": 0
+    },
+    "orchestrator": {
+      "status": "idle",
+      "successRate": 100,
+      "lastRun": null,
+      "runCount": 0
+    }
+  },
+  "resources": {
+    "sufficient": true,
+    "resources": {
+      "cpu": 22.31081382855964,
+      "memory": 45.57380281933374,
+      "disk": 54.37166423208129
+    },
+    "recommendation": null
+  },
+  "alerts": []
+}
