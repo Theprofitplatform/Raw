@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Navigation Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-item {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #2c86f9;
+            background: #f8fafc;
+            border-radius: 5px;
+        }
+        .test-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .pass { background: #10b981; color: white; }
+        .fail { background: #ef4444; color: white; }
+        .warning { background: #f59e0b; color: white; }
+        button {
+            background: #2c86f9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1e6ee8;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .mobile-preview {
+            width: 375px;
+            height: 667px;
+            margin: 20px auto;
+            border: 2px solid #333;
+            border-radius: 25px;
+            padding: 10px;
+            background: #333;
+        }
+        .mobile-preview iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧭 Mobile Navigation Test Suite</h1>
+        <p>Testing the mobile navigation functionality for The Profit Platform website.</p>
+        
+        <div class="test-item">
+            <h3>🎯 Test Environment</h3>
+            <p><strong>URL:</strong> <span id="testUrl">http://localhost:3000</span></p>
+            <p><strong>Test Time:</strong> <span id="testTime"></span></p>
+            <p><strong>User Agent:</strong> <span id="userAgent"></span></p>
+        </div>
+        
+        <div class="test-item">
+            <h3>📱 Mobile Navigation Elements Test</h3>
+            <div id="elementsTest">Testing...</div>
+            <button onclick="testElements()">Re-test Elements</button>
+        </div>
+        
+        <div class="test-item">
+            <h3>🖱️ Mobile Navigation Functionality Test</h3>
+            <div id="functionalityTest">Testing...</div>
+            <button onclick="testFunctionality()">Test Mobile Nav</button>
+        </div>
+        
+        <div class="test-item">
+            <h3>📐 Header Height Test</h3>
+            <div id="headerTest">Testing...</div>
+            <button onclick="testHeaderHeight()">Test Header Height</button>
+        </div>
+        
+        <div class="test-item">
+            <h3>🎨 Services Dropdown Test</h3>
+            <div id="dropdownTest">Testing...</div>
+            <button onclick="testServicesDropdown()">Test Dropdown</button>
+        </div>
+        
+        <h2>📱 Mobile Preview (375px width)</h2>
+        <div class="mobile-preview">
+            <iframe id="mobileFrame" src="http://localhost:3000"></iframe>
+        </div>
+        
+        <h2>🖥️ Desktop Preview</h2>
+        <iframe id="desktopFrame" src="http://localhost:3000"></iframe>
+    </div>
+
+    <script>
+        // Set test time
+        document.getElementById('testTime').textContent = new Date().toLocaleString();
+        document.getElementById('userAgent').textContent = navigator.userAgent.substring(0, 80) + '...';
+        
+        function testElements() {
+            const testUrl = 'http://localhost:3000';
+            const iframe = document.createElement('iframe');
+            iframe.src = testUrl;
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            
+            iframe.onload = function() {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    
+                    const tests = [
+                        { name: 'Menu Toggle Button', selector: '#menuToggle' },
+                        { name: 'Mobile Navigation', selector: '#mobileNav' },
+                        { name: 'Mobile Nav Overlay', selector: '#mobileNavOverlay' },
+                        { name: 'Mobile Nav Close', selector: '#mobileNavClose' },
+                        { name: 'Services Dropdown', selector: '.nav-dropdown' },
+                        { name: 'Header Element', selector: '#header' }
+                    ];
+                    
+                    let results = '<ul>';
+                    tests.forEach(test => {
+                        const element = doc.querySelector(test.selector);
+                        const status = element ? 'pass' : 'fail';
+                        const statusText = element ? 'FOUND' : 'MISSING';
+                        results += `<li>${test.name}: <span class="test-status ${status}">${statusText}</span></li>`;
+                    });
+                    results += '</ul>';
+                    
+                    document.getElementById('elementsTest').innerHTML = results;
+                } catch (e) {
+                    document.getElementById('elementsTest').innerHTML = 
+                        `<span class="test-status fail">ERROR</span> Could not access iframe content: ${e.message}`;
+                }
+                
+                document.body.removeChild(iframe);
+            };
+        }
+        
+        function testFunctionality() {
+            document.getElementById('functionalityTest').innerHTML = 
+                '<p>🔧 <strong>Manual Test Required:</strong></p>' +
+                '<ol>' +
+                '<li>Resize your browser to mobile width (&lt;1024px)</li>' +
+                '<li>Look for the hamburger menu (☰) in the top right</li>' +
+                '<li>Click the hamburger menu - mobile nav should slide in from right</li>' +
+                '<li>Click the X button - mobile nav should close</li>' +
+                '<li>Test on the mobile preview below</li>' +
+                '</ol>' +
+                '<span class="test-status warning">MANUAL TEST</span>';
+        }
+        
+        function testHeaderHeight() {
+            const iframe = document.getElementById('desktopFrame');
+            try {
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+                const header = doc.querySelector('#header');
+                if (header) {
+                    const height = header.offsetHeight;
+                    const status = height <= 80 ? 'pass' : height <= 120 ? 'warning' : 'fail';
+                    const statusText = height <= 80 ? 'GOOD' : height <= 120 ? 'ACCEPTABLE' : 'TOO TALL';
+                    document.getElementById('headerTest').innerHTML = 
+                        `Header height: ${height}px <span class="test-status ${status}">${statusText}</span>`;
+                } else {
+                    document.getElementById('headerTest').innerHTML = 
+                        '<span class="test-status fail">ERROR</span> Header not found';
+                }
+            } catch (e) {
+                document.getElementById('headerTest').innerHTML = 
+                    `<span class="test-status fail">ERROR</span> Could not access iframe: ${e.message}`;
+            }
+        }
+        
+        function testServicesDropdown() {
+            document.getElementById('dropdownTest').innerHTML = 
+                '<p>🔧 <strong>Manual Test Required:</strong></p>' +
+                '<ol>' +
+                '<li>Hover over "Services" in the main navigation</li>' +
+                '<li>Dropdown menu should appear with services listed</li>' +
+                '<li>Menu should stay open while hovering over items</li>' +
+                '<li>Menu should close when moving mouse away</li>' +
+                '</ol>' +
+                '<span class="test-status warning">MANUAL TEST</span>';
+        }
+        
+        // Auto-run tests on load
+        setTimeout(() => {
+            testElements();
+            setTimeout(testHeaderHeight, 2000);
+        }, 1000);
+    </script>
+</body>
+</html>
