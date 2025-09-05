@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- =====================================================================
+         TEMPLATE: Page-Specific Meta Tags
+         Replace these with your page-specific values
+         ===================================================================== -->
+    
+    <!-- Primary Meta Tags -->
+    <title>{{PAGE_TITLE}} | The Profit Platform</title>
+    <meta name="title" content="{{META_TITLE}}">
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <meta name="keywords" content="{{META_KEYWORDS}}">
+    <meta name="author" content="The Profit Platform">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="English">
+    <meta name="geo.region" content="AU-NSW">
+    <meta name="geo.placename" content="Sydney">
+    <meta name="geo.position" content="-33.8688;151.2093">
+    <meta name="ICBM" content="-33.8688, 151.2093">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{PAGE_URL}}">
+    <meta property="og:title" content="{{OG_TITLE}}">
+    <meta property="og:description" content="{{OG_DESCRIPTION}}">
+    <meta property="og:image" content="{{OG_IMAGE_URL}}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{OG_IMAGE_ALT}}">
+    <meta property="og:site_name" content="The Profit Platform">
+    <meta property="og:locale" content="en_AU">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{PAGE_URL}}">
+    <meta property="twitter:title" content="{{TWITTER_TITLE}}">
+    <meta property="twitter:description" content="{{TWITTER_DESCRIPTION}}">
+    <meta property="twitter:image" content="{{TWITTER_IMAGE_URL}}">
+    <meta property="twitter:image:alt" content="{{TWITTER_IMAGE_ALT}}">
+    <meta property="twitter:creator" content="@profitplatform">
+    <meta property="twitter:site" content="@profitplatform">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="The Profit Platform">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    
+    <!-- Alternate Language -->
+    <link rel="alternate" hreflang="en-au" href="{{PAGE_URL}}">
+    <link rel="alternate" hreflang="x-default" href="{{PAGE_URL}}">
+    
+    <!-- =====================================================================
+         END TEMPLATE: Page-Specific Meta Tags
+         ===================================================================== -->
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="https://theprofitplatform.com.au/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://theprofitplatform.com.au/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://theprofitplatform.com.au/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://theprofitplatform.com.au/apple-touch-icon.png">
+    <link rel="manifest" href="assets/manifest.json">
+    
+    <!-- Performance and Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google.com">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/critical.css" as="style">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    
+    <!-- Fallback for preload -->
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
+    
+    <!-- Critical CSS inline for faster rendering -->
+    <link rel="stylesheet" href="css/critical.css">
+    
+    <!-- External Resources - Load asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" media="all">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" media="all">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    </noscript>
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" media="all">
+    
+    <!-- =====================================================================
+         TEMPLATE: Page-Specific Structured Data
+         Add your page-specific structured data here
+         ===================================================================== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "{{PAGE_NAME}}",
+        "description": "{{PAGE_STRUCTURED_DESCRIPTION}}",
+        "url": "{{PAGE_URL}}",
+        "isPartOf": {
+            "@type": "WebSite",
+            "url": "https://theprofitplatform.com.au",
+            "name": "The Profit Platform"
+        }
+    }
+    </script>
+    
+    <!-- =====================================================================
+         TEMPLATE: Additional Page-Specific Styles
+         Add any page-specific CSS here
+         ===================================================================== -->
+    <style>
+        /* {{PAGE_SPECIFIC_STYLES}} */
+    </style>
+    
+</head>
+<body>
+    <!-- Skip Links for Accessibility -->
+    <a class="skip-link sr-only-focusable" href="#main-content">Skip to main content</a>
+    <a class="skip-link sr-only-focusable" href="#primary-navigation">Skip to navigation</a>
+    <a class="skip-link sr-only-focusable" href="#contact">Skip to contact</a>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" role="banner" class="premium-nav">
+        <div class="progress-indicator"></div>
+        <div class="nav-floating-container">
+            <div class="container">
+                <a href="index.html" class="logo premium-logo" aria-label="The Profit Platform - Home">
+                    <div class="logo-content">
+                        <img src="images/logo.png" 
+                             alt="The Profit Platform Logo" 
+                             class="logo-img"
+                             width="150" 
+                             height="50"
+                             loading="eager"
+                             fetchpriority="high"
+                             decoding="async">
+                        <div class="logo-tagline">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="logo-accent"></div>
+                </a>
+
+                <nav id="primary-navigation" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-links premium-nav-links" role="menubar">
+                        <li role="none">
+                            <a href="index.html" class="nav-item premium-nav-item {{NAV_HOME_ACTIVE}}" role="menuitem" aria-current="{{NAV_HOME_CURRENT}}">
+                                <i class="fas fa-home nav-icon" aria-hidden="true"></i>
+                                <span>Home</span>
+                                <div class="nav-pill-bg"></div>
+                            </a>
+                        </li>
+                        <li class="nav-dropdown premium-dropdown" role="none">
+                            <a href="services.html" 
+                               class="nav-item premium-nav-item {{NAV_SERVICES_ACTIVE}}" 
+                               role="menuitem" 
+                               aria-expanded="false" 
+                               aria-haspopup="true"
+                               aria-controls="services-dropdown"
+                               aria-current="{{NAV_SERVICES_CURRENT}}">
+                                <i class="fas fa-rocket nav-icon" aria-hidden="true"></i>
+                                <span>Services</span>
+                                <i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+                                <div class="nav-pill-bg"></div>
+                            </a>
+                            <div class="dropdown-menu mega-dropdown" role="menu" id="services-dropdown" aria-label="Services submenu">
+                                <div class="mega-dropdown-content">
+                                    <a href="seo.html" class="dropdown-item mega-item" role="menuitem">
+                                        <div class="mega-item-icon">
+                                            <i class="fas fa-search" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="mega-item-content">
+                                            <strong>SEO Services</strong>
+                                            <span>Dominate Google search results</span>
+                                        </div>
+                                        <div class="mega-item-arrow">
+                                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                    <a href="web-design.html" class="dropdown-item mega-item" role="menuitem">
+                                        <div class="mega-item-icon">
+                                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="mega-item-content">
+                                            <strong>Website Design</strong>
+                                            <span>Convert visitors to customers</span>
+                                        </div>
+                                        <div class="mega-item-arrow">
+                                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                    <a href="google-ads.html" class="dropdown-item mega-item" role="menuitem">
+                                        <div class="mega-item-icon">
+                                            <i class="fas fa-bullhorn" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="mega-item-content">
+                                            <strong>Google Ads</strong>
+                                            <span>Instant traffic and leads</span>
+                                        </div>
+                                        <div class="mega-item-arrow">
+                                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li role="none">
+                            <a href="pricing.html" class="nav-item premium-nav-item {{NAV_PRICING_ACTIVE}}" role="menuitem" aria-current="{{NAV_PRICING_CURRENT}}">
+                                <i class="fas fa-dollar-sign nav-icon" aria-hidden="true"></i>
+                                <span>Pricing</span>
+                                <div class="nav-pill-bg"></div>
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a href="about.html" class="nav-item premium-nav-item {{NAV_ABOUT_ACTIVE}}" role="menuitem" aria-current="{{NAV_ABOUT_CURRENT}}">
+                                <i class="fas fa-users nav-icon" aria-hidden="true"></i>
+                                <span>About</span>
+                                <div class="nav-pill-bg"></div>
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a href="blog/index.html" class="nav-item premium-nav-item {{NAV_BLOG_ACTIVE}}" role="menuitem" aria-current="{{NAV_BLOG_CURRENT}}">
+                                <i class="fas fa-blog nav-icon" aria-hidden="true"></i>
+                                <span>Blog</span>
+                                <div class="nav-pill-bg"></div>
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a href="contact.html" class="nav-item premium-nav-item {{NAV_CONTACT_ACTIVE}}" role="menuitem" aria-current="{{NAV_CONTACT_CURRENT}}">
+                                <i class="fas fa-envelope nav-icon" aria-hidden="true"></i>
+                                <span>Contact</span>
+                                <div class="nav-pill-bg"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="nav-cta premium-cta">
+                    <a href="tel:0487286451" class="phone-number" aria-label="Call us at 0487 286 451">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <span>0487 286 451</span>
+                    </a>
+                    <a href="contact.html#free-audit" class="btn-primary nav-btn">
+                        <span>Get Free Audit</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-toggle" 
+                        id="menuToggle" 
+                        aria-label="Open mobile menu" 
+                        aria-expanded="false" 
+                        aria-controls="mobileNav"
+                        type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true"></div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" 
+         id="mobileNav" 
+         role="dialog" 
+         aria-modal="true" 
+         aria-labelledby="mobile-nav-title"
+         aria-hidden="true">
+        <div class="mobile-nav-header">
+            <div class="mobile-logo">
+                <img src="images/logo.png" 
+                     alt="The Profit Platform Logo" 
+                     class="logo-img" 
+                     width="120" 
+                     height="40"
+                     loading="lazy"
+                     decoding="async">
+            </div>
+            <button class="mobile-nav-close" 
+                    id="mobileNavClose" 
+                    aria-label="Close mobile menu"
+                    type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <nav aria-label="Mobile navigation">
+            <h2 id="mobile-nav-title" class="sr-only">Navigation Menu</h2>
+            <div class="mobile-nav-links" role="list">
+                <a href="index.html" role="listitem" aria-current="{{MOBILE_NAV_HOME_CURRENT}}">
+                    <span aria-hidden="true">🏠</span> Home
+                </a>
+                <a href="services.html" role="listitem" aria-current="{{MOBILE_NAV_SERVICES_CURRENT}}">
+                    <span aria-hidden="true">🎯</span> Services
+                </a>
+                <a href="seo.html" role="listitem" class="mobile-sub-item">
+                    <span aria-hidden="true">📍</span> SEO & Local Search
+                </a>
+                <a href="web-design.html" role="listitem" class="mobile-sub-item">
+                    <span aria-hidden="true">🎨</span> Web Design
+                </a>
+                <a href="google-ads.html" role="listitem" class="mobile-sub-item">
+                    <span aria-hidden="true">📢</span> Google & Meta Ads
+                </a>
+                <a href="pricing.html" role="listitem" aria-current="{{MOBILE_NAV_PRICING_CURRENT}}">
+                    <span aria-hidden="true">💰</span> Pricing
+                </a>
+                <a href="about.html" role="listitem" aria-current="{{MOBILE_NAV_ABOUT_CURRENT}}">
+                    <span aria-hidden="true">👥</span> About Us
+                </a>
+                <a href="portfolio.html" role="listitem" aria-current="{{MOBILE_NAV_PORTFOLIO_CURRENT}}">
+                    <span aria-hidden="true">📈</span> Portfolio
+                </a>
+                <a href="blog/index.html" role="listitem" aria-current="{{MOBILE_NAV_BLOG_CURRENT}}">
+                    <span aria-hidden="true">📝</span> Blog
+                </a>
+                <a href="contact.html" role="listitem" aria-current="{{MOBILE_NAV_CONTACT_CURRENT}}">
+                    <span aria-hidden="true">📞</span> Contact
+                </a>
+            </div>
+        </nav>
+        <div class="mobile-nav-cta">
+            <a href="tel:+61487286451" 
+               class="phone-number" 
+               aria-label="Call us at 0487 286 451">
+                0487 286 451
+            </a>
+            <a href="contact.html" 
+               class="btn btn-primary"
+               aria-label="Get Free Chat - Contact us">
+                Let's Chat
+            </a>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         TEMPLATE: Main Content Area
+         Replace this section with your page-specific content
+         ===================================================================== -->
+    <main id="main-content" role="main">
+        
+        <!-- Example Hero Section Template -->
+        <section class="hero-section">
+            <div class="container">
+                <h1>{{PAGE_H1_TITLE}}</h1>
+                <p class="lead">{{PAGE_LEAD_TEXT}}</p>
+                
+                <!-- Add your page-specific content here -->
+                
+            </div>
+        </section>
+        
+        <!-- Add more sections as needed -->
+        
+    </main>
+    <!-- =====================================================================
+         END TEMPLATE: Main Content Area
+         ===================================================================== -->
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>The Profit Platform</h3>
+                    <p>We help Sydney businesses dominate Google and get more customers through proven digital marketing strategies. No lock-ins, just results.</p>
+                    
+                    <div class="social-links" role="list" aria-label="Social media links">
+                        <a href="https://facebook.com/theprofitplatform" 
+                           class="social-icon" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Follow us on Facebook"
+                           role="listitem">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://instagram.com/theprofitplatform" 
+                           class="social-icon" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Follow us on Instagram"
+                           role="listitem">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/theprofitplatform" 
+                           class="social-icon" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Connect with us on LinkedIn"
+                           role="listitem">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://twitter.com/profitplatform" 
+                           class="social-icon" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Follow us on Twitter"
+                           role="listitem">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://youtube.com/theprofitplatform" 
+                           class="social-icon" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Subscribe to our YouTube channel"
+                           role="listitem">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="contact-info-footer">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:0487286451">0487 286 451</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:avi@theprofitplatform.com.au">avi@theprofitplatform.com.au</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sydney, NSW, Australia</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="seo.html"><i class="fas fa-search"></i> SEO & Local Search</a></li>
+                        <li><a href="google-ads.html"><i class="fas fa-bullhorn"></i> Google Ads Management</a></li>
+                        <li><a href="google-ads.html"><i class="fas fa-share-alt"></i> Social Media Advertising</a></li>
+                        <li><a href="web-design.html"><i class="fas fa-laptop-code"></i> Website Design</a></li>
+                        <li><a href="services.html#conversion"><i class="fas fa-chart-line"></i> Conversion Optimization</a></li>
+                        <li><a href="services.html#analytics"><i class="fas fa-analytics"></i> Analytics & Reporting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-chart-bar"></i> Case Studies</a></li>
+                        <li><a href="blog/index.html"><i class="fas fa-blog"></i> Blog</a></li>
+                        <li><a href="about.html#careers"><i class="fas fa-briefcase"></i> Careers</a></li>
+                        <li><a href="about.html#partners"><i class="fas fa-handshake"></i> Partners</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="contact.html"><i class="fas fa-search-plus"></i> Free Marketing Audit</a></li>
+                        <li><a href="blog/seo-guide.html"><i class="fas fa-book"></i> Free SEO Guide</a></li>
+                        <li><a href="blog/google-ads-guide.html"><i class="fas fa-graduation-cap"></i> Google Ads Guide</a></li>
+                        <li><a href="/local-seo-checklist"><i class="fas fa-list-check"></i> Local SEO Checklist</a></li>
+                        <li><a href="/webinars"><i class="fas fa-video"></i> Free Webinars</a></li>
+                        <li><a href="/tools"><i class="fas fa-tools"></i> Free Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Profit Platform. All rights reserved.</p>
+                <ul class="footer-links-bottom">
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service">Terms of Service</a></li>
+                    <li><a href="/sitemap">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Exit Intent Popup -->
+    <div class="exit-popup-overlay" id="exitPopup">
+        <div class="exit-popup">
+            <button class="exit-popup-close" id="exitClose">&times;</button>
+            <div class="exit-popup-header">
+                <h3>Wait! Before You Go...</h3>
+                <p>Discover why your competitors are beating you online</p>
+            </div>
+            <div class="exit-popup-body">
+                <div class="exit-popup-benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Discover exactly why you're losing customers</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Get a custom growth plan worth $500</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>No obligation, no sales pitch</span>
+                    </div>
+                </div>
+                <div class="exit-popup-cta">
+                    <a href="#contact" class="btn-exit-primary">Yes, Get My Free Audit</a>
+                    <button class="btn-exit-close" id="exitDecline">No Thanks, I'll Keep Struggling</button>
+                </div>
+                <div class="exit-popup-urgency">
+                    ⏰ <strong>Limited Time:</strong> Only 3 audits available this week
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <!-- Optimized Script Loading -->
+    <script src="js/main.js" defer></script>
+    
+    <!-- Lazy Loading for Images -->
+    <script>
+        // Native lazy loading fallback and optimization
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.src;
+            });
+        } else {
+            // Fallback for browsers that don't support lazy loading
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
+        
+        // Optimize web vitals
+        if ('PerformanceObserver' in window) {
+            const po = new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                    console.log('LCP:', entry.startTime);
+                }
+            });
+            po.observe({type: 'largest-contentful-paint', buffered: true});
+        }
+    </script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful: ', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('ServiceWorker registration failed: ', error);
+                    });
+            });
+        }
+    </script>
+
+    <!-- =====================================================================
+         TEMPLATE: Page-Specific JavaScript
+         Add any page-specific JavaScript here
+         ===================================================================== -->
+    <script>
+        // {{PAGE_SPECIFIC_JAVASCRIPT}}
+    </script>
+
+    <!-- Accessibility Styles -->
+    <style>
+        .skip-link {
+            position: fixed;
+            top: -100px;
+            left: 6px;
+            background: #4F46E5;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 10000;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+    </style>
+</body>
+</html>

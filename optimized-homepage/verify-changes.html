@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Changes</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #2563eb;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 10px;
+        }
+        .section {
+            background: #f3f4f6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .check {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-left: 4px solid #10b981;
+            border-radius: 4px;
+        }
+        .check strong {
+            color: #10b981;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .timestamp {
+            background: #fef3c7;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Homepage Changes Verification</h1>
+    
+    <div class="timestamp">
+        <strong>Timestamp:</strong> <span id="timestamp"></span>
+        <br>
+        <strong>Cache Buster:</strong> <span id="cachebuster"></span>
+    </div>
+    
+    <div class="section">
+        <h2>✅ Changes That Should Be Visible:</h2>
+        
+        <div class="check">
+            <strong>1. Hero Title:</strong> "Double Your Revenue" (was "3x Your Revenue")
+        </div>
+        
+        <div class="check">
+            <strong>2. Timeline:</strong> "In Just 60 Days" (was "In Just 90 Days")
+        </div>
+        
+        <div class="check">
+            <strong>3. Tagline:</strong> "Sydney's Freshest Digital Growth Partner" (was "Most Trusted")
+        </div>
+        
+        <div class="check">
+            <strong>4. Client Count:</strong> "15+ Sydney Clients" (was "300+ Happy Clients")
+        </div>
+        
+        <div class="check">
+            <strong>5. Trust Bar:</strong> REMOVED (blue gradient section with metrics)
+        </div>
+        
+        <div class="check">
+            <strong>6. Google Partner Badge:</strong> HIDDEN from hero section
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>🔄 Force Refresh Instructions:</h2>
+        <ol>
+            <li>Press <strong>Ctrl + Shift + R</strong> (Windows) or <strong>Cmd + Shift + R</strong> (Mac) to hard refresh</li>
+            <li>Or open Developer Tools (F12) → Network tab → Check "Disable cache"</li>
+            <li>Or add ?v=<span class="cachebuster"></span> to the URL</li>
+        </ol>
+    </div>
+    
+    <h2>Live Preview (with cache buster):</h2>
+    <iframe id="preview" src=""></iframe>
+    
+    <script>
+        const timestamp = new Date().toLocaleString();
+        const cacheBuster = Date.now();
+        
+        document.getElementById('timestamp').textContent = timestamp;
+        document.getElementById('cachebuster').textContent = cacheBuster;
+        document.querySelectorAll('.cachebuster').forEach(el => {
+            el.textContent = cacheBuster;
+        });
+        
+        // Load index.html with cache buster
+        document.getElementById('preview').src = `index.html?v=${cacheBuster}`;
+        
+        // Auto refresh every 5 seconds
+        setInterval(() => {
+            const newCacheBuster = Date.now();
+            document.getElementById('preview').src = `index.html?v=${newCacheBuster}`;
+            document.getElementById('cachebuster').textContent = newCacheBuster;
+        }, 5000);
+    </script>
+</body>
+</html>

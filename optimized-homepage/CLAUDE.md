@@ -4,133 +4,132 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an optimized version of "The Profit Platform" homepage - a performance-focused digital marketing agency website. This is a static HTML website with modern UI/UX enhancements, comprehensive testing suite, and significant performance optimizations over the original version.
+"The Profit Platform" - A performance-optimized static website for a Sydney-based digital marketing agency (theprofitplatform.com.au). Pure HTML/CSS/JS implementation with no build process required.
 
 ## Architecture
 
-- **Optimized Static HTML**: Single-page application with external CSS/JS for better caching and performance
-- **Modern CSS**: Custom design system using CSS variables (--pp-* prefix) with glassmorphism effects and animations
-- **Vanilla JavaScript**: Performance-optimized ES6+ with smooth animations and progressive enhancement
-- **Service Worker**: Caching strategy for improved performance
-- **Comprehensive Testing**: Jest + Playwright test suite covering UI, performance, accessibility, and visual regression
+- **Static Site**: No framework or build process - direct HTML/CSS/JS files
+- **File Organization**: External CSS in `/css/`, JavaScript in `/js/`, assets in `/assets/`
+- **Service Worker**: Aggressive caching strategy in `sw.js` (requires HTTPS in production)
+- **CSS Design System**: Variables prefixed with `--pp-*`, glassmorphism effects, responsive breakpoints
+- **Progressive Enhancement**: Site works without JavaScript, enhanced features when JS available
 
 ## Development Commands
 
+### Local Development
+```bash
+# Start local server (required for Service Worker)
+python -m http.server 3000
+
+# Alternative servers
+npx serve .
+# or use VS Code Live Server extension
+
+# Access site at http://localhost:3000/
+```
+
 ### Testing
 ```bash
-# Run all tests
-npm test
+# Run Playwright tests (requires npm install first)
+npx playwright test
 
-# Watch mode for development
-npm run test:watch
+# Run specific test file
+npx playwright test test-mobile-nav-complete.js
 
-# Run specific test types
-npm run test:visual      # Visual regression tests
-npm run test:performance # Performance benchmarks
-npm run test:mobile      # Mobile-specific tests
-npm run test:accessibility # A11y compliance tests
+# Debug tests with headed browser
+npx playwright test --headed
 
-# Generate test coverage
-npm run test:coverage
-```
+# Generate HTML report
+npx playwright test --reporter=html
 
-### Development Server
-```bash
-# Start local development server on port 3000
-npm run serve
-
-# Development mode (server + watch tests)
-npm run dev
-```
-
-### Performance Analysis
-```bash
-# Run Lighthouse audit
-npm run lighthouse
-
-# Complete validation (tests + lighthouse)
-npm run validate
+# Manual testing approach:
+# 1. Performance: Chrome DevTools > Lighthouse (targets: Performance 85-95, SEO 95+, Accessibility 90+)
+# 2. Cross-browser: Chrome 60+, Firefox 60+, Safari 12+, Edge 79+
+# 3. Mobile: Test at 768px breakpoint and below
 ```
 
 ## Key Files Structure
 
 ```
-optimized-homepage/
-├── index.html                 # Main optimized HTML file
-├── script.js                  # Main JavaScript functionality
-├── styles.css                 # Complete CSS design system
-├── sw.js                      # Service Worker for caching
-├── manifest.json              # Web App Manifest
-├── test-*.js                  # Test suite files
-├── analyze-*.js               # Analysis and debugging scripts
-└── quality-assessment-report.json # Performance metrics
+/
+├── index.html              # Main homepage (single entry point)
+├── sw.js                   # Service Worker (root scope required)
+├── /css/
+│   ├── style.css          # Main styles (104KB)
+│   ├── homepage.css       # Homepage-specific styles (12KB)
+│   └── critical.css       # Critical above-fold styles (2KB)
+├── /js/
+│   ├── main.js            # Core functionality (45KB)
+│   ├── homepage.js        # Homepage interactions (15KB)
+│   └── exit-intent.js     # Exit intent popup (2KB)
+├── /assets/
+│   └── manifest.json      # PWA manifest
+├── /blog/                  # Blog post pages
+├── /images/                # Image assets
+└── /.claude/agents/        # SEO copywriter agent configuration
 ```
 
-## Performance Architecture
+## Code Style & Conventions
 
-### Optimization Features
-- **Critical CSS**: Above-the-fold styles inlined, rest loaded asynchronously
-- **Lazy Loading**: Images and non-critical resources loaded on demand  
-- **Service Worker Caching**: Aggressive caching for static assets
-- **Resource Hints**: Preconnect and preload for external resources
-- **Async JavaScript**: Non-blocking script loading with error handling
+- **HTML**: Semantic tags, accessible labels, kebab-case classes (e.g., `hero-stats`)
+- **CSS**: 4-space indentation, `--pp-*` variables, component styles grouped
+- **JavaScript**: ES6+, named functions, requestAnimationFrame for animations, passive event listeners
+- **File Naming**: kebab-case for all files (e.g., `exit-intent.js`)
+- **Commits**: Conventional format (e.g., `feat: add hero animation`, `fix: correct SW cache`)
 
-### Expected Metrics
-- Lighthouse Performance: 85-95
-- First Contentful Paint: <1.5s
-- Time to Interactive: <3s
-- Page Size: ~45KB (vs 280KB original)
+## Service Worker Configuration
 
-## Testing Architecture
+### Cache Strategy
+- **Static Cache**: `profit-platform-static-v3` - Core assets (CSS, JS, manifest)
+- **Dynamic Cache**: `profit-platform-dynamic-v2` - HTML pages
+- **External Resources**: Cache-first for Google Fonts, CDN resources
+- **Update Process**: Bump cache version numbers in `sw.js` when deploying updates
 
-The test suite uses **Jest + Playwright** with multiple test categories:
-
-### Test Types
-- **UI/UX Tests** (`test-enhanced-website.js`): Button interactions, glassmorphism effects, animations
-- **Performance Tests** (`test-performance.js`): Load times, resource sizes, Core Web Vitals
-- **Accessibility Tests** (`test-accessibility.js`): WCAG compliance, screen reader support
-- **Navigation Tests** (`test-nav-*.js`): Mobile/desktop navigation, dropdowns, responsiveness
-- **Visual Tests**: Screenshot comparison and regression testing
-
-### Test Configuration
-- **Jest Preset**: `jest-playwright-preset`
-- **Coverage Threshold**: 80% branches/functions/lines/statements
-- **Test Pattern**: `test-*.js` and `*.test.js` files
-- **Setup**: `test-setup.js` configures global test environment
-
-## Design System
-
-### CSS Variables Architecture
-```css
---pp-primary: #2c86f9;           # Primary brand color
---pp-gray-*: #f8fafc to #0f172a; # Gray scale system
---pp-radius: 16px;               # Border radius system
---pp-shadow-glass: ...;          # Glassmorphism shadows
---pp-transition: ...;            # Smooth animations
+### Critical Paths in `sw.js`:
+```javascript
+const urlsToCache = [
+    '/',
+    '/css/style.css',
+    '/css/homepage.css', 
+    '/css/critical.css',
+    '/js/main.js',
+    // External dependencies
+    'https://fonts.googleapis.com/...',
+    'https://cdnjs.cloudflare.com/...',
+];
 ```
 
-### Component Classes
-- `.container`: Layout container with responsive behavior
-- `.btn`: Enhanced button system with glassmorphism
-- `.nav-dropdown`: Desktop navigation dropdowns
-- `.mobile-nav`: Mobile navigation overlay system
-- `.hero-*`: Hero section components with animations
-- `.stats-*`: Animated counter components
+## Performance Targets
 
-## Browser Support
+- **Lighthouse Scores**: Performance 85-95, SEO 95+, Accessibility 90+
+- **Core Web Vitals**: FCP <1.5s, TTI <3s, CLS <0.1
+- **Page Weight**: ~45KB compressed (vs 280KB original)
+- **Cache Hit Rate**: >90% for returning visitors
 
-- Chrome 60+
-- Firefox 60+ 
-- Safari 12+
-- Edge 79+
-- Mobile browsers (iOS Safari 12+, Chrome Mobile 60+)
+## SEO Agent Integration
 
-## Important Notes
+The repository includes an SEO copywriter agent (`.claude/agents/seo-copywriter.md`) for content optimization. Use it for:
+- Meta descriptions (150-160 chars)
+- Title tags (50-60 chars)
+- H1-H6 hierarchy optimization
+- Australian market localization (Sydney-focused)
+- Keyword density optimization (1-2%)
 
-- All styles use embedded CSS with external fallback
-- JavaScript is progressively enhanced - site works without JS
-- Images use WebP format with fallbacks
-- Mobile navigation uses overlay pattern
-- All animations respect `prefers-reduced-motion`
-- Service Worker requires HTTPS in production
-- Website targets Australian digital marketing market (Sydney-focused)
+## Important Implementation Notes
+
+1. **No Build Process**: Direct file editing, no compilation required
+2. **Service Worker Scope**: Must be served from root (`/sw.js`) for proper scope
+3. **HTTPS Required**: Service Worker requires HTTPS in production
+4. **Mobile Navigation**: Overlay pattern with hamburger menu toggle
+5. **Australian Market**: Use Australian spelling, Sydney-focused content
+6. **Progressive Enhancement**: Core functionality without JS, enhanced with JS
+7. **External Dependencies**: Google Fonts, Font Awesome, Animate.css via CDN
+
+## Available Test Files
+
+- `test-mobile-nav-complete.js` - Mobile navigation functionality
+- `test-mobile-success-section.js` - Success section mobile view
+- `test-trust-signals-layout.js` - Trust signals layout validation
+- `test-nav-alignment.js` - Navigation alignment checks
+- `test-homepage-changes.js` - Homepage change detection
+- `test-combined-files.js` - Combined file integrity tests

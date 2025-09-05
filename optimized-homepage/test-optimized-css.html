@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Optimized CSS - The Profit Platform</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Optimized Combined CSS -->
+    <link rel="stylesheet" href="css/combined-optimized.css">
+    
+    <style>
+        /* Test-specific styles */
+        .test-section {
+            padding: 40px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .test-title {
+            background: linear-gradient(135deg, #2c86f9, #1e6ee8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="progress-bar"></div>
+    </div>
+    
+    <!-- Header with Glassmorphism -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="images/logo.png" alt="The Profit Platform" class="logo-img">
+                </a>
+                
+                <ul class="nav-links">
+                    <li class="nav-item">
+                        <a href="#" class="active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">About</a>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#">Services</a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-link">
+                                    <span>🚀</span>
+                                    <div>
+                                        <strong>SEO Services</strong>
+                                        <small>Boost your rankings</small>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-link">
+                                    <span>📱</span>
+                                    <div>
+                                        <strong>Google Ads</strong>
+                                        <small>PPC campaigns</small>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-link">
+                                    <span>💻</span>
+                                    <div>
+                                        <strong>Web Design</strong>
+                                        <small>Modern websites</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-cta">
+                    <a href="tel:1300949326" class="phone-number">
+                        1300 949 326
+                    </a>
+                    <button class="mobile-menu-toggle">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay"></div>
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <img src="images/logo.png" alt="The Profit Platform" style="height: 40px;">
+            <button class="mobile-nav-close">✕</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#" class="active">🏠 Home</a></li>
+            <li><a href="#">👥 About</a></li>
+            <li><a href="#">🚀 Services</a></li>
+            <li><a href="#">💼 Portfolio</a></li>
+            <li><a href="#">📞 Contact</a></li>
+        </ul>
+        <div class="mobile-nav-cta">
+            <a href="#" class="btn btn-primary" style="width: 100%;">Get Started</a>
+        </div>
+    </div>
+    
+    <!-- Hero Section Test -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="fade-in">CSS Optimization Test Page</h1>
+                    <p class="fade-in">Testing all visual elements, responsive design, and animations with the optimized CSS file.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary">Primary Button</a>
+                        <a href="#" class="btn btn-secondary">Secondary Button</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">500+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">95%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">24/7</div>
+                            <div class="stat-label">Support</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 400px; border-radius: 24px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Test Components Section -->
+    <section class="section">
+        <div class="container">
+            <div class="test-section">
+                <h2 class="test-title">Button Styles Test</h2>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-ghost">Ghost Button</button>
+                    <button class="btn btn-primary shimmer">Shimmer Effect</button>
+                    <button class="btn btn-primary pulse">Pulse Animation</button>
+                </div>
+            </div>
+            
+            <div class="test-section">
+                <h2 class="test-title">Service Cards Test</h2>
+                <div class="test-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🚀</div>
+                        <h3 class="service-title">SEO Services</h3>
+                        <p class="service-description">Boost your search rankings with our proven SEO strategies.</p>
+                        <ul class="service-features">
+                            <li>Keyword Research</li>
+                            <li>On-Page Optimization</li>
+                            <li>Link Building</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📱</div>
+                        <h3 class="service-title">Google Ads</h3>
+                        <p class="service-description">Maximize ROI with targeted PPC campaigns.</p>
+                        <ul class="service-features">
+                            <li>Campaign Setup</li>
+                            <li>Ad Copywriting</li>
+                            <li>Performance Tracking</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3 class="service-title">Web Design</h3>
+                        <p class="service-description">Modern, responsive websites that convert.</p>
+                        <ul class="service-features">
+                            <li>Custom Design</li>
+                            <li>Mobile Responsive</li>
+                            <li>Fast Loading</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="test-section">
+                <h2 class="test-title">Typography Test</h2>
+                <h1>Heading 1 - Main Title</h1>
+                <h2>Heading 2 - Section Title</h2>
+                <h3>Heading 3 - Subsection</h3>
+                <h4>Heading 4 - Card Title</h4>
+                <h5>Heading 5 - Small Title</h5>
+                <h6>Heading 6 - Tiny Title</h6>
+                <p>This is a paragraph with <strong>bold text</strong> and <a href="#">a link</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            
+            <div class="test-section">
+                <h2 class="test-title">Animation Classes Test</h2>
+                <div class="test-grid">
+                    <div class="service-card fade-in">
+                        <h3>Fade In Animation</h3>
+                        <p>This card fades in on load</p>
+                    </div>
+                    <div class="service-card slide-in-left">
+                        <h3>Slide In Left</h3>
+                        <p>This card slides from left</p>
+                    </div>
+                    <div class="service-card slide-in-right">
+                        <h3>Slide In Right</h3>
+                        <p>This card slides from right</p>
+                    </div>
+                    <div class="service-card scale-in">
+                        <h3>Scale In</h3>
+                        <p>This card scales in</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Test JavaScript for scroll progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.width = scrolled + '%';
+            
+            // Header scroll effect
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+        const mobileClose = document.querySelector('.mobile-nav-close');
+        
+        function toggleMobileMenu() {
+            mobileToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+        
+        mobileToggle?.addEventListener('click', toggleMobileMenu);
+        mobileOverlay?.addEventListener('click', toggleMobileMenu);
+        mobileClose?.addEventListener('click', toggleMobileMenu);
+        
+        // Button ripple effect
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                
+                const x = e.clientX - e.target.offsetLeft;
+                const y = e.clientY - e.target.offsetTop;
+                
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+        
+        // Test responsive breakpoints
+        function checkBreakpoint() {
+            const width = window.innerWidth;
+            let breakpoint = 'desktop';
+            
+            if (width <= 480) {
+                breakpoint = 'mobile-small';
+            } else if (width <= 768) {
+                breakpoint = 'mobile';
+            } else if (width <= 1024) {
+                breakpoint = 'tablet';
+            }
+            
+            console.log(`Current breakpoint: ${breakpoint} (${width}px)`);
+        }
+        
+        window.addEventListener('resize', checkBreakpoint);
+        checkBreakpoint();
+    </script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!-- Ultra-Thin Hero Section Replacement -->
+<!-- Replace the existing hero section (lines 522-690) with this code -->
+
+        <!-- Ultra-Thin Hero Section -->
+        <section class="hero-ultra-thin" role="banner" aria-labelledby="heroHeading">
+            <div class="container">
+                <!-- Top Row: Badge + Title + Stats -->
+                <div class="hero-thin-row hero-primary-row">
+                    <!-- Compact Badge -->
+                    <div class="thin-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-text-thin">Sydney's #1</span>
+                    </div>
+                    
+                    <!-- Inline Title -->
+                    <h1 id="heroHeading" class="hero-title-thin">
+                        <span class="title-main">Small Business Marketing Expert</span>
+                        <span class="title-separator">|</span>
+                        <span class="title-highlight">15+ Clients</span>
+                        <span class="title-separator">|</span>
+                        <span class="title-accent">247% Growth</span>
+                    </h1>
+                    
+                    <!-- Inline Stats -->
+                    <div class="hero-stats-thin">
+                        <div class="stat-thin">
+                            <img src="https://www.gstatic.com/partners/badge/images/2024/PartnerBadgeClickable.svg" 
+                                 alt="Google Partner" 
+                                 class="google-badge-thin">
+                        </div>
+                        <div class="stat-thin">
+                            <span class="stat-value-thin">4.9★</span>
+                            <span class="stat-label-thin">Top Rated</span>
+                        </div>
+                        <div class="stat-thin">
+                            <span class="stat-value-thin">2024</span>
+                            <span class="stat-label-thin">Founded</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bottom Row: Subtitle + CTAs -->
+                <div class="hero-thin-row hero-secondary-row">
+                    <!-- Compact Subtitle -->
+                    <p class="hero-subtitle-thin">
+                        Dominate Google in <span class="location-thin">Bondi</span>, <span class="location-thin">Parramatta</span>, <span class="location-thin">Penrith</span> & Greater Sydney. Personal service from a hungry local expert - no call centres.
+                    </p>
+                    
+                    <!-- Inline CTAs -->
+                    <div class="hero-cta-thin">
+                        <a href="contact.html" class="cta-primary-thin">
+                            <span class="cta-text-thin">Free $997 Audit</span>
+                            <i class="fas fa-arrow-right cta-icon-thin"></i>
+                        </a>
+                        
+                        <span class="cta-divider">or</span>
+                        
+                        <a href="tel:+61487286451" class="cta-secondary-thin">
+                            <i class="fas fa-phone cta-icon-thin"></i>
+                            <span class="cta-text-thin">0487 286 451</span>
+                        </a>
+                        
+                        <span class="cta-urgent">Only 5 spots left</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Subtle bottom border -->
+            <div class="hero-thin-border"></div>
+        </section>
+
+        <!-- Ultra-Thin CSS Styles (Add to your styles.css or in a <style> tag) -->
+        <style>
+            /* Ultra-Thin Hero Design */
+            .hero-ultra-thin {
+                position: relative;
+                background: linear-gradient(to right, #ffffff, #f8fafc);
+                padding: 1rem 0;
+                margin-top: 80px; /* Account for fixed header */
+                border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+                overflow: hidden;
+            }
+            
+            .hero-thin-row {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                padding: 0.5rem 0;
+            }
+            
+            .hero-primary-row {
+                border-bottom: 1px solid rgba(226, 232, 240, 0.3);
+                padding-bottom: 0.75rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .hero-secondary-row {
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            /* Badge */
+            .thin-badge {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.25rem 0.75rem;
+                background: linear-gradient(135deg, rgba(44, 134, 249, 0.05), rgba(96, 165, 250, 0.05));
+                border: 1px solid rgba(44, 134, 249, 0.2);
+                border-radius: 20px;
+                white-space: nowrap;
+            }
+            
+            .badge-dot {
+                width: 6px;
+                height: 6px;
+                background: #2c86f9;
+                border-radius: 50%;
+                animation: pulse-thin 2s infinite;
+            }
+            
+            .badge-text-thin {
+                font-size: 0.75rem;
+                font-weight: 500;
+                color: #2c86f9;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            
+            /* Title */
+            .hero-title-thin {
+                flex: 1;
+                font-size: 1.25rem;
+                font-weight: 300;
+                line-height: 1.4;
+                color: #0f172a;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                flex-wrap: wrap;
+            }
+            
+            .title-main {
+                font-weight: 400;
+                color: #1e293b;
+            }
+            
+            .title-separator {
+                color: #cbd5e1;
+                font-weight: 200;
+            }
+            
+            .title-highlight {
+                color: #2c86f9;
+                font-weight: 500;
+            }
+            
+            .title-accent {
+                background: linear-gradient(135deg, #2c86f9, #60a5fa);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-weight: 600;
+            }
+            
+            /* Stats */
+            .hero-stats-thin {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            
+            .stat-thin {
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+                white-space: nowrap;
+            }
+            
+            .google-badge-thin {
+                height: 28px;
+                width: auto;
+                opacity: 0.9;
+            }
+            
+            .stat-value-thin {
+                font-size: 0.95rem;
+                font-weight: 600;
+                color: #2c86f9;
+            }
+            
+            .stat-label-thin {
+                font-size: 0.75rem;
+                font-weight: 300;
+                color: #64748b;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+            }
+            
+            /* Subtitle */
+            .hero-subtitle-thin {
+                flex: 1;
+                font-size: 0.875rem;
+                font-weight: 300;
+                line-height: 1.4;
+                color: #475569;
+                margin: 0;
+                max-width: 600px;
+            }
+            
+            .location-thin {
+                font-weight: 500;
+                color: #2c86f9;
+            }
+            
+            /* CTAs */
+            .hero-cta-thin {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .cta-primary-thin {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.5rem 1.25rem;
+                background: linear-gradient(135deg, #2c86f9, #60a5fa);
+                color: white;
+                font-size: 0.875rem;
+                font-weight: 500;
+                border-radius: 20px;
+                text-decoration: none;
+                transition: all 0.2s ease;
+                white-space: nowrap;
+            }
+            
+            .cta-primary-thin:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(44, 134, 249, 0.25);
+            }
+            
+            .cta-secondary-thin {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+                padding: 0.5rem 1rem;
+                background: white;
+                border: 1px solid #e2e8f0;
+                color: #1e293b;
+                font-size: 0.875rem;
+                font-weight: 400;
+                border-radius: 20px;
+                text-decoration: none;
+                transition: all 0.2s ease;
+                white-space: nowrap;
+            }
+            
+            .cta-secondary-thin:hover {
+                border-color: #2c86f9;
+                color: #2c86f9;
+                background: rgba(44, 134, 249, 0.05);
+            }
+            
+            .cta-icon-thin {
+                font-size: 0.75rem;
+                opacity: 0.8;
+            }
+            
+            .cta-text-thin {
+                font-size: 0.875rem;
+            }
+            
+            .cta-divider {
+                font-size: 0.75rem;
+                color: #cbd5e1;
+                font-weight: 300;
+            }
+            
+            .cta-urgent {
+                padding: 0.25rem 0.75rem;
+                background: rgba(239, 68, 68, 0.1);
+                color: #dc2626;
+                font-size: 0.7rem;
+                font-weight: 500;
+                border-radius: 12px;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+            }
+            
+            /* Bottom border decoration */
+            .hero-thin-border {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(90deg, 
+                    transparent 0%, 
+                    rgba(44, 134, 249, 0.3) 20%, 
+                    rgba(44, 134, 249, 0.3) 80%, 
+                    transparent 100%);
+            }
+            
+            /* Animation */
+            @keyframes pulse-thin {
+                0%, 100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.5;
+                }
+            }
+            
+            /* Responsive Design */
+            @media (max-width: 1024px) {
+                .hero-thin-row {
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                }
+                
+                .hero-title-thin {
+                    font-size: 1.1rem;
+                    order: 2;
+                    width: 100%;
+                }
+                
+                .thin-badge {
+                    order: 1;
+                }
+                
+                .hero-stats-thin {
+                    order: 3;
+                    width: 100%;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .hero-ultra-thin {
+                    padding: 0.75rem 0;
+                    margin-top: 60px;
+                }
+                
+                .hero-thin-row {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 0.75rem;
+                }
+                
+                .hero-secondary-row {
+                    align-items: flex-start;
+                }
+                
+                .hero-title-thin {
+                    font-size: 1rem;
+                    gap: 0.5rem;
+                }
+                
+                .hero-subtitle-thin {
+                    font-size: 0.8rem;
+                    max-width: 100%;
+                }
+                
+                .hero-cta-thin {
+                    width: 100%;
+                    flex-wrap: wrap;
+                    gap: 0.75rem;
+                }
+                
+                .cta-primary-thin,
+                .cta-secondary-thin {
+                    padding: 0.4rem 1rem;
+                    font-size: 0.8rem;
+                }
+                
+                .hero-stats-thin {
+                    gap: 1rem;
+                    flex-wrap: wrap;
+                }
+                
+                .stat-thin {
+                    font-size: 0.8rem;
+                }
+                
+                .google-badge-thin {
+                    height: 24px;
+                }
+                
+                .cta-urgent {
+                    font-size: 0.65rem;
+                    padding: 0.2rem 0.5rem;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .hero-title-thin {
+                    font-size: 0.9rem;
+                }
+                
+                .title-separator {
+                    display: none;
+                }
+                
+                .hero-cta-thin {
+                    flex-direction: column;
+                    width: 100%;
+                }
+                
+                .cta-primary-thin,
+                .cta-secondary-thin {
+                    width: 100%;
+                    justify-content: center;
+                    padding: 0.6rem 1rem;
+                }
+                
+                .cta-divider {
+                    display: none;
+                }
+            }
+            
+            /* Dark mode support */
+            @media (prefers-color-scheme: dark) {
+                .hero-ultra-thin {
+                    background: linear-gradient(to right, #0f172a, #1e293b);
+                    border-bottom-color: rgba(51, 65, 85, 0.5);
+                }
+                
+                .thin-badge {
+                    background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(44, 134, 249, 0.1));
+                    border-color: rgba(96, 165, 250, 0.3);
+                }
+                
+                .hero-title-thin,
+                .title-main {
+                    color: #f1f5f9;
+                }
+                
+                .hero-subtitle-thin {
+                    color: #94a3b8;
+                }
+                
+                .cta-secondary-thin {
+                    background: #1e293b;
+                    border-color: #334155;
+                    color: #f1f5f9;
+                }
+                
+                .cta-secondary-thin:hover {
+                    background: rgba(96, 165, 250, 0.1);
+                }
+            }
+            
+            /* Print styles */
+            @media print {
+                .hero-ultra-thin {
+                    padding: 0.5rem 0;
+                    background: white;
+                }
+                
+                .hero-cta-thin {
+                    display: none;
+                }
+            }
+        </style>

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/C:\\Users\\abhis\\Claud and Gemini\\The Profit Platform\\optimized-homepage/**)",
+      "Read(/C:\\Users\\abhis\\Claud and Gemini\\The Profit Platform\\optimized-homepage/**)",
+      "Read(/C:\\Users\\abhis\\Claud and Gemini\\The Profit Platform\\optimized-homepage/**)",
+      "Read(/C:\\Users\\abhis\\Claud and Gemini\\The Profit Platform\\optimized-homepage\\css/**)",
+      "Bash(node:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Cache & View Changes</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f9fafb;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+        .success {
+            background: #10b981;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            display: none;
+        }
+        .warning {
+            background: #f59e0b;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+        .info {
+            background: #3b82f6;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🧹 Clear Cache & View Updated Homepage</h1>
+        
+        <div class="warning">
+            ⚠️ If you're not seeing the changes, it's likely due to browser or Service Worker caching.
+        </div>
+        
+        <h2>Step 1: Clear All Caches</h2>
+        <button onclick="clearAllCaches()">Clear Service Worker Cache</button>
+        <button onclick="unregisterServiceWorker()">Unregister Service Worker</button>
+        <button onclick="hardReload()">Hard Reload Page</button>
+        
+        <div id="success" class="success">
+            ✅ <span id="successMsg"></span>
+        </div>
+        
+        <h2>Step 2: Expected Changes</h2>
+        <div class="info">
+            You should see these changes after clearing cache:
+            <ul>
+                <li>Title: "Double Your Revenue" (NOT "3x Your Revenue")</li>
+                <li>Timeline: "In Just 60 Days" (NOT "90 Days")</li>
+                <li>Tagline: "Sydney's Freshest Digital Growth Partner"</li>
+                <li>Stats: "15+ Sydney Clients" (NOT "300+ Happy Clients")</li>
+                <li>No blue gradient trust signals bar</li>
+                <li>No Google Partner badge</li>
+            </ul>
+        </div>
+        
+        <h2>Step 3: View Updated Page</h2>
+        <button onclick="openFreshPage()">Open Homepage (New Tab)</button>
+        <button onclick="openIncognito()">Instructions for Incognito Mode</button>
+        
+        <div id="incognitoInstructions" style="display:none;" class="info">
+            <strong>To open in Incognito/Private mode:</strong>
+            <ul>
+                <li><strong>Chrome:</strong> Ctrl+Shift+N (Windows) or Cmd+Shift+N (Mac)</li>
+                <li><strong>Firefox:</strong> Ctrl+Shift+P (Windows) or Cmd+Shift+P (Mac)</li>
+                <li><strong>Edge:</strong> Ctrl+Shift+N (Windows) or Cmd+Shift+N (Mac)</li>
+                <li><strong>Safari:</strong> Cmd+Shift+N</li>
+            </ul>
+            Then navigate to: <code>http://localhost:3000/index.html</code>
+        </div>
+        
+        <h2>Current Page Status:</h2>
+        <pre id="status">Checking...</pre>
+    </div>
+    
+    <script>
+        function showSuccess(msg) {
+            const el = document.getElementById('success');
+            document.getElementById('successMsg').textContent = msg;
+            el.style.display = 'block';
+            setTimeout(() => el.style.display = 'none', 3000);
+        }
+        
+        async function clearAllCaches() {
+            if ('caches' in window) {
+                const cacheNames = await caches.keys();
+                await Promise.all(
+                    cacheNames.map(cacheName => {
+                        console.log('Deleting cache:', cacheName);
+                        return caches.delete(cacheName);
+                    })
+                );
+                showSuccess('All caches cleared successfully!');
+                checkStatus();
+            } else {
+                alert('Cache API not supported');
+            }
+        }
+        
+        async function unregisterServiceWorker() {
+            if ('serviceWorker' in navigator) {
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                for (let registration of registrations) {
+                    await registration.unregister();
+                    console.log('Service Worker unregistered');
+                }
+                showSuccess('Service Worker unregistered!');
+                checkStatus();
+            } else {
+                alert('Service Workers not supported');
+            }
+        }
+        
+        function hardReload() {
+            location.reload(true);
+        }
+        
+        function openFreshPage() {
+            const timestamp = Date.now();
+            window.open(`index.html?cachebust=${timestamp}`, '_blank');
+        }
+        
+        function openIncognito() {
+            document.getElementById('incognitoInstructions').style.display = 
+                document.getElementById('incognitoInstructions').style.display === 'none' ? 'block' : 'none';
+        }
+        
+        async function checkStatus() {
+            let status = 'Page Status:\n';
+            status += `URL: ${window.location.href}\n`;
+            status += `Time: ${new Date().toLocaleString()}\n`;
+            
+            if ('serviceWorker' in navigator) {
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                status += `Service Workers: ${registrations.length} registered\n`;
+            }
+            
+            if ('caches' in window) {
+                const cacheNames = await caches.keys();
+                status += `Caches: ${cacheNames.length} active\n`;
+                if (cacheNames.length > 0) {
+                    status += `Cache Names: ${cacheNames.join(', ')}\n`;
+                }
+            }
+            
+            document.getElementById('status').textContent = status;
+        }
+        
+        // Check status on load
+        checkStatus();
+        
+        // Auto-refresh status every 2 seconds
+        setInterval(checkStatus, 2000);
+    </script>
+</body>
+</html>

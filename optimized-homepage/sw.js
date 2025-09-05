@@ -1,19 +1,20 @@
-// Service Worker for The Profit Platform - Enhanced caching
-const CACHE_NAME = 'profit-platform-v2';
-const STATIC_CACHE = 'profit-platform-static-v2';
-const DYNAMIC_CACHE = 'profit-platform-dynamic-v1';
+// Service Worker for The Profit Platform - Enhanced caching (root scope)
+const CACHE_NAME = 'profit-platform-v3';
+const STATIC_CACHE = 'profit-platform-static-v3';
+const DYNAMIC_CACHE = 'profit-platform-dynamic-v2';
 
 const urlsToCache = [
     '/',
     '/index.html',
-    '/styles.css',
-    '/script.js',
-    '/manifest.json',
+    '/css/style.css',
+    '/css/homepage.css',
+    '/css/critical.css',
+    '/js/main.js',
+    '/assets/manifest.json',
+    // External styles still in use
     'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css',
-    'https://theprofitplatform.com.au/wp-content/uploads/2025/08/cropped-The-Profit-Platform-Logo-1.png',
-    'https://theprofitplatform.com.au/wp-content/uploads/2025/08/The-Profit-Platform-Growth-Dashboard-1.png'
+    'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'
 ];
 
 const EXTERNAL_RESOURCES = [

@@ -1,7 +1,7 @@
 ---
 name: seo-copywriter
 description: Use this agent when you need to create, optimize, or rewrite content for search engine optimization purposes. This includes writing meta descriptions, title tags, headers, blog posts, landing page copy, or any content that needs to rank well in search engines while maintaining readability and conversion focus. Examples: <example>Context: User needs SEO-optimized content for their digital marketing website. user: 'Write a meta description for our Google Ads services page' assistant: 'I'll use the seo-copywriter agent to create an optimized meta description for your Google Ads services page.' <commentary>Since the user needs SEO-focused copy for a meta description, use the Task tool to launch the seo-copywriter agent.</commentary></example> <example>Context: User wants to improve existing content for better search rankings. user: 'Rewrite this paragraph to include keywords about digital marketing Sydney' assistant: 'Let me use the seo-copywriter agent to optimize this paragraph with your target keywords while maintaining natural readability.' <commentary>The user needs content optimization with specific keywords, so use the seo-copywriter agent.</commentary></example>
-model: sonnet
+model: opus
 color: cyan
 ---
 
